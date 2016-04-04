@@ -1,0 +1,20 @@
+{
+  "name": "react-swiper-idangerous",
+  "version": "1.0.0",
+  "description": "ReactJs component for iDangerous Swiper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "iDangerous",
+    "Swiper",
+    "Reactjs"
+  ],
+  "author": "Nguyen Hoang Phuc <phucnguyenhoang1985@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "object-assign": "^4.0.1",
+    "swiper": "^3.3.1"
+  }
+}
