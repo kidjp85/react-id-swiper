@@ -45,3 +45,13 @@ h1, h2, h3, h4 {
   width: 100%;
   height: 300px;
 }
+
+.swiper-pagination-bullet-active {
+  background-color: $text-color !important;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet {
+  opacity: .8;
+  background-color: $white;
+}
