@@ -15,11 +15,12 @@
     "type": "git",
     "url": "git://github.com/kidjp85/react-idangerous-swiper.git"
   },
-  "main": "index.js",
   "author": "Nguyen Hoang Phuc <phucnguyenhoang1985@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "object-assign": "^4.0.1",
+    "react": "^0.14.x",
+    "react-dom": "^0.14.x",
     "swiper": "^3.3.1"
   }
 }
