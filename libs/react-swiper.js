@@ -185,7 +185,7 @@
       buttonDisabledClass: React.PropTypes.string
     },
 
-    getDefaultProps() {
+    getDefaultProps: function() {
       return defaultProps;
     },
 
