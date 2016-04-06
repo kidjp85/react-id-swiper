@@ -2,7 +2,7 @@
   "name": "react-idangerous-swiper",
   "version": "1.0.0",
   "description": "ReactJs component for iDangerous Swiper",
-  "main": "index.js",
+  "main": "libs/react-swiper.js",
   "scripts": {
     "start": "webpack-dev-server"
   },

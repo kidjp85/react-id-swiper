@@ -1,5 +1,4 @@
 import React from 'react';
-import Slides from "./common/demo-data";
 import Header from './common/header';
 import DefaultSwiper from './default-swiper';
 import PaginationSwiper from './pagination-swiper';
@@ -22,35 +21,39 @@ import FlipEffectSwiper from './3d-flip-effect-swiper';
 import MouseWheelSwiper from './mouse-wheel-swiper';
 import AutoplaySwiper from './autoplay-swiper';
 import CustomizedPaginationSwiper from './customized-pagination-swiper';
-
-
+import FractionPaginationSwiper from './fraction-pagination-swiper';
+import ProgressPaginationSwiper from './progress-pagination-swiper';
+import ResponsiveBreakpointsSwiper from './responsive-breakpoints-swiper';
 
 export default () => {
   return(
     <div className="body-container">
       <Header />
       <div className="container">
-        <DefaultSwiper slides={Slides} />
-        <VerticalSwiper slides={Slides} />
-        <PaginationSwiper slides={Slides} />
-        <SpaceBetweenSwiper slides={Slides} />
-        <SlidesPerViewSwiper slides={Slides} />
-        <AutoSlidesPerViewSwiper slides={Slides} id="auto-slides-per-view"/>
-        <CenteredSlidesSwiper slides={Slides} id="centered-slides"/>
-        <CenteredSlidesAutoSwiper slides={Slides} id="centered-slides-auto"/>
-        <FreeModeNoFixedPositionsSwiper slides={Slides} />
-        <MultiRowSwiper slides={Slides} id="multi-row" />
-        <GrabCursorSwiper slides={Slides} id="grad-cursor" />
-        <ScrollbarSwiper slides={Slides} />
-        <NavigationButtonSwiper slides={Slides} />
-        <LoopModeSwiper slides={Slides} />
-        <FadeEffectSwiper slides={Slides} showImage="true" id="fade-effect"/>
-        <CubeEffectSwiper slides={Slides} showImage="true" id="cube-effect"/>
-        <CoverflowEffectSwiper slides={Slides} showImage="true" id="coverflow-effect"/>
-        <FlipEffectSwiper slides={Slides} showImage="true" id="flip-effect"/>
-        <MouseWheelSwiper slides={Slides} />
-        <AutoplaySwiper slides={Slides} />
-        <CustomizedPaginationSwiper slides={Slides} id="customized-pagination" />
+        <DefaultSwiper />
+        <VerticalSwiper />
+        <PaginationSwiper />
+        <SpaceBetweenSwiper />
+        <SlidesPerViewSwiper />
+        <AutoSlidesPerViewSwiper id="auto-slides-per-view"/>
+        <CenteredSlidesSwiper id="centered-slides"/>
+        <CenteredSlidesAutoSwiper id="centered-slides-auto"/>
+        <FreeModeNoFixedPositionsSwiper />
+        <MultiRowSwiper id="multi-row" />
+        <GrabCursorSwiper id="grad-cursor" />
+        <ScrollbarSwiper />
+        <NavigationButtonSwiper />
+        <LoopModeSwiper />
+        <FadeEffectSwiper showImage="true" id="fade-effect"/>
+        <CubeEffectSwiper showImage="true" id="cube-effect"/>
+        <CoverflowEffectSwiper showImage="true" id="coverflow-effect"/>
+        <FlipEffectSwiper showImage="true" id="flip-effect"/>
+        <MouseWheelSwiper />
+        <AutoplaySwiper />
+        <CustomizedPaginationSwiper id="customized-pagination" />
+        <FractionPaginationSwiper id="fraction-pagination" />
+        <ProgressPaginationSwiper />
+        <ResponsiveBreakpointsSwiper />
       </div>
     </div>
   )

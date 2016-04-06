@@ -13,6 +13,6 @@ export default (props) => {
   }
 
   return(
-    <Slider title="Loop Mode / Infinite Loop" slides={props.slides} params={params} id={props.id} />
+    <Slider title="Loop Mode / Infinite Loop" params={params} id={props.id} />
   )
 };

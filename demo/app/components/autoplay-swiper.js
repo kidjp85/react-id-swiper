@@ -14,6 +14,6 @@ export default (props) => {
   }
 
   return(
-    <Slider title="Autoplay" slides={props.slides} params={params} id={props.id} />
+    <Slider title="Autoplay" params={params} id={props.id} />
   )
 };

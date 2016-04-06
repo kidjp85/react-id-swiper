@@ -12,6 +12,6 @@ export default (props) => {
   }
 
   return(
-    <Slider title="Scrollbar" slides={props.slides} params={params} id={props.id} />
+    <Slider title="Scrollbar" params={params} id={props.id} />
   )
 };

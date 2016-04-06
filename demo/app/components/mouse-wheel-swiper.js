@@ -12,6 +12,6 @@ export default (props) => {
   }
 
   return(
-    <Slider title="Mousewheel Control" slides={props.slides} params={params} id={props.id} />
+    <Slider title="Mousewheel Control" params={params} id={props.id} />
   )
 };

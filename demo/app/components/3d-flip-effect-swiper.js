@@ -11,6 +11,6 @@ export default (props) => {
   }
 
   return(
-    <Slider title="3D Flip Effect" slides={props.slides} params={params} id={props.id} showImage={props.showImage} />
+    <Slider title="3D Flip Effect" params={params} id={props.id} showImage={props.showImage} />
   )
 };

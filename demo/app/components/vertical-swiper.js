@@ -9,6 +9,6 @@ export default (props) => {
   }
 
   return(
-    <Slider title="Vertical Slides + Responsive / Fullscreen" slides={props.slides} params={params} />
+    <Slider title="Vertical Slides + Responsive / Fullscreen" params={params} />
   )
 };

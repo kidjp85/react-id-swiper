@@ -11,6 +11,6 @@ export default (props) => {
   }
 
   return(
-    <Slider title="Multi Row Slides Layout" slides={props.slides} params={params} id={props.id} />
+    <Slider title="Multi Row Slides Layout" params={params} id={props.id} />
   )
 };

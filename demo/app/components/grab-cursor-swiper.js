@@ -12,6 +12,6 @@ export default (props) => {
   }
 
   return(
-    <Slider title="Grab Cusor" slides={props.slides} params={params} id={props.id} />
+    <Slider title="Grab Cusor" params={params} id={props.id} />
   )
 };

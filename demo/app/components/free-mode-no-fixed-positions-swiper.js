@@ -11,6 +11,6 @@ export default (props) => {
   }
 
   return(
-    <Slider title="Free Mode / No Fixed Positions" slides={props.slides} params={params} id={props.id} />
+    <Slider title="Free Mode / No Fixed Positions" params={params} id={props.id} />
   )
 };

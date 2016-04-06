@@ -11,6 +11,6 @@ export default (props) => {
   }
 
   return(
-    <Slider title="Centered Slides + Auto Slides Per View" slides={props.slides} params={params} id={props.id} />
+    <Slider title="Centered Slides + Auto Slides Per View" params={params} id={props.id} />
   )
 };

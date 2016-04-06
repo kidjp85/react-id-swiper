@@ -15,6 +15,6 @@ export default (props) => {
   }
 
   return(
-    <Slider title="3D Cube Effect" slides={props.slides} params={params} id={props.id} showImage={props.showImage} />
+    <Slider title="3D Cube Effect" params={params} id={props.id} showImage={props.showImage} />
   )
 };

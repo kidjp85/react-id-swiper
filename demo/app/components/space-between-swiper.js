@@ -9,6 +9,6 @@ export default (props) => {
   }
 
   return(
-    <Slider title="Space Between Slides" slides={props.slides} params={params} />
+    <Slider title="Space Between Slides" params={params} />
   )
 };

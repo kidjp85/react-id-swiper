@@ -1,5 +1,6 @@
 import React from 'react';
 import Swiper from 'react-swiper';
+import Slides from "./demo-data";
 
 export default (props) => {
   const _renderContent = (slide) => {
@@ -7,7 +8,7 @@ export default (props) => {
   }
 
   const _divStyle = (slide) => {
-    return props.showImage ? {backgroundImage: `url(${slide.img})`} : {}
+    return props.showImage ? {backgroundImage: `url(${require(`images/img_${slide.id}.jpg`)})`} : {}
   }
 
   return(
@@ -15,7 +16,7 @@ export default (props) => {
       <div className="col-sm-12 col-md-12 col-lg-12 slide-content">
         <h2>{props.title}</h2>
           <Swiper {...props.params}>
-            {props.slides.map((slide) => {
+            {Slides.map((slide) => {
               return <div className="demo-slide" key={slide.id} style={_divStyle(slide)}>{_renderContent(slide)}</div>
             })}
           </Swiper>

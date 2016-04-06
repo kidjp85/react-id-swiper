@@ -109,10 +109,9 @@ h1, h2, h3, h4 {
 
 #fade-effect {
   .swiper-slide {
-    background: $white;
-    img {
-      width: 100%;
-    }
+    background-position: center;
+    background-size: cover;
+    background-color: $white;
   }
 }
 
@@ -181,5 +180,11 @@ h1, h2, h3, h4 {
   .swiper-pagination-bullet-active {
     color: $white;
     background: $text-color;
+  }
+}
+
+#fraction-pagination {
+  .swiper-pagination-fraction {
+    color: $white;
   }
 }

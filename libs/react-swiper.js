@@ -36,7 +36,6 @@
 
   var ReactIDangerousSwiper = React.createClass({
     displayName: 'ReactIDangerousSwiper',
-
     // http://idangero.us/swiper/api/#.VwH7iRJ95hE
     propTypes: {
       initialSlide: React.PropTypes.number,

@@ -10,6 +10,6 @@ export default (props) => {
   }
 
   return(
-    <Slider title="Slides Per View / Carousel Mode" slides={props.slides} params={params} />
+    <Slider title="Slides Per View / Carousel Mode" params={params} />
   )
 };

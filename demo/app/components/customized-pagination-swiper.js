@@ -11,6 +11,6 @@ export default (props) => {
   }
 
   return(
-    <Slider title="Customized Pagination" slides={props.slides} params={params} id={props.id} />
+    <Slider title="Customized Pagination" params={params} id={props.id} />
   )
 };

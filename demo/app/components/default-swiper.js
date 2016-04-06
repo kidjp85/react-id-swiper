@@ -3,6 +3,6 @@ import Slider from './common/slider';
 
 export default (props) => {
   return(
-    <Slider title="Default Setup" slides={props.slides}  />
+    <Slider title="Default Setup" />
   )
 };

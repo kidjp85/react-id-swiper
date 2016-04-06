@@ -16,7 +16,8 @@ const common = {
   resolve: {
     root: path.resolve(__dirname),
     alias: {
-      'react-swiper': 'libs/react-swiper'
+      'react-swiper': 'libs/react-swiper',
+      'images': 'demo/app/assets/images'
     },
     extensions: ['', '.js', '.jsx']
   },
@@ -35,25 +36,29 @@ const common = {
         loaders: ['babel?cacheDirectory'],
         include: PATHS.app
       },
-      { 
+      {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, 
-        loader: "file" 
+        loader: "file"
       },
-      { 
-        test: /\.(woff|woff2)$/, 
-        loader:"url?prefix=font/&limit=5000" 
+      {
+        test: /\.(woff|woff2)$/,
+        loader:"url?prefix=font/&limit=5000"
       },
-      { 
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, 
-        loader: "url?limit=10000&mimetype=application/octet-stream" 
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "url?limit=10000&mimetype=application/octet-stream"
       },
-      { 
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, 
-        loader: "url?limit=10000&mimetype=image/svg+xml" 
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "url?limit=10000&mimetype=image/svg+xml"
       },
       {
         test: /\.scss$/,
         loaders: ["style", "css", "sass"]
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'file-loader?name=images/[name].[ext]'
       }
     ]
   }
