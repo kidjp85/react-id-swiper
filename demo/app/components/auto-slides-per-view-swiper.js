@@ -4,11 +4,12 @@ import Slider from './common/slider';
 export default (props) => {
   const params = {
     pagination: '.swiper-pagination',
+    slidesPerView: 'auto',
     paginationClickable: true,
     spaceBetween: 30
   }
 
   return(
-    <Slider title="Space Between Slides" slides={props.slides} params={params} />
+    <Slider title="Auto Slides Per View / Carousel Mode" slides={props.slides} params={params} id={props.id} />
   )
 };

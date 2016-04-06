@@ -1,7 +1,5 @@
 import React from 'react';
-import Swiper from 'react-swiper';
-import Slide from './common/slide';
-import Row from './common/row-container'
+import Slider from './common/slider';
 
 export default (props) => {
   const params = {
@@ -11,13 +9,6 @@ export default (props) => {
   }
 
   return(
-    <Row>
-      <h2>Vertical Slides + Responsive / Fullscreen</h2>
-      <Swiper {...params}>
-        {props.slides.map((slide) => {
-          return <Slide key={slide.id} title={slide.title} className="demo-slide"/>
-        })}
-      </Swiper>
-    </Row>
+    <Slider title="Vertical Slides + Responsive / Fullscreen" slides={props.slides} params={params} />
   )
 };

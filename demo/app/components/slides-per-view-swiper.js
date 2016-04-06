@@ -4,11 +4,12 @@ import Slider from './common/slider';
 export default (props) => {
   const params = {
     pagination: '.swiper-pagination',
-    paginationClickable: true
+    slidesPerView: 3,
+    paginationClickable: true,
+    spaceBetween: 30
   }
 
   return(
-    <Slider title="Responsive / Fullscreen + Pagination" slides={props.slides} params={params} />
+    <Slider title="Slides Per View / Carousel Mode" slides={props.slides} params={params} />
   )
 };
-
