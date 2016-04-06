@@ -1,0 +1,1 @@
+# react-idangerous-swiper
