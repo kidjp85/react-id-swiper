@@ -36,6 +36,7 @@
 
   var ReactIDangerousSwiper = React.createClass({
     displayName: 'ReactIDangerousSwiper',
+
     // http://idangero.us/swiper/api/#.VwH7iRJ95hE
     propTypes: {
       initialSlide: React.PropTypes.number,
@@ -106,12 +107,9 @@
       paginationFractionRender: React.PropTypes.func,
       paginationProgressRender: React.PropTypes.func,
       paginationCustomRender: React.PropTypes.func,
-      scrollbar: React.PropTypes.string,
       scrollbarHide: React.PropTypes.bool,
       scrollbarDraggable: React.PropTypes.bool,
       scrollbarSnapOnRelease: React.PropTypes.bool,
-      prevButton: React.PropTypes.string,
-      nextButton: React.PropTypes.string,
       a11y: React.PropTypes.bool,
       prevSlideMessage: React.PropTypes.string,
       nextSlideMessage: React.PropTypes.string,
@@ -215,35 +213,24 @@
       }
       this.swiper = Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
     },
-    _renderScrollBar: function () {
-      if (!this.props.scrollbar) return false;
-      return React.createElement('div', { className: this.props.scrollbar.replace(/\./g, "") });
+
+    _renderScrollBar: function() {
+      if(!this.props.scrollbar) return false;
+      return <div className={this.props.scrollbar}></div>
     },
-    _renderNextButton: function() {
-      if (!this.props.nextButton) return false;
-      return React.createElement('div', { className: this.props.nextButton.replace(/\./g, "") });
-    },
-    _renderPrevButton: function() {
-      if (!this.props.prevButton) return false;
-      return React.createElement('div', { className: this.props.prevButton.replace(/\./g, "") });
-    },
-    render: function() {
+
+    render: function () {
       var slideClass = this.props.slideClass;
-      return React.createElement(
-        'div',
-        { className: this.props.slideClassContainer },
-        React.createElement(
-          'div',
-          { className: 'swiper-wrapper' },
-          React.Children.map(this.props.children, function (e) {
-            return React.cloneElement(e, { className: [slideClass, e.props.className].join(' ') });
-          })
-        ),
-        React.createElement('div', { className: 'swiper-pagination' }),
-        this._renderScrollBar(),
-        this._renderNextButton(),
-        this._renderPrevButton()
-      );
+      return(
+        <div className={this.props.slideClassContainer}>
+          <div className="swiper-wrapper">
+            {React.Children.map(this.props.children, function(e){
+              return React.cloneElement(e, {className: [slideClass, e.props.className].join(' ')});
+            })}
+          </div>
+          {this._renderScrollBar()}
+        </div>
+      )
     }
   });
 
