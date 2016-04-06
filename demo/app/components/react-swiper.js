@@ -214,6 +214,11 @@
       this.swiper = Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
     },
 
+    _renderScrollBar: function() {
+      if(!this.props.scrollbar) return false;
+      return <div className={this.props.scrollbar}></div>
+    },
+
     render: function () {
       var slideClass = this.props.slideClass;
       return(
@@ -223,7 +228,7 @@
               return React.cloneElement(e, {className: [slideClass, e.props.className].join(' ')});
             })}
           </div>
-          <div className="swiper-pagination"></div>
+          {this._renderScrollBar()}
         </div>
       )
     }

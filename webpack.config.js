@@ -16,7 +16,7 @@ const common = {
   resolve: {
     root: path.resolve(__dirname),
     alias: {
-      'react-swiper': path.join(__dirname, 'libs/react-swiper')
+      'react-swiper': 'libs/react-swiper'
     },
     extensions: ['', '.js', '.jsx']
   },

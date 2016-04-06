@@ -1,17 +1,19 @@
 $background-color: #FF9529;
 $white: #fff;
 $text-color: #1e70cd;
+$container-color: #DAD8D8;
+$box-size: 300px;
 
 html, body {
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size: 14px;
-  color: #333;
   margin: 0;
   padding: 0;
   line-height: 1.5;
   background: $white;
   position: relative;
   height: 100%;
+  padding-top: 2em;
 }
 
 h1, h2, h3, h4 {
@@ -45,9 +47,19 @@ h1, h2, h3, h4 {
   -webkit-align-items: center;
 }
 
+.app-header {
+  background: $background-color;
+  h2 {
+    color: $white !important;
+    font-size: 2em;
+    margin: 0;
+  }
+}
+
 .swiper-container {
   width: 100%;
-  height: 300px;
+  height: $box-size;
+  background: $white;
 }
 
 .swiper-pagination-bullet-active {
@@ -56,7 +68,7 @@ h1, h2, h3, h4 {
 }
 
 .swiper-pagination-bullet {
-  opacity: .8;
+  opacity: 1;
   background-color: $white;
 }
 
@@ -72,7 +84,9 @@ h1, h2, h3, h4 {
   }
 }
 
-#centered-slides {
+#centered-slides,
+#centered-slides-auto,
+#grab-cursor {
   .swiper-slide {
     width: 60%;
     &:nth-child(2n) {
@@ -81,5 +95,91 @@ h1, h2, h3, h4 {
     &:nth-child(3n) {
       width: 20%;
     }
+  }
+}
+
+#multi-row {
+  .swiper-container {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+#fade-effect {
+  .swiper-slide {
+    background: $white;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+#cube-effect {
+  .swiper-container {
+    width: $box-size !important;
+    height: $box-size;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+    background: $white;
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      background-color: $white;
+    }
+  }
+  .slide-content {
+    height: 450px;
+    position: relative;
+  }
+}
+
+#coverflow-effect {
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+    padding: .5em;
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: $box-size;
+        height: $box-size;
+        background-color: $white;
+    }
+  }
+}
+
+#flip-effect {
+  .swiper-container {
+    width: $box-size;
+    height: $box-size;
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: $box-size;
+      height: $box-size;
+      background-color: $white;
+    }
+  }
+}
+
+#customized-pagination {
+  .swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 11px;
+    color: $text-color;
+    opacity: 1;
+    background: $white;
+  }
+  .swiper-pagination-bullet-active {
+    color: $white;
+    background: $text-color;
   }
 }

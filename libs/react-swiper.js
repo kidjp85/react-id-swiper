@@ -107,9 +107,12 @@
       paginationFractionRender: React.PropTypes.func,
       paginationProgressRender: React.PropTypes.func,
       paginationCustomRender: React.PropTypes.func,
+      scrollbar: React.PropTypes.string,
       scrollbarHide: React.PropTypes.bool,
       scrollbarDraggable: React.PropTypes.bool,
       scrollbarSnapOnRelease: React.PropTypes.bool,
+      prevButton: React.PropTypes.string,
+      nextButton: React.PropTypes.string,
       a11y: React.PropTypes.bool,
       prevSlideMessage: React.PropTypes.string,
       nextSlideMessage: React.PropTypes.string,
@@ -213,6 +216,18 @@
       }
       this.swiper = Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
     },
+    _renderScrollBar: function () {
+      if (!this.props.scrollbar) return false;
+      return React.createElement('div', { className: this.props.scrollbar.replace(/\./g, "") });
+    },
+    _renderNextButton: function() {
+      if (!this.props.nextButton) return false;
+      return React.createElement('div', { className: this.props.nextButton.replace(/\./g, "") });
+    },
+    _renderPrevButton: function() {
+      if (!this.props.prevButton) return false;
+      return React.createElement('div', { className: this.props.prevButton.replace(/\./g, "") });
+    },
     render: function() {
       var slideClass = this.props.slideClass;
       return React.createElement(
@@ -225,7 +240,10 @@
             return React.cloneElement(e, { className: [slideClass, e.props.className].join(' ') });
           })
         ),
-        React.createElement('div', { className: 'swiper-pagination' })
+        React.createElement('div', { className: 'swiper-pagination' }),
+        this._renderScrollBar(),
+        this._renderNextButton(),
+        this._renderPrevButton()
       );
     }
   });
