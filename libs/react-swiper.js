@@ -213,18 +213,20 @@
       }
       this.swiper = Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
     },
-
-    render: function () {
+    render: function() {
       var slideClass = this.props.slideClass;
-      return(
-        <div className={this.props.slideClassContainer}>
-          <div className="swiper-wrapper">
-            {React.Children.map(this.props.children, function(e){
-              return React.cloneElement(e, {className: [slideClass, e.props.className].join(' ')});
-            })}
-          </div>
-        </div>
-      )
+      return React.createElement(
+        'div',
+        { className: this.props.slideClassContainer },
+        React.createElement(
+          'div',
+          { className: 'swiper-wrapper' },
+          React.Children.map(this.props.children, function (e) {
+            return React.cloneElement(e, { className: [slideClass, e.props.className].join(' ') });
+          })
+        ),
+        React.createElement('div', { className: 'swiper-pagination' })
+      );
     }
   });
 
