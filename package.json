@@ -1,5 +1,5 @@
 {
-  "name": "react-idangerous-swiper",
+  "name": "react-id-swiper",
   "version": "1.0.0",
   "description": "ReactJs component for iDangerous Swiper",
   "main": "libs/react-swiper.js",
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git://github.com/kidjp85/react-idangerous-swiper.git"
   },
-  "author": "Nguyen Hoang Phuc <phucnguyenhoang1985@gmail.com>",
+  "author": "phucnguyenhoang1985@gmail.com>",
   "dependencies": {
     "object-assign": "^4.0.1",
     "react": "^0.14.8",

@@ -17,7 +17,7 @@ You can see [DEMO](https://still-journey-25167.herokuapp.com/)
 
 ## Installation
 ```bash
-npm install --save react-idangerous-swiper
+npm install --save react-id-swiper
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ npm install --save react-idangerous-swiper
 
 ```javascript
 var React = require('react');
-var Swiper = require('react-idangerous-swiper');
+var Swiper = require('react-id-swiper');
 
 var Example = React.createClass({
   render: function() {
@@ -51,7 +51,7 @@ module.exports = Example;
 ### Es6
 ```javascript
 import React from 'react';
-import Swiper from 'react-idangerous-swiper';
+import Swiper from 'react-id-swiper';
 
 class Example extends React.Component {
   render() {
@@ -75,7 +75,7 @@ export default Example;
 ### Es5
 ```javascript
 var React = require('react');
-var Swiper = require('react-idangerous-swiper');
+var Swiper = require('react-id-swiper');
 
 var Example = React.createClass({
   render: function() {
@@ -111,7 +111,7 @@ module.exports = Example;
 
 ```javascript
 import React from 'react';
-import Swiper from 'react-idangerous-swiper';
+import Swiper from 'react-id-swiper';
 
 class Example extends React.Component {
   render() {
