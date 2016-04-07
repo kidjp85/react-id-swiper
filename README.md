@@ -20,6 +20,16 @@ You can see [DEMO](https://still-journey-25167.herokuapp.com/)
 npm install --save react-id-swiper
 ```
 
+## Recommendation
+>Swiper stylesheet file is required
+### Use Swiper stylesheet file from CDN
+```css
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.x.x/css/swiper.css">
+```
+```css
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.x.x/css/swiper.min.css">
+```
+
 ## Usage
 
 ### Example with default
@@ -142,7 +152,7 @@ You can check Swiper API [HERE](http://idangero.us/swiper/api/)
 First, clone this repo to your local
 
 ```bash
-https://github.com/kidjp85/react-idangerous-swiper.git
+https://github.com/kidjp85/react-id-swiper.git
 ```
 
 Install node pacakages
