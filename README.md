@@ -148,7 +148,7 @@ https://github.com/kidjp85/react-idangerous-swiper.git
 Install node pacakages
 
 ```bash
-https://github.com/kidjp85/react-idangerous-swiper.git
+npm install
 ```
 
 Run webpack server
