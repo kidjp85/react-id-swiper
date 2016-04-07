@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git://github.com/kidjp85/react-idangerous-swiper.git"
   },
-  "author": "phucnguyenhoang1985@gmail.com>",
+  "author": "Phuc Nguyen Hoang<phucnguyenhoang1985@gmail.com>",
   "dependencies": {
     "object-assign": "^4.0.1",
     "react": "^0.14.8",
