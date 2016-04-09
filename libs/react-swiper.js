@@ -215,18 +215,22 @@
       }
       this.swiper = Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
     },
+
     _renderScrollBar: function () {
       if (!this.props.scrollbar) return false;
       return React.createElement('div', { className: this.props.scrollbar.replace(/\./g, "") });
     },
+
     _renderNextButton: function() {
       if (!this.props.nextButton) return false;
       return React.createElement('div', { className: this.props.nextButton.replace(/\./g, "") });
     },
+
     _renderPrevButton: function() {
       if (!this.props.prevButton) return false;
       return React.createElement('div', { className: this.props.prevButton.replace(/\./g, "") });
     },
+    
     render: function() {
       var slideClass = this.props.slideClass;
       return React.createElement(
