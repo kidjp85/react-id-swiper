@@ -13,7 +13,7 @@ Swiper is not compatible with all platforms, it is a modern touch slider which i
 DEMO
 ====
 
-You can see [DEMO](https://still-journey-25167.herokuapp.com/)
+You can see DEMO with example code [HERE](https://still-journey-25167.herokuapp.com/) 
 
 ## Installation
 ```bash
@@ -155,7 +155,7 @@ First, clone this repo to your local
 https://github.com/kidjp85/react-id-swiper.git
 ```
 
-Install node pacakages
+Install node packages
 
 ```bash
 npm install
