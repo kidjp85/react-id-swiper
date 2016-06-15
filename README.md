@@ -13,7 +13,7 @@ Swiper is not compatible with all platforms, it is a modern touch slider which i
 DEMO
 ====
 
-You can see DEMO with example code [HERE](https://still-journey-25167.herokuapp.com/) 
+You can see DEMO with example code [HERE](https://still-journey-25167.herokuapp.com/)
 
 ## Installation
 ```bash
@@ -24,11 +24,13 @@ npm install --save react-id-swiper
 >Swiper stylesheet file is required
 ### Use Swiper stylesheet file from CDN
 ```css
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.x.x/css/swiper.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.css">
 ```
 ```css
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.x.x/css/swiper.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
 ```
+### OR
+Use stylesheet file from libs/styles/  folder (supporting css, less, scss)
 
 ## Usage
 
@@ -98,7 +100,7 @@ var Example = React.createClass({
     };
 
     return (
-      <Swiper 
+      <Swiper
         pagination={params.pagination}
         paginationClickable={params.paginationClickable}
         nextButton={params.nextButton}
