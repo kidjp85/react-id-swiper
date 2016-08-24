@@ -13,7 +13,7 @@ Swiper is not compatible with all platforms, it is a modern touch slider which i
 DEMO
 ====
 
-You can see DEMO with example code [HERE](https://still-journey-25167.herokuapp.com/)
+You can see DEMO with example code [HERE](http://kidjp85.github.io/react-id-swiper/)
 
 ## Installation
 ```bash
