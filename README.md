@@ -165,11 +165,11 @@ export default class Example extends React.Component {
   }
 
   goNext() {
-    this.swiper.slideNext()
+    if (this.swiper) this.swiper.slideNext()
   }
 
   goPrev() {
-    this.swiper.slidePrev()
+    if (this.swiper) this.swiper.slidePrev()
   }
 
   render() {
