@@ -149,7 +149,9 @@ export default Example;
 
 ### Example with manipulating swiper from outside swiper component
 >Examble with navigation button
+
 ### Es6
+
 ```javascript
 import React from 'react';
 import Swiper from 'react-id-swiper';
