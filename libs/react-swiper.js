@@ -230,8 +230,9 @@
       if (!this.props.prevButton) return false;
       return React.createElement('div', { className: this.props.prevButton.replace(/\./g, "") });
     },
-    
+
     render: function() {
+      var noSwipingClass = this.props.noSwiping ? 'swiper-no-swiping' : ''
       var slideClass = this.props.slideClass;
       return React.createElement(
         'div',
@@ -240,7 +241,7 @@
           'div',
           { className: 'swiper-wrapper' },
           React.Children.map(this.props.children, function (e) {
-            return React.cloneElement(e, { className: [slideClass, e.props.className].join(' ') });
+            return React.cloneElement(e, { className: [slideClass, e.props.className, noSwipingClass].join(' ') });
           })
         ),
         React.createElement('div', { className: 'swiper-pagination' }),
