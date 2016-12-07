@@ -30,7 +30,7 @@ npm install --save react-id-swiper
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/css/swiper.css">
 ```
 ```css
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0.1/css/swiper.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/css/swiper.min.css">
 ```
 ### OR
 Use stylesheet file from src/styles/  folder (supporting css, less, scss)
