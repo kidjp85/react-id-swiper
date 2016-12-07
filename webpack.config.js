@@ -9,9 +9,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const pkg = require('./package.json');
 
 const PATHS = {
-  app: path.join(__dirname, 'demo/app'),
-  build: path.join(__dirname, 'demo/bundle'),
-  style: path.join(__dirname, 'demo/app/assets/styles/demo.scss')
+  app: path.join(__dirname, 'examples/app'),
+  build: path.join(__dirname, 'examples/bundle'),
+  style: path.join(__dirname, 'examples/app/assets/styles/demo.scss')
 };
 
 process.env.BABEL_ENV = TARGET;
@@ -24,8 +24,8 @@ const common = {
   resolve: {
     root: path.resolve(__dirname),
     alias: {
-      'react-swiper': 'libs/react-swiper',
-      'images': 'demo/app/assets/images'
+      'react-swiper': 'src/react-swiper',
+      'images': 'examples/app/assets/images'
     },
     extensions: ['', '.js', '.jsx']
   },
@@ -82,7 +82,7 @@ if(TARGET === 'start' || !TARGET) {
           loaders: ["style", "css", "sass"]
         },
         {
-          test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, 
+          test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
           loader: "file"
         },
         {
@@ -102,7 +102,7 @@ if(TARGET === 'start' || !TARGET) {
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new NpmInstallPlugin({
-        save: true 
+        save: true
       })
     ]
   });
@@ -112,7 +112,7 @@ if(TARGET === 'build' || TARGET === 'stats') {
   module.exports = merge(common, {
     entry: {
       vendor: Object.keys(pkg.dependencies).filter(function(v) {
-        return v; 
+        return v;
       })
     },
     output: {
