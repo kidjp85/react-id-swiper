@@ -1,0 +1,19 @@
+*.js text
+*.html text
+*.json text
+*.png binary
+*.jpg binary
+
+# Make GitHub ignore vendor libraries while computing language stats.
+# See https://github.com/github/linguist#overrides.
+
+/src/* linguist-vendored=true
+/examples/app/* linguist-vendored=true
+
+# Explicitly specify language for non-standard extensions used under
+
+*.css_ linguist-language=CSS
+*.html_ linguist-language=HTML
+*.js_ linguist-language=JavaScript
+*.json_ linguist-language=JSON
+*.scss_ linguist-language=CSS
