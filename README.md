@@ -27,13 +27,13 @@ npm install --save react-id-swiper
 >Swiper stylesheet file is required
 ### Use Swiper stylesheet file from CDN
 ```css
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/css/swiper.css">
 ```
 ```css
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0.1/css/swiper.min.css">
 ```
 ### OR
-Use stylesheet file from libs/styles/  folder (supporting css, less, scss)
+Use stylesheet file from src/styles/  folder (supporting css, less, scss)
 
 ## Usage
 
