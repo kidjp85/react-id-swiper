@@ -18,8 +18,8 @@
   'use strict';
 
   var defaultProps = {
-    swiperContainerClass: '.swiper-container',
-    swiperWrapperClass: '.swiper-wrapper',
+    containerClass: 'swiper-container',
+    wrapperClass: 'swiper-wrapper', 
     slideClass: 'swiper-slide'
   }
 
@@ -171,7 +171,11 @@
       paginationCurrentClass: React.PropTypes.string,
       paginationTotalClass: React.PropTypes.string,
       paginationProgressbarClass: React.PropTypes.string,
-      buttonDisabledClass: React.PropTypes.string
+      buttonDisabledClass: React.PropTypes.string,
+      prevButtonCustomizedClass: React.PropTypes.string,
+      nextButtonCustomizedClass: React.PropTypes.string,
+      paginationCustomizedClass: React.PropTypes.string,
+      scrollbarCustomizedClass: React.PropTypes.string
     },
 
     getDefaultProps: function() {
@@ -205,51 +209,61 @@
       this.swiper = Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
     },
 
-    convertClassName: function(className) {
-      if (typeof className !== 'string') return;
-      return className.replace(/\./g, " ").trim()
+    validateClass: function(className) {
+      if (typeof className !== 'string') return '';
+      return className.replace(/\.|#/g, " ").trim();
     },
 
     renderScrollBar: function () {
       if (!this.props.scrollbar) return false;
-      return React.createElement('div', { className: this.convertClassName(this.props.scrollbar) });
+      var scrollbarCustomizedClass = this.validateClass(this.props.scrollbarCustomizedClass);
+      var scrollbarClass = this.validateClass(this.props.scrollbar);
+
+      return React.createElement('div', { className: [scrollbarClass, scrollbarCustomizedClass].join(' ') });
     },
 
     renderPagination: function() {
       if (!this.props.pagination) return false;
-      return React.createElement('div', { className: this.convertClassName(this.props.pagination) });
+      var paginationCustomizedClass = this.validateClass(this.props.paginationCustomizedClass);
+      var paginationClass = this.validateClass(this.props.pagination);
+
+      return React.createElement('div', { className: [paginationClass, paginationCustomizedClass].join(' ') });
     },
 
     renderNextButton: function() {
       if (!this.props.nextButton) return false;
-      return React.createElement('div', { className: this.convertClassName(this.props.nextButton) });
+      var nextButtonCustomizedClass = this.validateClass(this.props.nextButtonCustomizedClass);
+      var nextButtonClass = this.validateClass(this.props.nextButton);
+
+      return React.createElement('div', { className: [nextButtonClass, nextButtonCustomizedClass].join(' ') });
     },
 
     renderPrevButton: function() {
       if (!this.props.prevButton) return false;
-      return React.createElement('div', { className: this.convertClassName(this.props.prevButton) });
+      var prevButtonCustomizedClass = this.validateClass(this.props.prevButtonCustomizedClass);
+      var prevButtonClass = this.validateClass(this.props.prevButton);
+
+      return React.createElement('div', { className: [prevButtonClass, prevButtonCustomizedClass].join(' ') });
     },
 
     render: function() {
-      var swiperContainerClass = this.convertClassName(this.props.swiperContainerClass);
-      var swiperWrapperClass = this.convertClassName(this.props.swiperWrapperClass);
-      var slideClass = this.convertClassName(this.props.slideClass);
+      var self = this;
       var noSwipingClass = this.props.noSwiping ? 'swiper-no-swiping' : ''
 
       return React.createElement(
         'div',
-        { className: swiperContainerClass },
+        { className: self.props.containerClass },
         React.createElement(
           'div',
-          { className: swiperWrapperClass },
-          React.Children.map(this.props.children, function (e) {
-            return React.cloneElement(e, { className: [slideClass, e.props.className, noSwipingClass].join(' ') });
+          { className: self.props.wrapperClass },
+          React.Children.map(self.props.children, function (e) {
+            return React.cloneElement(e, { className: [self.props.slideClass, e.props.className, noSwipingClass].join(' ') });
           })
         ),
-        this.renderPagination(),
-        this.renderScrollBar(),
-        this.renderNextButton(),
-        this.renderPrevButton()
+        self.renderPagination(),
+        self.renderScrollBar(),
+        self.renderNextButton(),
+        self.renderPrevButton()
       );
     }
   });

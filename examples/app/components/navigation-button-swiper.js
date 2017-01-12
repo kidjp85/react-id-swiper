@@ -3,12 +3,14 @@ import Slider from './common/slider';
 
 export default (props) => {
   const params = {
-    pagination: '.swiper-pagination.customized-pagination',
+    pagination: '.swiper-pagination',
     paginationClickable: true,
-    nextButton: '.swiper-button-next.customized',
-    prevButton: '.swiper-button-prev.customized',
-    swiperContainerClass: '.swiper-container.customized',
-    swiperWrapperClass: '.swiper-wrapper.customized',
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    prevButtonCustomizedClass: 'customized-prev',
+    nextButtonCustomizedClass: 'customized-next',
+    paginationCustomizedClass: 'customized-pagination',
+    containerClass: 'swiper-container customized-swiper-container',
     spaceBetween: 30
   }
 
