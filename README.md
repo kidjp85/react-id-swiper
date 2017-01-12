@@ -199,6 +199,36 @@ export default class Example extends React.Component {
 }
 ```
 
+### How to add customized class for swiper?
+>Examble with navigation button
+
+```javascript
+const params = {
+  pagination: '.swiper-pagination.customized',
+  paginationClickable: true,
+  nextButton: '.swiper-button-next.customized',
+  prevButton: '.swiper-button-prev.customized',
+  swiperContainerClass: '.swiper-container.customized',
+  swiperWrapperClass: '.swiper-wrapper.customized',
+  spaceBetween: 30  
+}
+```
+
+>Available params for class name customization
+
+NOTE: If you wanna use built in style, you should add customized class name with built in class name like `.swiper-pagination.customized`.
+If you only use your own style, you just need to add your own class name like `.customized`
+
+Params               | Examble
+-------------------- | -------------------------------
+pagination           | '.swiper-pagination.customized'
+nextButton           | '.swiper-button-next.customized'
+prevButton           | '.swiper-button-prev.customized'
+swiperContainerClass | '.swiper-container.customized'
+swiperWrapperClass   | '.swiper-wrapper.customized'
+scrollbar            | '.swiper-scrollbar.customized'
+
+
 ### API
 
 You can check Swiper API [HERE](http://idangero.us/swiper/api/)

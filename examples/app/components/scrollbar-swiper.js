@@ -3,7 +3,7 @@ import Slider from './common/slider';
 
 export default (props) => {
   const params = {
-    scrollbar: '.swiper-scrollbar',
+    scrollbar: '.swiper-scrollbar.customized',
     scrollbarHide: true,
     slidesPerView: 'auto',
     centeredSlides: true,

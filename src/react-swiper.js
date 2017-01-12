@@ -18,20 +18,9 @@
   'use strict';
 
   var defaultProps = {
-    slideClassContainer: 'swiper-container',
-    slideClass: 'swiper-slide',
-    slideActiveClass: 'swiper-slide-active',
-    slideVisibleClass: 'swiper-slide-visible',
-    slideDuplicateClass: 'swiper-slide-duplicate',
-    slideNextClass: 'swiper-slide-next',
-    slidePrevClass: 'swiper-slide-prev',
-    bulletClass: 'swiper-pagination-bullet',
-    bulletActiveClass: 'swiper-pagination-bullet-active',
-    paginationHiddenClass: 'swiper-pagination-hidden',
-    paginationCurrentClass: 'swiper-pagination-current',
-    paginationTotalClass: 'swiper-pagination-total',
-    paginationProgressbarClass: 'swiper-pagination-progressbar',
-    buttonDisabledClass: 'swiper-button-disabled'
+    swiperContainerClass: '.swiper-container',
+    swiperWrapperClass: '.swiper-wrapper',
+    slideClass: 'swiper-slide'
   }
 
   var ReactIDangerousSwiper = React.createClass({
@@ -216,38 +205,51 @@
       this.swiper = Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
     },
 
-    _renderScrollBar: function () {
+    convertClassName: function(className) {
+      if (typeof className !== 'string') return;
+      return className.replace(/\./g, " ").trim()
+    },
+
+    renderScrollBar: function () {
       if (!this.props.scrollbar) return false;
-      return React.createElement('div', { className: this.props.scrollbar.replace(/\./g, "") });
+      return React.createElement('div', { className: this.convertClassName(this.props.scrollbar) });
     },
 
-    _renderNextButton: function() {
+    renderPagination: function() {
+      if (!this.props.pagination) return false;
+      return React.createElement('div', { className: this.convertClassName(this.props.pagination) });
+    },
+
+    renderNextButton: function() {
       if (!this.props.nextButton) return false;
-      return React.createElement('div', { className: this.props.nextButton.replace(/\./g, "") });
+      return React.createElement('div', { className: this.convertClassName(this.props.nextButton) });
     },
 
-    _renderPrevButton: function() {
+    renderPrevButton: function() {
       if (!this.props.prevButton) return false;
-      return React.createElement('div', { className: this.props.prevButton.replace(/\./g, "") });
+      return React.createElement('div', { className: this.convertClassName(this.props.prevButton) });
     },
 
     render: function() {
+      var swiperContainerClass = this.convertClassName(this.props.swiperContainerClass);
+      var swiperWrapperClass = this.convertClassName(this.props.swiperWrapperClass);
+      var slideClass = this.convertClassName(this.props.slideClass);
       var noSwipingClass = this.props.noSwiping ? 'swiper-no-swiping' : ''
-      var slideClass = this.props.slideClass;
+
       return React.createElement(
         'div',
-        { className: this.props.slideClassContainer },
+        { className: swiperContainerClass },
         React.createElement(
           'div',
-          { className: 'swiper-wrapper' },
+          { className: swiperWrapperClass },
           React.Children.map(this.props.children, function (e) {
             return React.cloneElement(e, { className: [slideClass, e.props.className, noSwipingClass].join(' ') });
           })
         ),
-        React.createElement('div', { className: 'swiper-pagination' }),
-        this._renderScrollBar(),
-        this._renderNextButton(),
-        this._renderPrevButton()
+        this.renderPagination(),
+        this.renderScrollBar(),
+        this.renderNextButton(),
+        this.renderPrevButton()
       );
     }
   });
