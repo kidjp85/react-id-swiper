@@ -5,7 +5,7 @@ export default (props) => {
   const params = {
     pagination: '.swiper-pagination',
     paginationClickable: true,
-    paginationBulletRender:(index, className) => {
+    paginationBulletRender:(swiper, index, className) => {
       return `<span class="${className}">${index + 1}</span>`
     }
   }

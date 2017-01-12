@@ -1,5 +1,5 @@
-react-id-swiper
-=======================
+react-id-swiper ( Newest version 1.2.1 )
+======================================
 
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component.
 
@@ -19,18 +19,25 @@ DEMO
 You can see DEMO with example code [HERE](http://kidjp85.github.io/react-id-swiper/)
 
 ## Installation
+By npm
+
 ```bash
 npm install --save react-id-swiper
+```
+
+By Yarn
+```bash
+yarn add react-id-swiper
 ```
 
 ## Recommendation
 >Swiper stylesheet file is required
 ### Use Swiper stylesheet file from CDN
 ```css
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/css/swiper.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.css">
 ```
 ```css
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/css/swiper.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
 ```
 ### OR
 Use stylesheet file from src/styles/  folder (supporting css, less, scss)
@@ -199,9 +206,41 @@ export default class Example extends React.Component {
 }
 ```
 
+### How to add customized class for swiper?
+>Examble with navigation button
+
+```javascript
+const params = {
+  pagination: '.swiper-pagination',
+  paginationCustomizedClass: 'customized-swiper-pagination', // Add your class name for pagination container
+  paginationClickable: true,
+  nextButton: '.swiper-button-next',
+  prevButton: '.swiper-button-prev',
+  nextButtonCustomizedClass: 'nextButtonCustomizedClass', // Add your class name for next button
+  prevButtonCustomizedClass: 'customized-swiper-button-prev', // Add your class name for prev button
+  containerClass: 'customized-swiper-container' // Replace swiper-container with customized-swiper-container
+  spaceBetween: 30  
+}
+```
+
+>Available params for class name customization
+
+You can use your own class name by using these params below
+
+Params                     | Examble
+-------------------------- | -------------------------------
+prevButtonCustomizedClass  | 'customized-swiper-button-prev'
+nextButtonCustomizedClass  | 'customized-swiper-button-next'
+paginationCustomizedClass  | 'customized-swiper-pagination'
+scrollbarCustomizedClass   | 'customized-swiper-scrollbar'
+containerClass             | 'my-swiper-container'
+
+NOTE: These 5 params above are only supported by React-id-swiper from v1.2.1.
+You can find more customized class name params from Swiper API documentation
+
 ### API
 
-You can check Swiper API [HERE](http://idangero.us/swiper/api/)
+You can check Swiper API documentation [HERE](http://idangero.us/swiper/api/)
 
 ### Build demo in local
 First, clone this repo to your local

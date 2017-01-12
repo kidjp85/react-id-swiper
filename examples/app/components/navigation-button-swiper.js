@@ -7,6 +7,10 @@ export default (props) => {
     paginationClickable: true,
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
+    prevButtonCustomizedClass: 'customized-prev',
+    nextButtonCustomizedClass: 'customized-next',
+    paginationCustomizedClass: 'customized-pagination',
+    containerClass: 'swiper-container customized-swiper-container',
     spaceBetween: 30
   }
 
