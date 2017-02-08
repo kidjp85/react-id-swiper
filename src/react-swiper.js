@@ -187,14 +187,14 @@
     },
 
     componentDidUpdate: function () {
-      if(this.props.rebuildOnUpdate) {
+      if(this.props.rebuildOnUpdate && typeof this.swiper !== 'undefined') {
         this.swiper.destroy(true, true);
         this.swiper = Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
       }
     },
 
     componentWillUnmount: function () {
-      this.swiper.destroy(true, true);
+      if (typeof this.swiper !== 'undefined') this.swiper.destroy(true, true);
       delete this.swiper;
     },
 
@@ -202,11 +202,11 @@
       return nextProps.children !== this.props.children;
     },
 
-    componentWillReceiveProps: function () {
-      if (this.swiper != null) {
+    componentWillReceiveProps: function (nextProps) {
+      if (this.props.rebuildOnUpdate  && typeof this.swiper !== 'undefined') {
         this.swiper.destroy(true, true);
+        this.swiper = Swiper(ReactDOM.findDOMNode(this), objectAssign({}, nextProps));
       }
-      this.swiper = Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
     },
 
     validateClass: function(className) {
