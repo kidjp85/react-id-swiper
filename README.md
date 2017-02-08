@@ -1,4 +1,4 @@
-react-id-swiper ( Newest version 1.2.1 )
+react-id-swiper ( Newest version 1.3.0 )
 ======================================
 
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component.
