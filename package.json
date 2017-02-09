@@ -1,6 +1,6 @@
 {
   "name": "react-id-swiper",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "ReactJs component for iDangerous Swiper",
   "main": "src/react-swiper.js",
   "scripts": {
@@ -12,6 +12,9 @@
     "Swiper",
     "Reactjs"
   ],
+  "engines": {
+    "node": ">= 4.7.0"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/kidjp85/react-id-swiper.git"
