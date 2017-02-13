@@ -16,7 +16,7 @@ Swiper is not compatible with all platforms, it is a modern touch slider which i
 DEMO
 ====
 
-You can see DEMO with example code [HERE](http://kidjp85.github.io/react-id-swiper/)
+You can see the demo with example code [HERE](http://kidjp85.github.io/react-id-swiper/)
 
 ## Installation
 By npm
@@ -45,9 +45,9 @@ Use stylesheet file from src/styles/  folder (supporting css, less, scss)
 ## Usage
 
 ### Example with default
->Examble with default params
+>Example with default params
 
-### Es5
+### ES5
 
 ```javascript
 var React = require('react');
@@ -70,7 +70,7 @@ var Example = React.createClass({
 module.exports = Example;
 ```
 
-### Es6
+### ES6
 ```javascript
 import React from 'react';
 import Swiper from 'react-id-swiper';
@@ -92,9 +92,9 @@ export default Example;
 
 ### Example with params
 
->Examble with navigation buttons
+>Example with navigation buttons
 
-### Es5
+### ES5
 ```javascript
 var React = require('react');
 var Swiper = require('react-id-swiper');
@@ -129,7 +129,7 @@ var Example = React.createClass({
 module.exports = Example;
 ```
 
-### Es6
+### ES6
 
 ```javascript
 import React from 'react';
@@ -158,9 +158,9 @@ export default Example;
 ```
 
 ### Example with manipulating swiper from outside swiper component
->Examble with navigation button
+>Example with navigation button
 
-### Es6
+### ES6
 
 ```javascript
 import React from 'react';
@@ -207,7 +207,7 @@ export default class Example extends React.Component {
 ```
 
 ### How to add customized class for swiper?
->Examble with navigation button
+>Example with navigation button
 
 ```javascript
 const params = {
@@ -227,7 +227,7 @@ const params = {
 
 You can use your own class name by using these params below
 
-Params                     | Examble
+Params                     | Example
 -------------------------- | -------------------------------
 prevButtonCustomizedClass  | 'customized-swiper-button-prev'
 nextButtonCustomizedClass  | 'customized-swiper-button-next'
