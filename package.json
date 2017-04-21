@@ -23,11 +23,13 @@
   "dependencies": {
     "libs": "^0.1.2",
     "object-assign": "^4.0.1",
-    "swiper": "3.4.1"
+    "swiper": "3.4.1",
+    "prop-types": "^15.5.7" 
   },
   "peerDependencies": {
-    "react": ">=0.14.0",
-    "react-dom": ">=0.14.0"
+    "react": ">=15.5.0",
+    "react-dom": ">=0.14.0",
+    "prop-types": ">=15.5.7"
   },
   "devDependencies": {
     "babel-core": "^6.7.2",
