@@ -24,7 +24,7 @@ const common = {
   resolve: {
     root: path.resolve(__dirname),
     alias: {
-      'react-swiper': 'src/react-swiper',
+      'react-id-swiper': 'src/index',
       'images': 'examples/app/assets/images'
     },
     extensions: ['', '.js', '.jsx']

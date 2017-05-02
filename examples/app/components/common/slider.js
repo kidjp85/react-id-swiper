@@ -1,5 +1,5 @@
 import React from 'react';
-import Swiper from 'react-swiper';
+import Swiper from 'react-id-swiper';
 import Slides from "./demo-data";
 
 export default (props) => {
