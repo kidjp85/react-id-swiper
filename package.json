@@ -2,11 +2,9 @@
   "name": "react-id-swiper",
   "version": "1.4.0-r3",
   "description": "ReactJs component for iDangerous Swiper",
-  "main": "src/react-swiper.js",
+  "main": "lib/index.js",
   "scripts": {
-    "demo:start": "webpack-dev-server",
-    "demo:build": "webpack",
-    "build": "babel src/ --out-dir lib/",
+    "build": "babel src -d lib",
     "lint": "eslint -c .eslintrc src/"
   },
   "keywords": [
@@ -23,8 +21,7 @@
   },
   "author": "Phuc Nguyen Hoang<phucnguyenhoang1985@gmail.com>",
   "dependencies": {
-    "lodash.bindall": "^4.4.0",
-    "lodash.merge": "^4.6.0",
+    "object-assign": "^4.4.0",
     "prop-types": "^15.5.7",
     "swiper": "3.4.2"
   },
@@ -47,19 +44,7 @@
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.0",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.8.5",
-    "html-webpack-plugin": "^2.15.0",
-    "html-webpack-template": "^4.0.0",
-    "node-sass": "^3.4.2",
-    "npm-install-webpack-plugin": "^3.0.0",
-    "sass-loader": "^4.0.1",
-    "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
-    "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.14.1",
-    "webpack-merge": "^0.8.3"
+    "eslint-plugin-react": "^6.10.0"
   },
   "license": "MIT"
 }
