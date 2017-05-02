@@ -1,6 +1,6 @@
 {
   "name": "react-id-swiper",
-  "version": "1.4.0-r3",
+  "version": "1.4.0",
   "description": "ReactJs component for iDangerous Swiper",
   "main": "lib/index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "author": "Phuc Nguyen Hoang<phucnguyenhoang1985@gmail.com>",
   "dependencies": {
-    "object-assign": "^4.4.0",
+    "object-assign": "^4.1.1",
     "prop-types": "^15.5.7",
     "swiper": "3.4.2"
   },

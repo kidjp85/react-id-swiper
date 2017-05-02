@@ -1,4 +1,4 @@
-react-id-swiper ( Newest version 1.3.0 )
+react-id-swiper ( Newest version 1.4.0 )
 ======================================
 
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component.
@@ -34,10 +34,10 @@ yarn add react-id-swiper
 >Swiper stylesheet file is required
 ### Use Swiper stylesheet file from CDN
 ```css
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.css">
 ```
 ```css
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
 ```
 ### OR
 Use stylesheet file from src/styles/  folder (supporting css, less, scss)
@@ -246,7 +246,7 @@ You can check Swiper API documentation [HERE](http://idangero.us/swiper/api/)
 First, clone this repo to your local
 
 ```bash
-https://github.com/kidjp85/react-id-swiper.git
+https://github.com/kidjp85/react-id-swiper-demo.git
 ```
 
 Install node packages
@@ -254,11 +254,16 @@ Install node packages
 ```bash
 npm install
 ```
+or
+
+```bash
+yarn
+```
 
 Run webpack server
 
 ```bash
-npm start
+yarn start
 ```
 
 ## License
