@@ -1,11 +1,11 @@
 {
   "name": "react-id-swiper",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "ReactJs component for iDangerous Swiper",
-  "main": "src/react-swiper.js",
+  "main": "lib/index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack"
+    "build": "babel src -d lib",
+    "lint": "eslint -c .eslintrc src/"
   },
   "keywords": [
     "iDangerous",
@@ -21,38 +21,30 @@
   },
   "author": "Phuc Nguyen Hoang<phucnguyenhoang1985@gmail.com>",
   "dependencies": {
-    "libs": "^0.1.2",
-    "object-assign": "^4.0.1",
-    "swiper": "3.4.1",
-    "prop-types": "^15.5.7" 
+    "object-assign": "^4.1.1",
+    "prop-types": "^15.5.7",
+    "swiper": "3.4.2"
   },
   "peerDependencies": {
-    "react": ">=15.5.0",
-    "react-dom": ">=0.14.0",
-    "prop-types": ">=15.5.7"
+    "react": "^0.14.0 || ^15.0.0",
+    "react-dom": "^0.14.0 || ^15.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.7.2",
-    "babel-loader": "^6.2.4",
-    "babel-plugin-webpack-alias": "^1.1.1",
-    "babel-preset-es2015": "^6.6.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-stage-0": "^6.5.0",
-    "babelify": "^7.2.0",
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "~6.4.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
     "clean-webpack-plugin": "^0.1.8",
     "css-loader": "^0.25.0",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.8.5",
-    "html-webpack-plugin": "^2.15.0",
-    "html-webpack-template": "^4.0.0",
-    "node-sass": "^3.4.2",
-    "npm-install-webpack-plugin": "^3.0.0",
-    "sass-loader": "^4.0.1",
-    "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
-    "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.14.1",
-    "webpack-merge": "^0.8.3"
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0"
   },
   "license": "MIT"
 }
