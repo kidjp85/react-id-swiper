@@ -21,6 +21,7 @@ export default class ReactIdSwiper extends React.Component {
     rebuildOnUpdate: PropTypes.bool,
     initialSlide: PropTypes.number,
     direction: PropTypes.string,
+    rtl: PropTypes.bool,
     speed: PropTypes.number,
     setWrapperSize: PropTypes.bool,
     virtualTranslate: PropTypes.bool,
@@ -248,10 +249,10 @@ export default class ReactIdSwiper extends React.Component {
   }
 
   render() {
-    const { containerClass, wrapperClass, children } = this.props;
-
+    const { containerClass, wrapperClass, children, rtl } = this.props;
+    const rtlProp = rtl ? { dir: 'rtl' } : {};
     return (
-      <div className={containerClass}>
+      <div className={containerClass} {...rtlProp} >
         <div className={wrapperClass}>
           {React.Children.map(children, this.renderContent)}
         </div>
