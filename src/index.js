@@ -19,6 +19,7 @@ export default class ReactIdSwiper extends React.Component {
       PropTypes.element
     ]),
     rebuildOnUpdate: PropTypes.bool,
+    shouldSwiperUpdate: PropTypes.bool,
     initialSlide: PropTypes.number,
     direction: PropTypes.string,
     speed: PropTypes.number,
@@ -195,6 +196,8 @@ export default class ReactIdSwiper extends React.Component {
     if (this.props.rebuildOnUpdate && typeof this.swiper !== 'undefined') {
       this.swiper.destroy(true, true);
       this.swiper = Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
+    } else if (this.props.shouldSwiperUpdate && typeof this.swiper !== 'undefined') {
+      this.swiper.update();
     }
   }
 
