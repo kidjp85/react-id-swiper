@@ -198,6 +198,12 @@ export default class ReactIdSwiper extends React.Component {
       this.swiper = Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
     } else if (this.props.shouldSwiperUpdate && typeof this.swiper !== 'undefined') {
       this.swiper.update();
+
+      const numSlides = this.swiper.slides.length;
+      if (numSlides <= this.swiper.activeIndex) {
+          const index = Math.max(numSlides - 1, 0);
+          this.swiper.slideTo(index);
+      }
     }
   }
 
