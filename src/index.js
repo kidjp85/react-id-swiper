@@ -169,7 +169,8 @@ export default class ReactIdSwiper extends React.Component {
     prevButtonCustomizedClass: PropTypes.string,
     nextButtonCustomizedClass: PropTypes.string,
     paginationCustomizedClass: PropTypes.string,
-    scrollbarCustomizedClass: PropTypes.string
+    scrollbarCustomizedClass: PropTypes.string,
+    activeSlideKey: PropTypes.string
   }
 
   constructor(props) {
@@ -203,6 +204,23 @@ export default class ReactIdSwiper extends React.Component {
       if (numSlides <= this.swiper.activeIndex) {
           const index = Math.max(numSlides - 1, 0);
           this.swiper.slideTo(index);
+      }
+    }
+
+    if (this.props.activeSlideKey) {
+      let activeSlideId = null;
+      let id = 0;
+      React.Children.forEach(this.props.children, child => {
+        if (child) {
+          if (child.key === this.props.activeSlideKey) {
+            activeSlideId = id;
+          }
+          id++;
+        }
+      });
+
+      if (activeSlideId) {
+          this.swiper.slideTo(activeSlideId);
       }
     }
   }
@@ -250,6 +268,10 @@ export default class ReactIdSwiper extends React.Component {
   }
 
   renderContent(e) {
+    if (!e) {
+      return null;
+    }
+
     const { slideClass, noSwiping } = this.props;
     const noSwipingClass = noSwiping ? 'swiper-no-swiping' : '';
 
