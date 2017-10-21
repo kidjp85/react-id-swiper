@@ -22,12 +22,12 @@
   "author": "Phuc Nguyen Hoang<phucnguyenhoang1985@gmail.com>",
   "dependencies": {
     "object-assign": "^4.1.1",
-    "prop-types": "^15.5.7",
+    "prop-types": "^15.6.0",
     "swiper": "3.4.2"
   },
   "peerDependencies": {
-    "react": "^0.14.0 || ^15.0.0",
-    "react-dom": "^0.14.0 || ^15.0.0"
+    "react": "^0.14.0 || ^15.0.0 || ^16.0.0",
+    "react-dom": "^0.14.0 || ^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
