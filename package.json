@@ -23,7 +23,7 @@
   "dependencies": {
     "object-assign": "^4.1.1",
     "prop-types": "^15.5.7",
-    "swiper": "3.4.2"
+    "swiper": "4.0.2"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0",
