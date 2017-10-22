@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Swiper from 'swiper';
+import Swiper from 'swiper/dist/js/swiper.js';
 import objectAssign from 'object-assign';
 import PropTypes from 'prop-types';
 
