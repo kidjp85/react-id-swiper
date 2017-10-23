@@ -5,11 +5,14 @@ import objectAssign from 'object-assign';
 import PropTypes from 'prop-types';
 
 export default class ReactIdSwiper extends React.Component {
+  // Default props
   static defaultProps = {
     containerClass: 'swiper-container',
     wrapperClass: 'swiper-wrapper',
     slideClass: 'swiper-slide'
   }
+
+  // Proptypes
   static propTypes = {
     // react-id-swiper original parameter
     containerClass: PropTypes.string,
@@ -355,6 +358,7 @@ export default class ReactIdSwiper extends React.Component {
       this.swiper = new Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
     } else if (this.props.shouldSwiperUpdate && typeof this.swiper !== 'undefined') {
       this.swiper.update();
+      this.swiper.reLoop();
 
       const numSlides = this.swiper.slides.length;
       if (numSlides <= this.swiper.activeIndex) {
@@ -376,7 +380,7 @@ export default class ReactIdSwiper extends React.Component {
       });
 
       if (activeSlideId) {
-          this.swiper.slideTo(activeSlideId);
+        this.swiper.slideTo(activeSlideId);
       }
     }
   }
