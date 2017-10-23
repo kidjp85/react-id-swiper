@@ -12,6 +12,23 @@ Swiper - is the free and most modern mobile touch slider with hardware accelerat
 
 Swiper is not compatible with all platforms, it is a modern touch slider which is focused only on modern apps/platforms to bring the best experience and simplicity.
 
+React-id-swiper's original props
+================================
+
+| Name                        | Type        | Default value         | Description                               |
+| ---                         | ---         | ---                   | ---                                       |
+| `containerClass`            | `String`    | `swiper-container`    | `Swiper container class name`             |
+| `wrapperClass`              | `String`    | `swiper-wrapper`      | `Swiper wrapper class name`               |
+| `slideClass`                | `String`    | `swiper-slide`        | `Swiper slide class name`                 |
+| `prevButtonCustomizedClass` | `String`    | `''`                  | `Swiper prev button class name`           |
+| `nextButtonCustomizedClass` | `String`    | `''`                  | `Swiper next button class name`           |
+| `paginationCustomizedClass` | `String`    | `''`                  | `Swiper pagination class name`            |
+| `shouldSwiperUpdate`        | `Boolean`   | `false`               | `Update swiper when component is updated` |
+| `rebuildOnUpdate`           | `Boolean`   | `false`               | `Rebuild swiper when component is updated`|
+| `noSwiping`                 | `Boolean`   | `false`               | `Disable swiping by condition`            |
+| `activeSlideKey`            | `String`    | `''`                  | `Original active key`                     |
+
+NOTE: You can also use Swiper's original params too.Swiper API documentation [HERE](http://idangero.us/swiper/api/)
 
 DEMO
 ====
@@ -222,25 +239,6 @@ const params = {
   spaceBetween: 30  
 }
 ```
-
->Available params for class name customization
-
-You can use your own class name by using these params below
-
-Params                     | Example
--------------------------- | -------------------------------
-prevButtonCustomizedClass  | 'customized-swiper-button-prev'
-nextButtonCustomizedClass  | 'customized-swiper-button-next'
-paginationCustomizedClass  | 'customized-swiper-pagination'
-scrollbarCustomizedClass   | 'customized-swiper-scrollbar'
-containerClass             | 'my-swiper-container'
-
-NOTE: These 5 params above are only supported by React-id-swiper from v1.2.1.
-You can find more customized class name params from Swiper API documentation
-
-### API
-
-You can check Swiper API documentation [HERE](http://idangero.us/swiper/api/)
 
 ### Build demo in local
 First, clone this repo to your local
