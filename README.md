@@ -1,4 +1,4 @@
-react-id-swiper ( Newest version 1.5.0 )
+react-id-swiper ( Newest version 1.5.1 )
 ======================================
 
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component.
@@ -51,10 +51,10 @@ yarn add react-id-swiper
 >Swiper stylesheet file is required
 ### Use Swiper stylesheet file from CDN
 ```css
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.css">
 ```
 ```css
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
 ```
 ### OR
 Use stylesheet file from src/styles/  folder (supporting css, less, scss)
@@ -94,13 +94,16 @@ import Swiper from 'react-id-swiper';
 
 class Example extends React.Component {
   render() {
-    <Swiper>
-      <div>Slide 1</div>
-      <div>Slide 2</div>
-      <div>Slide 3</div>
-      <div>Slide 4</div>
-      <div>Slide 5</div>
-    </Swiper>
+
+    return (
+      <Swiper>
+        <div>Slide 1</div>
+        <div>Slide 2</div>
+        <div>Slide 3</div>
+        <div>Slide 4</div>
+        <div>Slide 5</div>
+      </Swiper>
+    )
   }
 }
 
@@ -119,10 +122,15 @@ var Swiper = require('react-id-swiper');
 var Example = React.createClass({
   render: function() {
     var params = {
-      pagination: '.swiper-pagination',
-      paginationClickable: true,
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev',
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
       spaceBetween: 30
     };
 
@@ -155,19 +163,27 @@ import Swiper from 'react-id-swiper';
 class Example extends React.Component {
   render() {
     const params = {
-      pagination: '.swiper-pagination',
-      paginationClickable: true,
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev',
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
       spaceBetween: 30
     }
-    <Swiper {...params}>
-      <div>Slide 1</div>
-      <div>Slide 2</div>
-      <div>Slide 3</div>
-      <div>Slide 4</div>
-      <div>Slide 5</div>
-    </Swiper>
+
+    return(
+      <Swiper {...params}>
+        <div>Slide 1</div>
+        <div>Slide 2</div>
+        <div>Slide 3</div>
+        <div>Slide 4</div>
+        <div>Slide 5</div>
+      </Swiper>
+    )
   }
 }
 
@@ -201,11 +217,15 @@ export default class Example extends React.Component {
 
   render() {
     const params = {
-      pagination: '.swiper-pagination',
-      paginationClickable: true,
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev',
-      spaceBetween: 30,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
       runCallbacksOnInit: true,
       onInit: (swiper) => {
         this.swiper = swiper
@@ -228,15 +248,10 @@ export default class Example extends React.Component {
 
 ```javascript
 const params = {
-  pagination: '.swiper-pagination',
   paginationCustomizedClass: 'customized-swiper-pagination', // Add your class name for pagination container
-  paginationClickable: true,
-  nextButton: '.swiper-button-next',
-  prevButton: '.swiper-button-prev',
   nextButtonCustomizedClass: 'nextButtonCustomizedClass', // Add your class name for next button
   prevButtonCustomizedClass: 'customized-swiper-button-prev', // Add your class name for prev button
   containerClass: 'customized-swiper-container' // Replace swiper-container with customized-swiper-container
-  spaceBetween: 30  
 }
 ```
 
