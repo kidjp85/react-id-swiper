@@ -137,9 +137,7 @@ var Example = React.createClass({
     return (
       <Swiper
         pagination={params.pagination}
-        paginationClickable={params.paginationClickable}
-        nextButton={params.nextButton}
-        prevButton={params.prevButton}
+        navigation={params.navigation}
         spaceBetween={params.spaceBetween}>
         <div>Slide 1</div>
         <div>Slide 2</div>
