@@ -18,13 +18,13 @@
 /* Progress */
 /* Scrollbar */
 /* Preloader */
-@-webkit-keyframes "swiper-preloader-spin" {
+@-webkit-keyframes swiper-preloader-spin {
 	100% {
 		-webkit-transform: rotate(360deg);
 		transform: rotate(360deg);
 	}
 }
-@keyframes "swiper-preloader-spin" {
+@keyframes swiper-preloader-spin {
 	100% {
 		-webkit-transform: rotate(360deg);
 		transform: rotate(360deg);
