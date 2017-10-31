@@ -1,6 +1,6 @@
 {
   "name": "react-id-swiper",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "ReactJs component for iDangerous Swiper",
   "main": "lib/index.js",
   "scripts": {
@@ -23,26 +23,22 @@
   "dependencies": {
     "object-assign": "^4.1.1",
     "prop-types": "15.6.0",
-    "swiper": "4.0.2"
+    "swiper": "4.0.3"
   },
   "peerDependencies": {
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.0",
-    "babel-core": "^6.24.0",
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.0",
     "babel-eslint": "^7.1.1",
-    "babel-loader": "~6.4.1",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.22.0",
-    "clean-webpack-plugin": "^0.1.8",
-    "css-loader": "^0.25.0",
     "eslint": "^3.17.1",
     "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0"
   },
