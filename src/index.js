@@ -328,7 +328,7 @@ export default class ReactIdSwiper extends React.Component {
       setTranslate: PropTypes.func,
       setTransition: PropTypes.func,
       resize: PropTypes.func,
-    }),
+    })
   }
 
   constructor(props) {
@@ -357,12 +357,11 @@ export default class ReactIdSwiper extends React.Component {
       this.swiper = new Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
     } else if (this.props.shouldSwiperUpdate && typeof this.swiper !== 'undefined') {
       this.swiper.update();
-      this.swiper.reLoop();
 
       const numSlides = this.swiper.slides.length;
       if (numSlides <= this.swiper.activeIndex) {
-          const index = Math.max(numSlides - 1, 0);
-          this.swiper.slideTo(index);
+        const index = Math.max(numSlides - 1, 0);
+        this.swiper.slideTo(index);
       }
     }
 
