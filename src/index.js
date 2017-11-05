@@ -377,7 +377,7 @@ export default class ReactIdSwiper extends React.Component {
         }
       });
 
-      if (activeSlideId) {
+      if (activeSlideId !== null) {
         this.swiper.slideTo(activeSlideId);
       }
     }
