@@ -27,7 +27,10 @@ export default class ReactIdSwiper extends React.Component {
     nextButtonCustomizedClass: PropTypes.string,
     paginationCustomizedClass: PropTypes.string,
     scrollbarCustomizedClass: PropTypes.string,
-    activeSlideKey: PropTypes.string,
+    activeSlideKey: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
 
     // swiper parameter
     init: PropTypes.bool,
@@ -449,7 +452,7 @@ export default class ReactIdSwiper extends React.Component {
         {this.renderNextButton()}
         {this.renderPrevButton()}
       </div>
-    )
+    );
   }
 }
 
