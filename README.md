@@ -1,4 +1,4 @@
-react-id-swiper ( Newest version 1.5.3 )
+react-id-swiper ( Newest version 1.5.4 )
 ======================================
 
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component.
@@ -15,18 +15,18 @@ Swiper is not compatible with all platforms, it is a modern touch slider which i
 React-id-swiper's original props
 ================================
 
-| Name                        | Type        | Default value         | Description                               |
-| ---                         | ---         | ---                   | ---                                       |
-| `containerClass`            | `String`    | `swiper-container`    | `Swiper container class name`             |
-| `wrapperClass`              | `String`    | `swiper-wrapper`      | `Swiper wrapper class name`               |
-| `slideClass`                | `String`    | `swiper-slide`        | `Swiper slide class name`                 |
-| `prevButtonCustomizedClass` | `String`    | `''`                  | `Swiper prev button class name`           |
-| `nextButtonCustomizedClass` | `String`    | `''`                  | `Swiper next button class name`           |
-| `paginationCustomizedClass` | `String`    | `''`                  | `Swiper pagination class name`            |
-| `shouldSwiperUpdate`        | `Boolean`   | `false`               | `Update swiper when component is updated` |
-| `rebuildOnUpdate`           | `Boolean`   | `false`               | `Rebuild swiper when component is updated`|
-| `noSwiping`                 | `Boolean`   | `false`               | `Disable swiping by condition`            |
-| `activeSlideKey`            | `String`    | `''`                  | `Original active key`                     |
+| Name | Type | Default value | Description |
+| ---  | ---  | ---           | ---         |
+| containerClass | String | swiper-container | Swiper container class name |
+| wrapperClass | String | swiper-wrapper | Swiper wrapper class name |
+| slideClass | String | swiper-slide | Swiper slide class name |
+| prevButtonCustomizedClass | String | '' | Swiper prev button class name |
+| nextButtonCustomizedClass | String | '' | Swiper next button class name |
+| paginationCustomizedClass | String | '' | Swiper pagination class name |
+| shouldSwiperUpdate | Boolean | false | Update swiper when component is updated |
+| rebuildOnUpdate | Boolean | false | Rebuild swiper when component is updated |
+| noSwiping | Boolean | false | Disable swiping by condition |
+| activeSlideKey | String or Number | '' | Original active key |
 
 NOTE: You can also use Swiper's original params too.Swiper API documentation [HERE](http://idangero.us/swiper/api/)
 

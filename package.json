@@ -1,6 +1,6 @@
 {
   "name": "react-id-swiper",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "ReactJs component for iDangerous Swiper",
   "main": "lib/index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   "dependencies": {
     "object-assign": "^4.1.1",
     "prop-types": "15.6.0",
-    "swiper": "4.0.3"
+    "swiper": "4.0.5"
   },
   "peerDependencies": {
     "react": "^15.0.0 || ^16.0.0",
