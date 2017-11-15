@@ -31,6 +31,12 @@ export default class ReactIdSwiper extends React.Component {
       PropTypes.string,
       PropTypes.number
     ]),
+    // parallax
+    parallax: PropTypes.bool,
+    parallaxEl: PropTypes.shape({
+      el: PropTypes.string,
+      value: PropTypes.string
+    }),
 
     // swiper parameter
     init: PropTypes.bool,
@@ -300,9 +306,6 @@ export default class ReactIdSwiper extends React.Component {
       })
     ]),
 
-    // parallax
-    parallax: PropTypes.bool,
-
     // events
     on: PropTypes.shape({
       init: PropTypes.func,
@@ -429,22 +432,33 @@ export default class ReactIdSwiper extends React.Component {
     return <div className={[prevButtonClass, prevButtonCustomizedClass].join(' ')} />;
   }
 
+  renderParallax() {
+    if (!this.props.parallax || !this.props.parallaxEl) return false;
+
+    const parallaxBgClass = this.validateClass(this.props.parallaxEl.el);
+    return <div className={parallaxBgClass} data-swiper-parallax={this.props.parallaxEl.value} />;
+  }
+
   renderContent(e) {
-    if (!e) {
-      return null;
-    }
+    if (!e) return null;
 
     const { slideClass, noSwiping } = this.props;
     const noSwipingClass = noSwiping ? 'swiper-no-swiping' : '';
+    const childProps = {
+      ...e.props,
+      className: [slideClass, e.props.className, noSwipingClass].join(' ')
+    };
 
-    return React.cloneElement(e, { className: [slideClass, e.props.className, noSwipingClass].join(' ') });
+    return React.cloneElement(e, { ...childProps });
   }
 
   render() {
     const { containerClass, wrapperClass, children, rtl } = this.props;
     const rtlProp = rtl ? { dir: 'rtl' } : {};
+
     return (
-      <div className={containerClass} {...rtlProp} >
+      <div className={containerClass} {...rtlProp}>
+        {this.renderParallax()}
         <div className={wrapperClass}>
           {React.Children.map(children, this.renderContent)}
         </div>
@@ -456,4 +470,3 @@ export default class ReactIdSwiper extends React.Component {
     );
   }
 }
-
