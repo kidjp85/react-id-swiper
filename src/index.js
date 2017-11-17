@@ -349,8 +349,7 @@ export default class ReactIdSwiper extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.rebuildOnUpdate && typeof this.swiper !== 'undefined') {
-      this.swiper.destroy(true, true);
-      this.swiper = new Swiper(ReactDOM.findDOMNode(this), objectAssign({}, nextProps));
+      this.rebuildSwiper();
     }
   }
 
@@ -360,8 +359,7 @@ export default class ReactIdSwiper extends React.Component {
 
   componentDidUpdate() {
     if (this.props.rebuildOnUpdate && typeof this.swiper !== 'undefined') {
-      this.swiper.destroy(true, true);
-      this.swiper = new Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
+      this.rebuildSwiper();
     } else if (this.props.shouldSwiperUpdate && typeof this.swiper !== 'undefined') {
       this.swiper.update();
 
@@ -393,6 +391,11 @@ export default class ReactIdSwiper extends React.Component {
   componentWillUnmount() {
     if (typeof this.swiper !== 'undefined') this.swiper.destroy(true, true);
     delete this.swiper;
+  }
+
+  rebuildSwiper() {
+    this.swiper.destroy(true, true);
+    this.swiper = new Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
   }
 
   validateClass(className) {
