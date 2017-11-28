@@ -273,6 +273,13 @@ Run webpack server
 yarn start
 ```
 
+Run tests
+
+```bash
+yarn test
+yarn test --watch
+```
+
 ## License
 
 MIT
