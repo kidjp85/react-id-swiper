@@ -19,6 +19,7 @@ React-id-swiper's original props
 | ---  | ---  | ---           | ---         |
 | containerClass | String | swiper-container | Swiper container class name |
 | wrapperClass | String | swiper-wrapper | Swiper wrapper class name |
+| wrapperElement | String | div | Swiper wrapper element type (div, ul, etc) |
 | slideClass | String | swiper-slide | Swiper slide class name |
 | prevButtonCustomizedClass | String | '' | Swiper prev button class name |
 | nextButtonCustomizedClass | String | '' | Swiper next button class name |
@@ -50,10 +51,10 @@ yarn add react-id-swiper
 ## Recommendation
 >Swiper stylesheet file is required
 ### Use Swiper stylesheet file from CDN
-```css
+```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.6/css/swiper.css">
 ```
-```css
+```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.6/css/swiper.min.css">
 ```
 ### OR
