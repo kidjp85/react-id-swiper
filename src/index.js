@@ -9,6 +9,7 @@ export default class ReactIdSwiper extends React.Component {
   static defaultProps = {
     containerClass: 'swiper-container',
     wrapperClass: 'swiper-wrapper',
+    wrapperElement: 'div',
     slideClass: 'swiper-slide'
   }
 
@@ -17,6 +18,7 @@ export default class ReactIdSwiper extends React.Component {
     // react-id-swiper original parameter
     containerClass: PropTypes.string,
     wrapperClass: PropTypes.string,
+    wrapperElement: PropTypes.string,
     children: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.element
@@ -455,16 +457,21 @@ export default class ReactIdSwiper extends React.Component {
     return React.cloneElement(e, { ...childProps });
   }
 
+  renderSlides() {
+    const { children, wrapperElement, wrapperClass } = this.props;
+
+    const slides = React.Children.map(children, this.renderContent);
+    return React.createElement(wrapperElement, { className: wrapperClass }, slides);
+  }
+
   render() {
-    const { containerClass, wrapperClass, children, rtl } = this.props;
+    const { containerClass, rtl } = this.props;
     const rtlProp = rtl ? { dir: 'rtl' } : {};
 
     return (
       <div className={containerClass} {...rtlProp}>
         {this.renderParallax()}
-        <div className={wrapperClass}>
-          {React.Children.map(children, this.renderContent)}
-        </div>
+        {this.renderSlides()}
         {this.renderPagination()}
         {this.renderScrollBar()}
         {this.renderNextButton()}
