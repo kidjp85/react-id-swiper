@@ -9,9 +9,11 @@
     "build": "yarn build:lib && yarn build:standalone",
     "lint": "eslint -c .eslintrc src/index.js",
     "lint:fix": "eslint --fix -c .eslintrc src/index.js",
-    "test": "jest",
-    "precommit": "lint-staged"
+    "test": "jest"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "keywords": [
     "iDangerous",
     "Swiper",
@@ -54,18 +56,13 @@
     "eslint-plugin-jsx-a11y": "5.0.3",
     "eslint-plugin-prettier": "2.1.2",
     "eslint-plugin-react": "7.1.0",
-    "prettier": "1.8.1",
     "jest": "21.2.1",
+    "pre-commit": "^1.2.2",
+    "prettier": "1.8.1",
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0",
     "regenerator-runtime": "0.11.0",
     "webpack": "^3.10.0"
-  },
-  "lint-staged": {
-    ".*.js": [
-      "yarn lint",
-      "git add"
-    ]
   },
   "license": "MIT",
   "jest": {
