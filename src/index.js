@@ -12,7 +12,7 @@ export default class ReactIdSwiper extends React.Component {
     slideClass: 'swiper-slide',
     ContainerEl: 'div',
     WrapperEl: 'div'
-  }
+  };
 
   // Proptypes
   static propTypes = {
@@ -21,20 +21,14 @@ export default class ReactIdSwiper extends React.Component {
     WrapperEl: PropTypes.string,
     containerClass: PropTypes.string,
     wrapperClass: PropTypes.string,
-    children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.element
-    ]),
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
     rebuildOnUpdate: PropTypes.bool,
     shouldSwiperUpdate: PropTypes.bool,
     prevButtonCustomizedClass: PropTypes.string,
     nextButtonCustomizedClass: PropTypes.string,
     paginationCustomizedClass: PropTypes.string,
     scrollbarCustomizedClass: PropTypes.string,
-    activeSlideKey: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
+    activeSlideKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     renderCustomPrevButton: PropTypes.func,
     renderCustomNextButton: PropTypes.func,
     renderCustomScrolbar: PropTypes.func,
@@ -162,7 +156,7 @@ export default class ReactIdSwiper extends React.Component {
       PropTypes.shape({
         delay: PropTypes.number,
         stopOnLast: PropTypes.bool,
-        disableOnInteraction: PropTypes.bool,
+        disableOnInteraction: PropTypes.bool
       })
     ]),
 
@@ -185,7 +179,7 @@ export default class ReactIdSwiper extends React.Component {
       totalClass: PropTypes.string,
       hiddenClass: PropTypes.string,
       progressbarFillClass: PropTypes.string,
-      clickableClass: PropTypes.string,
+      clickableClass: PropTypes.string
     }),
 
     // scrollbar
@@ -194,7 +188,7 @@ export default class ReactIdSwiper extends React.Component {
       hide: PropTypes.bool,
       draggable: PropTypes.bool,
       snapOnRelease: PropTypes.bool,
-      dragSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      dragSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     }),
 
     // navigation
@@ -203,7 +197,7 @@ export default class ReactIdSwiper extends React.Component {
       prevEl: PropTypes.string,
       hideOnClick: PropTypes.bool,
       disabledClass: PropTypes.string,
-      hiddenClass: PropTypes.string,
+      hiddenClass: PropTypes.string
     }),
 
     // a11y
@@ -215,7 +209,7 @@ export default class ReactIdSwiper extends React.Component {
         firstSlideMessage: PropTypes.string,
         lastSlideMessage: PropTypes.string,
         paginationBulletMessage: PropTypes.string,
-        notificationClass: PropTypes.string,
+        notificationClass: PropTypes.string
       })
     ]),
 
@@ -227,7 +221,7 @@ export default class ReactIdSwiper extends React.Component {
         minRatio: PropTypes.number,
         toggle: PropTypes.bool,
         containerClass: PropTypes.string,
-        zoomedSlideClass: PropTypes.string,
+        zoomedSlideClass: PropTypes.string
       })
     ]),
 
@@ -242,7 +236,7 @@ export default class ReactIdSwiper extends React.Component {
         releaseOnEdges: PropTypes.bool,
         invert: PropTypes.bool,
         sensitivity: PropTypes.number,
-        eventsTarged: PropTypes.string,
+        eventsTarged: PropTypes.string
       })
     ]),
 
@@ -251,7 +245,7 @@ export default class ReactIdSwiper extends React.Component {
       PropTypes.bool,
       PropTypes.shape({
         watchState: PropTypes.bool,
-        replaceState: PropTypes.bool,
+        replaceState: PropTypes.bool
       })
     ]),
 
@@ -260,7 +254,7 @@ export default class ReactIdSwiper extends React.Component {
       PropTypes.bool,
       PropTypes.shape({
         key: PropTypes.string,
-        replaceState: PropTypes.bool,
+        replaceState: PropTypes.bool
       })
     ]),
 
@@ -274,7 +268,7 @@ export default class ReactIdSwiper extends React.Component {
         elementClass: PropTypes.string,
         loadingClass: PropTypes.string,
         loadedClass: PropTypes.string,
-        preloaderClass: PropTypes.string,
+        preloaderClass: PropTypes.string
       })
     ]),
 
@@ -289,13 +283,13 @@ export default class ReactIdSwiper extends React.Component {
       rotate: PropTypes.number,
       stretch: PropTypes.number,
       depth: PropTypes.number,
-      modifier: PropTypes.number,
+      modifier: PropTypes.number
     }),
 
     // flipEffect
     flipEffect: PropTypes.shape({
       slideShadows: PropTypes.bool,
-      limitRotation: PropTypes.bool,
+      limitRotation: PropTypes.bool
     }),
 
     // cubeEffect
@@ -303,7 +297,7 @@ export default class ReactIdSwiper extends React.Component {
       slideShadows: PropTypes.bool,
       shadow: PropTypes.bool,
       shadowOffset: PropTypes.number,
-      shadowScale: PropTypes.number,
+      shadowScale: PropTypes.number
     }),
 
     // controller
@@ -312,7 +306,7 @@ export default class ReactIdSwiper extends React.Component {
       PropTypes.shape({
         control: PropTypes.any,
         inverse: PropTypes.bool,
-        by: PropTypes.string,
+        by: PropTypes.string
       })
     ]),
 
@@ -344,9 +338,9 @@ export default class ReactIdSwiper extends React.Component {
       fromEdge: PropTypes.func,
       setTranslate: PropTypes.func,
       setTransition: PropTypes.func,
-      resize: PropTypes.func,
+      resize: PropTypes.func
     })
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -357,7 +351,7 @@ export default class ReactIdSwiper extends React.Component {
     this.swiper = new Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps() {
     if (this.props.rebuildOnUpdate && typeof this.swiper !== 'undefined') {
       this.rebuildSwiper();
     }
@@ -388,7 +382,7 @@ export default class ReactIdSwiper extends React.Component {
           if (child.key === this.props.activeSlideKey) {
             activeSlideId = id;
           }
-          id++;
+          id += 1;
         }
       });
 
@@ -415,13 +409,13 @@ export default class ReactIdSwiper extends React.Component {
 
   // Scrollbar
   renderScrollBar() {
-    const { scrollbar, renderCustomScrolbar, scrollbarCustomizedClass } = this.props
+    const { scrollbar, renderCustomScrolbar, scrollbarCustomizedClass } = this.props;
 
     // Return false if required param is not existed
     if (!scrollbar || !scrollbar.el) return false;
 
     // Return customized rendering for scrollbar if existed
-    if (typeof renderCustomScrolbar === 'function') return renderCustomScrolbar()
+    if (typeof renderCustomScrolbar === 'function') return renderCustomScrolbar();
 
     // Validate classnames
     const customizedClass = this.validateClass(scrollbarCustomizedClass);
@@ -432,13 +426,13 @@ export default class ReactIdSwiper extends React.Component {
 
   // Pagination bullets
   renderPagination() {
-    const { pagination, renderCustomPagination, paginationCustomizedClass } = this.props
+    const { pagination, renderCustomPagination, paginationCustomizedClass } = this.props;
 
     // Return false if required param is not existed
     if (!pagination || !pagination.el) return false;
 
     // Return customized rendering for pagination if existed
-    if (typeof renderCustomPagination === 'function') return renderCustomPagination()
+    if (typeof renderCustomPagination === 'function') return renderCustomPagination();
 
     const customizedClass = this.validateClass(paginationCustomizedClass);
     const paginationClass = this.validateClass(pagination.el);
@@ -448,13 +442,13 @@ export default class ReactIdSwiper extends React.Component {
 
   // Next button
   renderNextButton() {
-    const { navigation, nextButtonCustomizedClass, renderCustomNextButton } = this.props
+    const { navigation, nextButtonCustomizedClass, renderCustomNextButton } = this.props;
 
     // Return false if required param is not existed
     if (!navigation || !navigation.nextEl) return false;
 
     // Return customized rendering for next button if existed
-    if (typeof renderCustomNextButton === 'function') return renderCustomNextButton()
+    if (typeof renderCustomNextButton === 'function') return renderCustomNextButton();
 
     const customizedClass = this.validateClass(nextButtonCustomizedClass);
     const nextButtonClass = this.validateClass(navigation.nextEl);
@@ -464,13 +458,13 @@ export default class ReactIdSwiper extends React.Component {
 
   // Prev button
   renderPrevButton() {
-    const { navigation, prevButtonCustomizedClass, renderCustomPrevButton } = this.props
+    const { navigation, prevButtonCustomizedClass, renderCustomPrevButton } = this.props;
 
     // Return false if required param is not existed
     if (!navigation || !navigation.prevEl) return false;
 
     // Return customized rendering for next button if existed
-    if (typeof renderCustomPrevButton === 'function') return renderCustomPrevButton()
+    if (typeof renderCustomPrevButton === 'function') return renderCustomPrevButton();
 
     const customizedClass = this.validateClass(prevButtonCustomizedClass);
     const prevButtonClass = this.validateClass(navigation.prevEl);
@@ -480,13 +474,13 @@ export default class ReactIdSwiper extends React.Component {
 
   // Parallax
   renderParallax() {
-    const { parallax, renderCustomParallax, parallaxEl } = this.props
+    const { parallax, renderCustomParallax, parallaxEl } = this.props;
 
     // Return false if required param is not existed
     if (!parallax || !parallaxEl) return false;
 
     // Return customized rendering for next button if existed
-    if (typeof renderCustomParallax === 'function') return renderCustomParallax()
+    if (typeof renderCustomParallax === 'function') return renderCustomParallax();
 
     const parallaxBgClass = this.validateClass(this.props.parallaxEl.el);
 

@@ -5,7 +5,7 @@ import Swiper from './index';
 let instantiationCount = 0;
 function mockSwiper() {
   instantiationCount++;
-};
+}
 mockSwiper.prototype.destroy = jest.fn();
 
 jest.mock('swiper/dist/js/swiper.js', () => mockSwiper);

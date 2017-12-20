@@ -17,7 +17,9 @@ React-id-swiper's original props
 
 | Name | Type | Default value | Description |
 | ---  | ---  | ---           | ---         |
+| ContainerEl | String | 'div' | Element type for container |
 | containerClass | String | swiper-container | Swiper container class name |
+| WrapperEl | String | 'div' | Element type for wrapper |
 | wrapperClass | String | swiper-wrapper | Swiper wrapper class name |
 | slideClass | String | swiper-slide | Swiper slide class name |
 | prevButtonCustomizedClass | String | '' | Swiper prev button class name |
@@ -26,7 +28,12 @@ React-id-swiper's original props
 | shouldSwiperUpdate | Boolean | false | Update swiper when component is updated |
 | rebuildOnUpdate | Boolean | false | Rebuild swiper when component is updated |
 | noSwiping | Boolean | false | Disable swiping by condition |
-| activeSlideKey | String or Number | '' | Original active key |
+| renderCustomPrevButton | function |  | Use to customize rendering for prev button |
+| renderCustomNextButton | function |  | Use to customize rendering for next button |
+| renderCustomScrolbar | function |  | Use to customize rendering for scrollbar |
+| renderCustomPagination | function |  | Use to customize rendering for pagination |
+| renderCustomParallax | function |  | Use to customize rendering for parallax |
+
 
 NOTE: You can also use Swiper's original params too.Swiper API documentation [HERE](http://idangero.us/swiper/api/)
 
@@ -47,14 +54,20 @@ By Yarn
 yarn add react-id-swiper
 ```
 
+## You can also use the standalone UMD build
+```html
+<script src="https://unpkg.com/react-id-swiper@1.5.7/lib/react-id-swiper.js"></script>
+<script src="https://unpkg.com/react-id-swiper@1.5.7/lib/react-id-swiper.min.js"></script>
+```
+
 ## Recommendation
 >Swiper stylesheet file is required
 ### Use Swiper stylesheet file from CDN
-```css
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.6/css/swiper.css">
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.css">
 ```
-```css
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.6/css/swiper.min.css">
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css">
 ```
 ### OR
 Use stylesheet file from src/styles/  folder (supporting css, less, scss)
@@ -246,6 +259,22 @@ const params = {
   nextButtonCustomizedClass: 'nextButtonCustomizedClass', // Add your class name for next button
   prevButtonCustomizedClass: 'customized-swiper-button-prev', // Add your class name for prev button
   containerClass: 'customized-swiper-container' // Replace swiper-container with customized-swiper-container
+}
+```
+
+### How to add customized components ?
+>Example with customized navigation button
+
+For customized rendering to work, you have to use same classname with params el.
+
+```javascript
+const params = {
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  renderCustomPrevButton: () => <button className="swiper-button-prev">Prev</button>,
+  renderCustomNextButton: () => <button className="swiper-button-next">Next</button>,
 }
 ```
 
