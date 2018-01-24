@@ -4425,9 +4425,9 @@ supports-color@^4.0.0, supports-color@^4.2.1:
   dependencies:
     has-flag "^2.0.0"
 
-swiper@4.0.7:
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-4.0.7.tgz#89175c2a23d86622eda8344740c24a3701a6b270"
+swiper@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-4.1.0.tgz#3d1d97aef948366b8b36fa90d41dcedf5432c88c"
   dependencies:
     dom7 "^2.0.1"
 
