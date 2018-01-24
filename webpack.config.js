@@ -7,14 +7,12 @@ module.exports = [
     output: {
       filename: './lib/react-id-swiper.js',
       libraryTarget: 'umd',
-      library: 'ReactIdSwiper'
+      library: 'ReactIdSwiper',
+      auxiliaryComment: ''
     },
     resolve: {
-      extensions: ['.js', '.jsx'],
-      modules: [
-        './src',
-        'node_modules'
-      ]
+      extensions: ['.js'],
+      modules: ['./src', 'node_modules']
     },
     resolveLoader: {
       moduleExtensions: ['-loader']
@@ -24,9 +22,7 @@ module.exports = [
         {
           test: /\.js$/,
           loader: 'babel',
-          include: [
-            path.join(__dirname, 'src')
-          ]
+          include: [path.join(__dirname, 'src')]
         }
       ]
     },
@@ -43,11 +39,8 @@ module.exports = [
       library: 'ReactIdSwiper'
     },
     resolve: {
-      extensions: ['.js', '.jsx'],
-      modules: [
-        './src',
-        'node_modules'
-      ]
+      extensions: ['.js'],
+      modules: ['./src', 'node_modules']
     },
     resolveLoader: {
       moduleExtensions: ['-loader']
@@ -57,9 +50,7 @@ module.exports = [
         {
           test: /\.js$/,
           loader: 'babel',
-          include: [
-            path.join(__dirname, 'src')
-          ]
+          include: [path.join(__dirname, 'src')]
         }
       ]
     },
