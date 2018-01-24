@@ -1,4 +1,4 @@
-react-id-swiper ( Newest version 1.5.7 )
+react-id-swiper ( Newest version 1.5.8 )
 ======================================
 
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component.
@@ -56,18 +56,18 @@ yarn add react-id-swiper
 
 ## You can also use the standalone UMD build
 ```html
-<script src="https://unpkg.com/react-id-swiper@1.5.7/lib/react-id-swiper.js"></script>
-<script src="https://unpkg.com/react-id-swiper@1.5.7/lib/react-id-swiper.min.js"></script>
+<script src="https://unpkg.com/react-id-swiper@1.5.8/lib/react-id-swiper.js"></script>
+<script src="https://unpkg.com/react-id-swiper@1.5.8/lib/react-id-swiper.min.js"></script>
 ```
 
 ## Recommendation
 >Swiper stylesheet file is required
 ### Use Swiper stylesheet file from CDN
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.css">
 ```
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css">
 ```
 ### OR
 Use stylesheet file from src/styles/  folder (supporting css, less, scss)
