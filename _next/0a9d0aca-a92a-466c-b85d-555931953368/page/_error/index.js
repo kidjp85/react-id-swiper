@@ -1,6 +1,6 @@
 
           window.__NEXT_REGISTER_PAGE('/_error', function() {
-            var comp = module.exports=webpackJsonp([4],[],[358]);
+            var comp = module.exports=webpackJsonp([4],[],[360]);
             return { page: comp.default }
           })
         
