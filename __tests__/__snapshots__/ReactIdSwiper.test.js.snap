@@ -1,0 +1,288 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReactIdSwiper Custom container & wrapper should render with custom container & wrapper 1`] = `
+<section
+  class="swiper-container"
+>
+  <section
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </section>
+</section>
+`;
+
+exports[`ReactIdSwiper Default should render default swiper 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReactIdSwiper Navigation should render navigation buttons 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+  <div
+    class="swiper-button-next"
+  />
+  <div
+    class="swiper-button-prev"
+  />
+</div>
+`;
+
+exports[`ReactIdSwiper Navigation should render pagination with customized class name 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+  <div
+    class="swiper-button-next next-button-with-customized-class-name"
+  />
+  <div
+    class="swiper-button-prev prev-button-with-customized-class-name"
+  />
+</div>
+`;
+
+exports[`ReactIdSwiper Navigation should render pagination with customized function 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+  <span>
+    Customized next button
+  </span>
+  <span>
+    Customized prev button
+  </span>
+</div>
+`;
+
+exports[`ReactIdSwiper No swiping should render slide with swiper-no-swiping class name 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide  swiper-no-swiping"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide  swiper-no-swiping"
+    >
+      Slide 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReactIdSwiper Pagination should render pagination 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+  <div
+    class="swiper-pagination"
+  />
+</div>
+`;
+
+exports[`ReactIdSwiper Pagination should render pagination with customized class name 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+  <div
+    class="swiper-pagination pagination-with-custom-class-name"
+  />
+</div>
+`;
+
+exports[`ReactIdSwiper Pagination should render pagination with customized function 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+  <span
+    class="pagination-with-custom-function"
+  />
+</div>
+`;
+
+exports[`ReactIdSwiper Parallax should render parallax 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="parallax-bg"
+    data-swiper-parallax="-23%"
+  />
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReactIdSwiper RTL should render with rtl 1`] = `
+<div
+  class="swiper-container"
+  dir="rtl"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReactIdSwiper Scrollbar should render scrollbar 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+  <div
+    class="swiper-scrollbar"
+  />
+</div>
+`;
