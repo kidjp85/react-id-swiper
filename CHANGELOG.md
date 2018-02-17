@@ -1,7 +1,6 @@
 # Change Log for React-id-swiper
 
-
-## [v1.5.9](https://github.com/kidjp85/react-id-swiper/compare/1.5.9...1.5.8) - Released on February 17th, 2018
+## [v1.6.0](https://github.com/kidjp85/react-id-swiper/compare/1.6.0...1.5.8) - Released on February 17th, 2018
   * Upgrade swiper@4.1.6
   * Add unit test
 ## [v1.5.8](https://github.com/kidjp85/react-id-swiper/compare/1.5.8...1.5.7) - Released on January 24th, 2018
