@@ -421,7 +421,7 @@ export default class ReactIdSwiper extends Component {
     const customizedClass = this.validateClass(scrollbarCustomizedClass);
     const scrollbarClass = this.validateClass(scrollbar.el);
 
-    return <div className={[scrollbarClass, customizedClass].join(' ')} />;
+    return <div className={[scrollbarClass, customizedClass].join(' ').trim()} />;
   }
 
   // Pagination bullets
@@ -437,7 +437,7 @@ export default class ReactIdSwiper extends Component {
     const customizedClass = this.validateClass(paginationCustomizedClass);
     const paginationClass = this.validateClass(pagination.el);
 
-    return <div className={[paginationClass, customizedClass].join(' ')} />;
+    return <div className={[paginationClass, customizedClass].join(' ').trim()} />;
   }
 
   // Next button
@@ -453,7 +453,7 @@ export default class ReactIdSwiper extends Component {
     const customizedClass = this.validateClass(nextButtonCustomizedClass);
     const nextButtonClass = this.validateClass(navigation.nextEl);
 
-    return <div className={[nextButtonClass, customizedClass].join(' ')} />;
+    return <div className={[nextButtonClass, customizedClass].join(' ').trim()} />;
   }
 
   // Prev button
@@ -469,7 +469,7 @@ export default class ReactIdSwiper extends Component {
     const customizedClass = this.validateClass(prevButtonCustomizedClass);
     const prevButtonClass = this.validateClass(navigation.prevEl);
 
-    return <div className={[prevButtonClass, customizedClass].join(' ')} />;
+    return <div className={[prevButtonClass, customizedClass].join(' ').trim()} />;
   }
 
   // Parallax
@@ -494,7 +494,7 @@ export default class ReactIdSwiper extends Component {
     const noSwipingClass = noSwiping ? 'swiper-no-swiping' : '';
     const childProps = {
       ...e.props,
-      className: [slideClass, e.props.className, noSwipingClass].join(' ')
+      className: [slideClass, e.props.className, noSwipingClass].join(' ').trim()
     };
 
     return React.cloneElement(e, { ...childProps });

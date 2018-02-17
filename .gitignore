@@ -1,3 +1,4 @@
 node_modules
 *.log
-lib/*.spec.*
+src/**/*.test.js
+coverage
