@@ -16,7 +16,7 @@ export default class ReactIdSwiper extends Component {
 
   // Proptypes
   static propTypes = {
-    // react-id-swiper original parameter
+    // react-id-swiper original parameters
     ContainerEl: PropTypes.string,
     WrapperEl: PropTypes.string,
     containerClass: PropTypes.string,
@@ -351,16 +351,6 @@ export default class ReactIdSwiper extends Component {
     this.swiper = new Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
   }
 
-  componentWillReceiveProps() {
-    if (this.props.rebuildOnUpdate && typeof this.swiper !== 'undefined') {
-      this.rebuildSwiper();
-    }
-  }
-
-  shouldComponentUpdate(nextProps) {
-    return nextProps.children !== this.props.children;
-  }
-
   componentDidUpdate() {
     if (this.props.rebuildOnUpdate && typeof this.swiper !== 'undefined') {
       this.rebuildSwiper();
@@ -488,7 +478,7 @@ export default class ReactIdSwiper extends Component {
   }
 
   renderContent(e) {
-    if (!e) return null;
+    if (!e) return false;
 
     const { slideClass, noSwiping } = this.props;
     const noSwipingClass = noSwiping ? 'swiper-no-swiping' : '';
