@@ -4,7 +4,7 @@
 
 [![Package Quality](http://npm.packagequality.com/badge/react-id-swiper.png)](http://packagequality.com/#?package=react-id-swiper)
 
-react-id-swiper ( Newest version 1.6.2 )
+react-id-swiper ( Newest version 1.6.3 )
 ========================================
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component.
 
@@ -27,17 +27,27 @@ React-id-swiper's original props
 | WrapperEl | String | 'div' | Element type for wrapper |
 | wrapperClass | String | swiper-wrapper | Swiper wrapper class name |
 | slideClass | String | swiper-slide | Swiper slide class name |
-| prevButtonCustomizedClass | String | '' | Swiper prev button class name |
-| nextButtonCustomizedClass | String | '' | Swiper next button class name |
-| paginationCustomizedClass | String | '' | Swiper pagination class name |
 | shouldSwiperUpdate | Boolean | false | Update swiper when component is updated |
 | rebuildOnUpdate | Boolean | false | Rebuild swiper when component is updated |
 | noSwiping | Boolean | false | Disable swiping by condition |
-| renderCustomPrevButton | function |  | Use to customize rendering for prev button |
-| renderCustomNextButton | function |  | Use to customize rendering for next button |
-| renderCustomScrolbar | function |  | Use to customize rendering for scrollbar |
-| renderCustomPagination | function |  | Use to customize rendering for pagination |
-| renderCustomParallax | function |  | Use to customize rendering for parallax |
+| renderPrevButton | function |  | Render props function for prev button |
+| renderNextButton | function |  | Render props function for next button |
+| renderScrollbar | function |  | Render props function for scrollbar |
+| renderPagination | function |  | Render props function for pagination |
+| renderParallax | function |  | Render props function for parallax |
+
+
+>React-id-swiper's deprecated props (from v1.6.3)
+
+- renderCustomPrevButton
+- renderCustomNextButton
+- renderCustomScrollbar
+- renderCustomPagination
+- renderCustomParallax
+- prevButtonCustomizedClass,
+- nextButtonCustomizedClass,
+- paginationCustomizedClass,
+- scrollbarCustomizedClass
 
 
 NOTE: You can also use Swiper's original params too.Swiper API documentation [HERE](http://idangero.us/swiper/api/)
@@ -61,18 +71,18 @@ yarn add react-id-swiper
 
 ## You can also use the standalone UMD build
 ```html
-<script src="https://unpkg.com/react-id-swiper@1.6.2/lib/react-id-swiper.js"></script>
-<script src="https://unpkg.com/react-id-swiper@1.6.2/lib/react-id-swiper.min.js"></script>
+<script src="https://unpkg.com/react-id-swiper@1.6.3/lib/react-id-swiper.js"></script>
+<script src="https://unpkg.com/react-id-swiper@1.6.3/lib/react-id-swiper.min.js"></script>
 ```
 
 ## Recommendation
 >Swiper stylesheet file is required
 ### Use Swiper stylesheet file from CDN
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.css">
 ```
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.min.css">
 ```
 ### OR
 Use stylesheet file from src/styles/  folder (supporting css, less, scss)
@@ -260,9 +270,13 @@ export default class Example extends React.Component {
 
 ```javascript
 const params = {
-  paginationCustomizedClass: 'customized-swiper-pagination', // Add your class name for pagination container
-  nextButtonCustomizedClass: 'nextButtonCustomizedClass', // Add your class name for next button
-  prevButtonCustomizedClass: 'customized-swiper-button-prev', // Add your class name for prev button
+  pargination: {
+    el: '.swiper-pagination.customized-swiper-pagination',
+  }, // Add your class name for pagination container
+  navigation: {
+    nextEl: '.swiper-button-next.customized-swiper-button-next', // Add your class name for next button
+    prevEl: '.swiper-button-prev.customized-swiper-button-prev' // Add your class name for prev button
+  },
   containerClass: 'customized-swiper-container' // Replace swiper-container with customized-swiper-container
 }
 ```
@@ -278,8 +292,8 @@ const params = {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
   },
-  renderCustomPrevButton: () => <button className="swiper-button-prev">Prev</button>,
-  renderCustomNextButton: () => <button className="swiper-button-next">Next</button>,
+  renderPrevButton: () => <button className="swiper-button-prev">Prev</button>,
+  renderNextButton: () => <button className="swiper-button-next">Next</button>,
 }
 ```
 

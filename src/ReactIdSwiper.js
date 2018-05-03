@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Swiper from 'swiper/dist/js/swiper';
 import objectAssign from 'object-assign';
 import PropTypes from 'prop-types';
+import { cn } from './utils';
 
 export default class ReactIdSwiper extends Component {
   // Default props
@@ -11,7 +12,14 @@ export default class ReactIdSwiper extends Component {
     wrapperClass: 'swiper-wrapper',
     slideClass: 'swiper-slide',
     ContainerEl: 'div',
-    WrapperEl: 'div'
+    WrapperEl: 'div',
+    renderScrollbar: ({ scrollbar }) => <div className={cn(scrollbar.el)} />,
+    renderPagination: ({ pagination }) => <div className={cn(pagination.el)} />,
+    renderPrevButton: ({ navigation }) => <div className={cn(navigation.prevEl)} />,
+    renderNextButton: ({ navigation }) => <div className={cn(navigation.nextEl)} />,
+    renderParallax: ({ parallaxEl }) => (
+      <div className={cn(parallaxEl.el)} data-swiper-parallax={parallaxEl.value} />
+    )
   };
 
   // Proptypes
@@ -21,19 +29,15 @@ export default class ReactIdSwiper extends Component {
     WrapperEl: PropTypes.string,
     containerClass: PropTypes.string,
     wrapperClass: PropTypes.string,
-    children: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
+    children: PropTypes.any,
     rebuildOnUpdate: PropTypes.bool,
     shouldSwiperUpdate: PropTypes.bool,
-    prevButtonCustomizedClass: PropTypes.string,
-    nextButtonCustomizedClass: PropTypes.string,
-    paginationCustomizedClass: PropTypes.string,
-    scrollbarCustomizedClass: PropTypes.string,
     activeSlideKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    renderCustomPrevButton: PropTypes.func,
-    renderCustomNextButton: PropTypes.func,
-    renderCustomScrolbar: PropTypes.func,
-    renderCustomPagination: PropTypes.func,
-    renderCustomParallax: PropTypes.func,
+    renderScrollbar: PropTypes.func,
+    renderPagination: PropTypes.func,
+    renderPrevButton: PropTypes.func,
+    renderNextButton: PropTypes.func,
+    renderParallax: PropTypes.func,
 
     // parallax
     parallax: PropTypes.bool,
@@ -352,10 +356,13 @@ export default class ReactIdSwiper extends Component {
   }
 
   componentDidUpdate() {
-    if (this.props.rebuildOnUpdate && typeof this.swiper !== 'undefined') {
+    if (typeof this.swiper === 'undefined') return;
+    const { rebuildOnUpdate, shouldSwiperUpdate, activeSlideKey } = this.props;
+
+    if (rebuildOnUpdate) {
       this.rebuildSwiper();
-    } else if (this.props.shouldSwiperUpdate && typeof this.swiper !== 'undefined') {
-      this.swiper.update();
+    } else if (shouldSwiperUpdate) {
+      this.updateSwiper();
 
       const numSlides = this.swiper.slides.length;
       if (numSlides <= this.swiper.activeIndex) {
@@ -364,12 +371,13 @@ export default class ReactIdSwiper extends Component {
       }
     }
 
-    if (this.props.activeSlideKey) {
+    if (activeSlideKey) {
       let activeSlideId = null;
       let id = 0;
+
       React.Children.forEach(this.props.children, child => {
         if (child) {
-          if (child.key === this.props.activeSlideKey) {
+          if (child.key === activeSlideKey) {
             activeSlideId = id;
           }
           id += 1;
@@ -392,118 +400,53 @@ export default class ReactIdSwiper extends Component {
     this.swiper = new Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
   }
 
-  validateClass(className) {
-    if (typeof className !== 'string') return '';
-    return className.replace(/\.|#/g, ' ').trim();
-  }
-
-  // Scrollbar
-  renderScrollBar() {
-    const { scrollbar, renderCustomScrolbar, scrollbarCustomizedClass } = this.props;
-
-    // Return false if required param is not existed
-    if (!scrollbar || !scrollbar.el) return false;
-
-    // Return customized rendering for scrollbar if existed
-    if (typeof renderCustomScrolbar === 'function') return renderCustomScrolbar();
-
-    // Validate classnames
-    const customizedClass = this.validateClass(scrollbarCustomizedClass);
-    const scrollbarClass = this.validateClass(scrollbar.el);
-
-    return <div className={[scrollbarClass, customizedClass].join(' ').trim()} />;
-  }
-
-  // Pagination bullets
-  renderPagination() {
-    const { pagination, renderCustomPagination, paginationCustomizedClass } = this.props;
-
-    // Return false if required param is not existed
-    if (!pagination || !pagination.el) return false;
-
-    // Return customized rendering for pagination if existed
-    if (typeof renderCustomPagination === 'function') return renderCustomPagination();
-
-    const customizedClass = this.validateClass(paginationCustomizedClass);
-    const paginationClass = this.validateClass(pagination.el);
-
-    return <div className={[paginationClass, customizedClass].join(' ').trim()} />;
-  }
-
-  // Next button
-  renderNextButton() {
-    const { navigation, nextButtonCustomizedClass, renderCustomNextButton } = this.props;
-
-    // Return false if required param is not existed
-    if (!navigation || !navigation.nextEl) return false;
-
-    // Return customized rendering for next button if existed
-    if (typeof renderCustomNextButton === 'function') return renderCustomNextButton();
-
-    const customizedClass = this.validateClass(nextButtonCustomizedClass);
-    const nextButtonClass = this.validateClass(navigation.nextEl);
-
-    return <div className={[nextButtonClass, customizedClass].join(' ').trim()} />;
-  }
-
-  // Prev button
-  renderPrevButton() {
-    const { navigation, prevButtonCustomizedClass, renderCustomPrevButton } = this.props;
-
-    // Return false if required param is not existed
-    if (!navigation || !navigation.prevEl) return false;
-
-    // Return customized rendering for next button if existed
-    if (typeof renderCustomPrevButton === 'function') return renderCustomPrevButton();
-
-    const customizedClass = this.validateClass(prevButtonCustomizedClass);
-    const prevButtonClass = this.validateClass(navigation.prevEl);
-
-    return <div className={[prevButtonClass, customizedClass].join(' ').trim()} />;
-  }
-
-  // Parallax
-  renderParallax() {
-    const { parallax, renderCustomParallax, parallaxEl } = this.props;
-
-    // Return false if required param is not existed
-    if (!parallax || !parallaxEl) return false;
-
-    // Return customized rendering for next button if existed
-    if (typeof renderCustomParallax === 'function') return renderCustomParallax();
-
-    const parallaxBgClass = this.validateClass(this.props.parallaxEl.el);
-
-    return <div className={parallaxBgClass} data-swiper-parallax={this.props.parallaxEl.value} />;
+  updateSwiper() {
+    if (typeof this.swiper !== 'undefined') this.swiper.update();
   }
 
   renderContent(e) {
     if (!e) return false;
 
     const { slideClass, noSwiping } = this.props;
-    const noSwipingClass = noSwiping ? 'swiper-no-swiping' : '';
-    const childProps = {
-      ...e.props,
-      className: [slideClass, e.props.className, noSwipingClass].join(' ').trim()
-    };
+    const slideClassNames = [slideClass, e.props.className];
+    if (noSwiping) slideClassNames.push('swiper-no-swiping');
 
-    return React.cloneElement(e, { ...childProps });
+    return React.cloneElement(e, {
+      ...e.props,
+      className: slideClassNames.join(' ').trim()
+    });
   }
 
   render() {
-    const { ContainerEl, WrapperEl, containerClass, wrapperClass, children, rtl } = this.props;
-    const rtlProp = rtl ? { dir: 'rtl' } : {};
+    const {
+      ContainerEl,
+      WrapperEl,
+      containerClass,
+      wrapperClass,
+      children,
+      rtl,
+      scrollbar,
+      renderScrollbar,
+      pagination,
+      renderPagination,
+      navigation,
+      renderPrevButton,
+      renderNextButton,
+      parallax,
+      parallaxEl,
+      renderParallax
+    } = this.props;
 
     return (
-      <ContainerEl className={containerClass} {...rtlProp}>
-        {this.renderParallax()}
+      <ContainerEl className={containerClass} dir={rtl && 'rtl'}>
+        {parallax && parallaxEl && renderParallax(this.props)}
         <WrapperEl className={wrapperClass}>
           {React.Children.map(children, this.renderContent)}
         </WrapperEl>
-        {this.renderPagination()}
-        {this.renderScrollBar()}
-        {this.renderNextButton()}
-        {this.renderPrevButton()}
+        {pagination && pagination.el && renderPagination(this.props)}
+        {scrollbar && scrollbar.el && renderScrollbar(this.props)}
+        {navigation && navigation.nextEl && renderNextButton(this.props)}
+        {navigation && navigation.prevEl && renderPrevButton(this.props)}
       </ContainerEl>
     );
   }
