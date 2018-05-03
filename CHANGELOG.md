@@ -18,6 +18,7 @@
     - renderScrollbar
     - renderPagination
     - renderParallax
+  * Clean code
   * Update unit test
 
 ## [v1.6.2](https://github.com/kidjp85/react-id-swiper/compare/1.6.2...1.6.1) - Released on April 1st, 2018

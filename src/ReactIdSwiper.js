@@ -362,7 +362,7 @@ export default class ReactIdSwiper extends Component {
     if (rebuildOnUpdate) {
       this.rebuildSwiper();
     } else if (shouldSwiperUpdate) {
-      this.swiper.update();
+      this.updateSwiper();
 
       const numSlides = this.swiper.slides.length;
       if (numSlides <= this.swiper.activeIndex) {
@@ -398,6 +398,10 @@ export default class ReactIdSwiper extends Component {
   rebuildSwiper() {
     this.swiper.destroy(true, true);
     this.swiper = new Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
+  }
+
+  updateSwiper() {
+    if (typeof this.swiper !== 'undefined') this.swiper.update();
   }
 
   renderContent(e) {
