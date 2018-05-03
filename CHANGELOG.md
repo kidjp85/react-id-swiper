@@ -1,5 +1,25 @@
 # Change Log for React-id-swiper
 
+## [v1.6.3](https://github.com/kidjp85/react-id-swiper/compare/1.6.3...1.6.2) - Released on May 3rd, 2018
+  * Upgrade swiper@4.2.6
+  * Deprecate these props:
+    - renderCustomPrevButton
+    - renderCustomNextButton
+    - renderCustomScrollbar
+    - renderCustomPagination
+    - renderCustomParallax
+    - prevButtonCustomizedClass,
+    - nextButtonCustomizedClass,
+    - paginationCustomizedClass,
+    - scrollbarCustomizedClass
+  * Add new render props:
+    - renderPrevButton
+    - renderNextButton
+    - renderScrollbar
+    - renderPagination
+    - renderParallax
+  * Update unit test
+
 ## [v1.6.2](https://github.com/kidjp85/react-id-swiper/compare/1.6.2...1.6.1) - Released on April 1st, 2018
   * Upgrade swiper@4.2.2
   * Update unit test
@@ -25,7 +45,6 @@
   * Upgrade Swiper@4.0.7
   * Add jest. Expose rebuildSwiper instance method [PR 108](https://github.com/kidjp85/react-id-swiper/pull/108) by [timkindberg](https://github.com/timkindberg)
   
-
 ## [v1.5.5](https://github.com/kidjp85/react-id-swiper/compare/1.5.5...1.5.4) - Released on November 15, 2017
   * Upgrade Swiper@4.0.6
   * Add support for parallax

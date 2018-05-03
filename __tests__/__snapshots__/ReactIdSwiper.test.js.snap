@@ -88,10 +88,10 @@ exports[`ReactIdSwiper rendering snapshot Navigation should render pagination wi
     </div>
   </div>
   <div
-    class="swiper-button-next next-button-with-customized-class-name"
+    class="swiper-button-next"
   />
   <div
-    class="swiper-button-prev prev-button-with-customized-class-name"
+    class="swiper-button-prev"
   />
 </div>
 `;
@@ -114,12 +114,12 @@ exports[`ReactIdSwiper rendering snapshot Navigation should render pagination wi
       Slide 2
     </div>
   </div>
-  <span>
-    Customized next button
-  </span>
-  <span>
-    Customized prev button
-  </span>
+  <div
+    class="swiper-button-next"
+  />
+  <div
+    class="swiper-button-prev"
+  />
 </div>
 `;
 
@@ -187,7 +187,7 @@ exports[`ReactIdSwiper rendering snapshot Pagination should render pagination wi
     </div>
   </div>
   <div
-    class="swiper-pagination pagination-with-custom-class-name"
+    class="swiper-pagination"
   />
 </div>
 `;
@@ -210,8 +210,8 @@ exports[`ReactIdSwiper rendering snapshot Pagination should render pagination wi
       Slide 2
     </div>
   </div>
-  <span
-    class="pagination-with-custom-function"
+  <div
+    class="swiper-pagination"
   />
 </div>
 `;
