@@ -7,7 +7,7 @@
 react-id-swiper ( Newest version 1.6.4 )
 ========================================
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component
-> (Providing lightweight version of Swiper which reduces ~40kb minified)
+> (Providing lightweight version of Swiper which reduces ~40kb of minified size)
 
 ![Demo](https://media.giphy.com/media/l0HlD8Aq2zZoF19aE/source.gif)
 
@@ -297,7 +297,7 @@ const params = {
 }
 ```
 
-## React-Id-Swiper also provides lightweight version for Swiper (reduce ~40kb of gzip)
+## React-Id-Swiper also provides lightweight version for Swiper (reduce ~40kb of minified size)
 > Those features below are not included in lightweight version
 
   - Virtual
