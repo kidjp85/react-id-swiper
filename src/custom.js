@@ -1,6 +1,23 @@
+/*
+  NOTE: Custom version won't support those features below
+  - Virtual
+  - Keyboard
+  - Mouse wheel
+  - Zoom
+  - Lazy load image
+  - A11y
+  - History
+  - Hash-navigation
+  - Effect-cube
+  - Effect-flip
+  - Effect-coverflow
+
+  #Referer link: http://idangero.us/swiper/api/#custom-build
+*/
+
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Swiper from 'swiper/dist/js/swiper';
+import Swiper from './swiper/custom';
 import objectAssign from 'object-assign';
 import PropTypes from 'prop-types';
 import { cn } from './utils';
@@ -53,7 +70,6 @@ export default class ReactIdSwiper extends Component {
     rtl: PropTypes.bool,
     speed: PropTypes.number,
     setWrapperSize: PropTypes.bool,
-    virtualTranslate: PropTypes.bool,
     width: PropTypes.number,
     height: PropTypes.number,
     autoHeight: PropTypes.bool,
@@ -204,104 +220,9 @@ export default class ReactIdSwiper extends Component {
       hiddenClass: PropTypes.string
     }),
 
-    // a11y
-    a11y: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.shape({
-        prevSlideMessage: PropTypes.string,
-        nextSlideMessage: PropTypes.string,
-        firstSlideMessage: PropTypes.string,
-        lastSlideMessage: PropTypes.string,
-        paginationBulletMessage: PropTypes.string,
-        notificationClass: PropTypes.string
-      })
-    ]),
-
-    // zoom
-    zoom: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.shape({
-        maxRatio: PropTypes.number,
-        minRatio: PropTypes.number,
-        toggle: PropTypes.bool,
-        containerClass: PropTypes.string,
-        zoomedSlideClass: PropTypes.string
-      })
-    ]),
-
-    // keyboard
-    keyboard: PropTypes.bool,
-
-    // mousewheel
-    mousewheel: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.shape({
-        forceToAxis: PropTypes.bool,
-        releaseOnEdges: PropTypes.bool,
-        invert: PropTypes.bool,
-        sensitivity: PropTypes.number,
-        eventsTarged: PropTypes.string
-      })
-    ]),
-
-    // hashNavigation
-    hashNavigation: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.shape({
-        watchState: PropTypes.bool,
-        replaceState: PropTypes.bool
-      })
-    ]),
-
-    // history
-    history: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.shape({
-        key: PropTypes.string,
-        replaceState: PropTypes.bool
-      })
-    ]),
-
-    // lazy
-    lazy: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.shape({
-        loadPrevNext: PropTypes.bool,
-        loadPrevNextAmount: PropTypes.number,
-        loadOnTransitionStart: PropTypes.bool,
-        elementClass: PropTypes.string,
-        loadingClass: PropTypes.string,
-        loadedClass: PropTypes.string,
-        preloaderClass: PropTypes.string
-      })
-    ]),
-
     // fadeEffect
     fadeEffect: PropTypes.shape({
       crossFade: PropTypes.bool
-    }),
-
-    // coverflowEffect
-    coverflowEffect: PropTypes.shape({
-      slideShadows: PropTypes.bool,
-      rotate: PropTypes.number,
-      stretch: PropTypes.number,
-      depth: PropTypes.number,
-      modifier: PropTypes.number
-    }),
-
-    // flipEffect
-    flipEffect: PropTypes.shape({
-      slideShadows: PropTypes.bool,
-      limitRotation: PropTypes.bool
-    }),
-
-    // cubeEffect
-    cubeEffect: PropTypes.shape({
-      slideShadows: PropTypes.bool,
-      shadow: PropTypes.bool,
-      shadowOffset: PropTypes.number,
-      shadowScale: PropTypes.number
     }),
 
     // controller
@@ -352,7 +273,7 @@ export default class ReactIdSwiper extends Component {
   }
 
   componentDidMount() {
-    this.swiper = new Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
+    this.buildSwiper();
   }
 
   componentDidUpdate() {
@@ -395,9 +316,13 @@ export default class ReactIdSwiper extends Component {
     delete this.swiper;
   }
 
+  buildSwiper() {
+    this.swiper = new Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
+  }
+
   rebuildSwiper() {
     this.swiper.destroy(true, true);
-    this.swiper = new Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
+    this.buildSwiper()
   }
 
   updateSwiper() {
