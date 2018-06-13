@@ -4,7 +4,7 @@
 
 [![Package Quality](http://npm.packagequality.com/badge/react-id-swiper.png)](http://packagequality.com/#?package=react-id-swiper)
 
-react-id-swiper ( Newest version 1.6.4 )
+react-id-swiper ( Newest version 1.6.5 )
 ========================================
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component
 > (Providing lightweight version of Swiper which reduces ~40kb of minified size)
@@ -38,7 +38,7 @@ React-id-swiper's original props
 | renderParallax | function |  | Render props function for parallax |
 
 
->React-id-swiper's deprecated props (from v1.6.4)
+>React-id-swiper's deprecated props (from v1.6.5)
 
 - renderCustomPrevButton
 - renderCustomNextButton
@@ -72,8 +72,8 @@ yarn add react-id-swiper
 
 ## You can also use the standalone UMD build
 ```html
-<script src="https://unpkg.com/react-id-swiper@1.6.4/lib/react-id-swiper.js"></script>
-<script src="https://unpkg.com/react-id-swiper@1.6.4/lib/react-id-swiper.min.js"></script>
+<script src="https://unpkg.com/react-id-swiper@1.6.5/lib/react-id-swiper.js"></script>
+<script src="https://unpkg.com/react-id-swiper@1.6.5/lib/react-id-swiper.min.js"></script>
 ```
 ## Recommendation
 >Swiper stylesheet file is required
@@ -306,6 +306,7 @@ const params = {
   - Zoom
   - Lazy load image
   - A11y
+  - Parallax
   - History
   - Hash-navigation
   - Effect-cube
