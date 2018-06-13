@@ -1708,9 +1708,9 @@ dom-serializer@0, dom-serializer@~0.1.0:
     domelementtype "~1.1.1"
     entities "~1.1.1"
 
-dom7@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/dom7/-/dom7-2.0.5.tgz#d99e1f416cacd627c6d3ed7b90be47c8f3c7b258"
+dom7@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/dom7/-/dom7-2.0.6.tgz#ea9f187de68635783cd5985fde52842763632903"
   dependencies:
     ssr-window "^1.0.0"
 
@@ -4746,11 +4746,11 @@ supports-color@^5.2.0:
   dependencies:
     has-flag "^3.0.0"
 
-swiper@^4.2.6:
-  version "4.2.6"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-4.2.6.tgz#9ee50527e3de7a49e2e56a58f8f6fa94a0358bf5"
+swiper@4.3.3:
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-4.3.3.tgz#92e39c806ead23a18e5c3251dfba1ae9ce76270e"
   dependencies:
-    dom7 "^2.0.5"
+    dom7 "^2.0.6"
     ssr-window "^1.0.0"
 
 symbol-tree@^3.2.2:
