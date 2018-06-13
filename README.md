@@ -38,7 +38,7 @@ React-id-swiper's original props
 | renderParallax | function |  | Render props function for parallax |
 
 
->React-id-swiper's deprecated props (from v1.6.5)
+>React-id-swiper's deprecated props (from v1.6.3)
 
 - renderCustomPrevButton
 - renderCustomNextButton
