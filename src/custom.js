@@ -6,6 +6,7 @@
   - Zoom
   - Lazy load image
   - A11y
+  - Parallax
   - History
   - Hash-navigation
   - Effect-cube
@@ -17,9 +18,9 @@
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Swiper from './swiper/custom';
 import objectAssign from 'object-assign';
 import PropTypes from 'prop-types';
+import Swiper from './swiper/custom';
 import { cn } from './utils';
 
 export default class ReactIdSwiper extends Component {
@@ -33,10 +34,7 @@ export default class ReactIdSwiper extends Component {
     renderScrollbar: ({ scrollbar }) => <div className={cn(scrollbar.el)} />,
     renderPagination: ({ pagination }) => <div className={cn(pagination.el)} />,
     renderPrevButton: ({ navigation }) => <div className={cn(navigation.prevEl)} />,
-    renderNextButton: ({ navigation }) => <div className={cn(navigation.nextEl)} />,
-    renderParallax: ({ parallaxEl }) => (
-      <div className={cn(parallaxEl.el)} data-swiper-parallax={parallaxEl.value} />
-    )
+    renderNextButton: ({ navigation }) => <div className={cn(navigation.nextEl)} />
   };
 
   // Proptypes
@@ -55,13 +53,6 @@ export default class ReactIdSwiper extends Component {
     renderPrevButton: PropTypes.func,
     renderNextButton: PropTypes.func,
     renderParallax: PropTypes.func,
-
-    // parallax
-    parallax: PropTypes.bool,
-    parallaxEl: PropTypes.shape({
-      el: PropTypes.string,
-      value: PropTypes.string
-    }),
 
     // swiper parameter
     init: PropTypes.bool,
@@ -322,7 +313,7 @@ export default class ReactIdSwiper extends Component {
 
   rebuildSwiper() {
     this.swiper.destroy(true, true);
-    this.buildSwiper()
+    this.buildSwiper();
   }
 
   updateSwiper() {
@@ -356,15 +347,11 @@ export default class ReactIdSwiper extends Component {
       renderPagination,
       navigation,
       renderPrevButton,
-      renderNextButton,
-      parallax,
-      parallaxEl,
-      renderParallax
+      renderNextButton
     } = this.props;
 
     return (
       <ContainerEl className={containerClass} dir={rtl && 'rtl'}>
-        {parallax && parallaxEl && renderParallax(this.props)}
         <WrapperEl className={wrapperClass}>
           {React.Children.map(children, this.renderContent)}
         </WrapperEl>
