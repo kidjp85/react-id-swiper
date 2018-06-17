@@ -4,7 +4,7 @@
 
 [![Package Quality](http://npm.packagequality.com/badge/react-id-swiper.png)](http://packagequality.com/#?package=react-id-swiper)
 
-react-id-swiper ( Newest version 1.6.5 )
+react-id-swiper ( Newest version 1.6.6 )
 ========================================
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component
 > (Providing lightweight version of Swiper which reduces ~40kb of minified size)
@@ -72,8 +72,8 @@ yarn add react-id-swiper
 
 ## You can also use the standalone UMD build
 ```html
-<script src="https://unpkg.com/react-id-swiper@1.6.5/lib/react-id-swiper.js"></script>
-<script src="https://unpkg.com/react-id-swiper@1.6.5/lib/react-id-swiper.min.js"></script>
+<script src="https://unpkg.com/react-id-swiper@1.6.6/lib/react-id-swiper.js"></script>
+<script src="https://unpkg.com/react-id-swiper@1.6.6/lib/react-id-swiper.min.js"></script>
 ```
 ## Recommendation
 >Swiper stylesheet file is required
@@ -92,30 +92,6 @@ Use stylesheet file from src/styles/  folder (supporting css, less, scss)
 ### Example with default
 >Example with default params
 
-### ES5
-
-```javascript
-var React = require('react');
-var Swiper = require('react-id-swiper');
-
-var Example = React.createClass({
-  render: function() {
-    return (
-      <Swiper>
-        <div>Slide 1</div>
-        <div>Slide 2</div>
-        <div>Slide 3</div>
-        <div>Slide 4</div>
-        <div>Slide 5</div>
-      </Swiper>
-    );
-  }
-});
-
-module.exports = Example;
-```
-
-### ES6
 ```javascript
 import React from 'react';
 import Swiper from 'react-id-swiper';
@@ -141,46 +117,6 @@ export default Example;
 ### Example with params
 
 >Example with navigation buttons
-
-### ES5
-```javascript
-var React = require('react');
-var Swiper = require('react-id-swiper');
-
-var Example = React.createClass({
-  render: function() {
-    var params = {
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
-      spaceBetween: 30
-    };
-
-    return (
-      <Swiper
-        pagination={params.pagination}
-        navigation={params.navigation}
-        spaceBetween={params.spaceBetween}>
-        <div>Slide 1</div>
-        <div>Slide 2</div>
-        <div>Slide 3</div>
-        <div>Slide 4</div>
-        <div>Slide 5</div>
-      </Swiper>
-    );
-  }
-});
-
-module.exports = Example;
-```
-
-### ES6
 
 ```javascript
 import React from 'react';
@@ -218,8 +154,6 @@ export default Example;
 
 ### Example with manipulating swiper from outside swiper component
 >Example with navigation button
-
-### ES6
 
 ```javascript
 import React from 'react';

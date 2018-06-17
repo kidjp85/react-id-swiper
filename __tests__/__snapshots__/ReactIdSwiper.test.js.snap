@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ReactIdSwiper rendering snapshot Custom container & wrapper should render with custom container & wrapper 1`] = `
+exports[`ReactIdSwiper rendering snapshot Custom container & wrapper it should render with custom container & wrapper 1`] = `
 <section
   class="swiper-container"
 >
@@ -21,7 +21,7 @@ exports[`ReactIdSwiper rendering snapshot Custom container & wrapper should rend
 </section>
 `;
 
-exports[`ReactIdSwiper rendering snapshot Default should render default swiper 1`] = `
+exports[`ReactIdSwiper rendering snapshot Default it should render default swiper 1`] = `
 <div
   class="swiper-container"
 >
@@ -42,34 +42,7 @@ exports[`ReactIdSwiper rendering snapshot Default should render default swiper 1
 </div>
 `;
 
-exports[`ReactIdSwiper rendering snapshot Navigation should render navigation buttons 1`] = `
-<div
-  class="swiper-container"
->
-  <div
-    class="swiper-wrapper"
-  >
-    <div
-      class="swiper-slide"
-    >
-      Slide 1
-    </div>
-    <div
-      class="swiper-slide"
-    >
-      Slide 2
-    </div>
-  </div>
-  <div
-    class="swiper-button-next"
-  />
-  <div
-    class="swiper-button-prev"
-  />
-</div>
-`;
-
-exports[`ReactIdSwiper rendering snapshot Navigation should render pagination with customized class name 1`] = `
+exports[`ReactIdSwiper rendering snapshot Navigation it should render navigation buttons 1`] = `
 <div
   class="swiper-container"
 >
@@ -96,7 +69,7 @@ exports[`ReactIdSwiper rendering snapshot Navigation should render pagination wi
 </div>
 `;
 
-exports[`ReactIdSwiper rendering snapshot Navigation should render pagination with customized function 1`] = `
+exports[`ReactIdSwiper rendering snapshot Navigation it should render pagination with customized class name 1`] = `
 <div
   class="swiper-container"
 >
@@ -123,7 +96,34 @@ exports[`ReactIdSwiper rendering snapshot Navigation should render pagination wi
 </div>
 `;
 
-exports[`ReactIdSwiper rendering snapshot No swiping should render slide with swiper-no-swiping class name 1`] = `
+exports[`ReactIdSwiper rendering snapshot Navigation it should render pagination with customized function 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+  <div
+    class="swiper-button-next"
+  />
+  <div
+    class="swiper-button-prev"
+  />
+</div>
+`;
+
+exports[`ReactIdSwiper rendering snapshot No swiping it should render slide with swiper-no-swiping class name 1`] = `
 <div
   class="swiper-container"
 >
@@ -144,7 +144,7 @@ exports[`ReactIdSwiper rendering snapshot No swiping should render slide with sw
 </div>
 `;
 
-exports[`ReactIdSwiper rendering snapshot Pagination should render pagination 1`] = `
+exports[`ReactIdSwiper rendering snapshot Pagination it should render pagination 1`] = `
 <div
   class="swiper-container"
 >
@@ -168,7 +168,7 @@ exports[`ReactIdSwiper rendering snapshot Pagination should render pagination 1`
 </div>
 `;
 
-exports[`ReactIdSwiper rendering snapshot Pagination should render pagination with customized class name 1`] = `
+exports[`ReactIdSwiper rendering snapshot Pagination it should render pagination with customized class name 1`] = `
 <div
   class="swiper-container"
 >
@@ -192,7 +192,7 @@ exports[`ReactIdSwiper rendering snapshot Pagination should render pagination wi
 </div>
 `;
 
-exports[`ReactIdSwiper rendering snapshot Pagination should render pagination with customized function 1`] = `
+exports[`ReactIdSwiper rendering snapshot Pagination it should render pagination with customized function 1`] = `
 <div
   class="swiper-container"
 >
@@ -216,7 +216,7 @@ exports[`ReactIdSwiper rendering snapshot Pagination should render pagination wi
 </div>
 `;
 
-exports[`ReactIdSwiper rendering snapshot Parallax should render parallax 1`] = `
+exports[`ReactIdSwiper rendering snapshot Parallax it should render parallax 1`] = `
 <div
   class="swiper-container"
 >
@@ -241,7 +241,7 @@ exports[`ReactIdSwiper rendering snapshot Parallax should render parallax 1`] = 
 </div>
 `;
 
-exports[`ReactIdSwiper rendering snapshot Parallax should render parallax 2`] = `
+exports[`ReactIdSwiper rendering snapshot Parallax it should render parallax 2`] = `
 <div
   class="swiper-container"
 >
@@ -266,7 +266,7 @@ exports[`ReactIdSwiper rendering snapshot Parallax should render parallax 2`] = 
 </div>
 `;
 
-exports[`ReactIdSwiper rendering snapshot RTL should render with rtl 1`] = `
+exports[`ReactIdSwiper rendering snapshot RTL it should render with rtl 1`] = `
 <div
   class="swiper-container"
   dir="rtl"
@@ -288,7 +288,7 @@ exports[`ReactIdSwiper rendering snapshot RTL should render with rtl 1`] = `
 </div>
 `;
 
-exports[`ReactIdSwiper rendering snapshot Scrollbar should render scrollbar 1`] = `
+exports[`ReactIdSwiper rendering snapshot Scrollbar it should render scrollbar 1`] = `
 <div
   class="swiper-container"
 >

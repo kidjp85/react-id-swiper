@@ -1,8 +1,12 @@
 # Change Log for React-id-swiper
 
-## [v1.6.5](https://github.com/kidjp85/react-id-swiper/compare/1.6.4...1.6.3) - Released on June 14th, 2018
-  * Upgrade swiper@4.3.3
+## [v1.6.6](https://github.com/kidjp85/react-id-swiper/compare/1.6.6...1.6.5) - Released on June 17th, 2018
+  * Upgrade swiper@4.3.3 for custom build
   * Remove support for parallax in lightweight version
+  * Updated test
+
+## [v1.6.5](https://github.com/kidjp85/react-id-swiper/compare/1.6.5...1.6.4) - Released on June 14th, 2018
+  * Upgrade swiper@4.3.3
 
 ## [v1.6.4](https://github.com/kidjp85/react-id-swiper/compare/1.6.4...1.6.3) - Released on May 18th, 2018
   * Provide lightweight version which drops those features below

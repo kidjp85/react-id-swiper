@@ -1,6 +1,6 @@
 {
   "name": "react-id-swiper",
-  "version": "1.6.5",
+  "version": "1.6.6",
   "description": "ReactJs component for iDangerous Swiper",
   "main": "lib/index",
   "scripts": {
@@ -10,7 +10,7 @@
     "lint": "eslint -c .eslintrc src/**/*.js",
     "lint:fix": "eslint --fix -c .eslintrc src/**/*.js",
     "test": "jest",
-    "test:dev": "jest --watch",
+    "test:dev": "jest --watch --coverage",
     "test:coverage": "jest --coverage"
   },
   "pre-commit": [

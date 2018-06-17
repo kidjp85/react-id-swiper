@@ -356,36 +356,37 @@ export default class ReactIdSwiper extends Component {
   }
 
   componentDidUpdate() {
-    if (typeof this.swiper === 'undefined') return;
-    const { rebuildOnUpdate, shouldSwiperUpdate, activeSlideKey } = this.props;
+    if (typeof this.swiper !== 'undefined') {
+      const { rebuildOnUpdate, shouldSwiperUpdate, activeSlideKey } = this.props;
 
-    if (rebuildOnUpdate) {
-      this.rebuildSwiper();
-    } else if (shouldSwiperUpdate) {
-      this.updateSwiper();
+      if (rebuildOnUpdate) {
+        this.rebuildSwiper();
+      } else if (shouldSwiperUpdate) {
+        this.updateSwiper();
 
-      const numSlides = this.swiper.slides.length;
-      if (numSlides <= this.swiper.activeIndex) {
-        const index = Math.max(numSlides - 1, 0);
-        this.swiper.slideTo(index);
-      }
-    }
-
-    if (activeSlideKey) {
-      let activeSlideId = null;
-      let id = 0;
-
-      React.Children.forEach(this.props.children, child => {
-        if (child) {
-          if (child.key === activeSlideKey) {
-            activeSlideId = id;
-          }
-          id += 1;
+        const numSlides = this.swiper.slides.length;
+        if (numSlides <= this.swiper.activeIndex) {
+          const index = Math.max(numSlides - 1, 0);
+          this.swiper.slideTo(index);
         }
-      });
+      }
 
-      if (activeSlideId !== null) {
-        this.swiper.slideTo(activeSlideId);
+      if (activeSlideKey) {
+        let activeSlideId = null;
+        let id = 0;
+
+        React.Children.forEach(this.props.children, child => {
+          if (child) {
+            if (child.key === activeSlideKey) {
+              activeSlideId = id;
+            }
+            id += 1;
+          }
+        });
+
+        if (activeSlideId !== null) {
+          this.swiper.slideTo(activeSlideId);
+        }
       }
     }
   }
@@ -401,7 +402,7 @@ export default class ReactIdSwiper extends Component {
 
   rebuildSwiper() {
     this.swiper.destroy(true, true);
-    this.buildSwiper()
+    this.buildSwiper();
   }
 
   updateSwiper() {
@@ -420,7 +421,6 @@ export default class ReactIdSwiper extends Component {
       className: slideClassNames.join(' ').trim()
     });
   }
-
 
   render() {
     const {

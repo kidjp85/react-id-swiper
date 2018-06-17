@@ -22,7 +22,7 @@ describe('ReactIdSwiper', () => {
   describe('defaultProps', () => {
     const component = mountSwiper({});
 
-    it('should have default props', () => {
+    test('should have default props', () => {
       expect(component.prop('containerClass')).toEqual('swiper-container');
       expect(component.prop('wrapperClass')).toEqual('swiper-wrapper');
       expect(component.prop('slideClass')).toEqual('swiper-slide');
@@ -31,30 +31,77 @@ describe('ReactIdSwiper', () => {
     });
   });
 
-  describe('lifecycle', () => {
+  describe('methods', () => {
     let component;
+    let instance;
 
     beforeEach(() => {
       component = mountSwiper({});
+      instance = component.instance();
     });
 
     describe('componentDidMount', () => {
-      it('should initialize swiper', () => {
-        expect(component.instance().swiper).toBeDefined();
+      test('it should initialize swiper', () => {
+        expect(instance.swiper).toBeDefined();
       });
     });
 
     describe('componentWillUnmount', () => {
-      it('should delete swiper instance', () => {
-        const componentWillUnmount = jest.spyOn(component.instance(), 'componentWillUnmount');
+      let destroySwiper;
+
+      beforeEach(() => {
+        destroySwiper = jest.spyOn(instance.swiper, 'destroy');
+      });
+
+      afterEach(() => {
+        destroySwiper.mockReset();
+      });
+
+      test('it should return if swiper instance does not exist', () => {
+        const { swiper } = instance;
+        instance.swiper = undefined;
         component.unmount();
-        expect(componentWillUnmount).toHaveBeenCalled();
+        expect(destroySwiper).not.toHaveBeenCalled();
+        instance.swiper = swiper;
+      });
+
+      test('it should delete swiper instance if exist', () => {
+        component.unmount();
+        expect(destroySwiper).toHaveBeenCalled();
       });
     });
 
     describe('componentDidUpdate', () => {
-      it('should rebuild swiper when rebuildOnUpdate is true', () => {
-        const rebuildSwiper = jest.spyOn(component.instance(), 'rebuildSwiper');
+      let rebuildSwiper;
+      let updateSwiper;
+      let swiperSlide;
+
+      beforeEach(() => {
+        rebuildSwiper = jest.spyOn(instance, 'rebuildSwiper');
+        updateSwiper = jest.spyOn(instance, 'updateSwiper');
+        swiperSlide = jest.spyOn(instance.swiper, 'slideTo');
+      });
+
+      afterEach(() => {
+        rebuildSwiper.mockReset();
+        updateSwiper.mockReset();
+        swiperSlide.mockReset();
+      });
+
+      test('it should return if swiper instance does not exist', () => {
+        const { swiper } = instance;
+        instance.swiper = undefined;
+        component.setProps({
+          rebuildOnUpdate: true
+        });
+
+        expect(rebuildSwiper).not.toHaveBeenCalled();
+        expect(updateSwiper).not.toHaveBeenCalled();
+
+        instance.swiper = swiper;
+      });
+
+      test('it should rebuild swiper when rebuildOnUpdate is true', () => {
         component.setProps({
           rebuildOnUpdate: true
         });
@@ -62,13 +109,57 @@ describe('ReactIdSwiper', () => {
         expect(rebuildSwiper).toHaveBeenCalled();
       });
 
-      it('should update swiper when shouldSwiperUpdate is true', () => {
-        const updateSwiper = jest.spyOn(component.instance(), 'updateSwiper');
+      test('it should update swiper when shouldSwiperUpdate is true', () => {
         component.setProps({
           shouldSwiperUpdate: true
         });
 
         expect(updateSwiper).toHaveBeenCalled();
+        expect(swiperSlide).toHaveBeenCalled();
+      });
+
+      test('it should not update swiper when shouldSwiperUpdate nor rebuildOnUpdate is true', () => {
+        component.setProps({
+          shouldSwiperUpdate: false,
+          shourebuildOnUpdateldSwiperUpdate: false
+        });
+
+        expect(updateSwiper).not.toHaveBeenCalled();
+        expect(rebuildSwiper).not.toHaveBeenCalled();
+      });
+    });
+
+    describe('updateSwiper', () => {
+      let updateSwiper;
+
+      beforeEach(() => {
+        updateSwiper = jest.spyOn(instance.swiper, 'update');
+      });
+
+      afterEach(() => {
+        updateSwiper.mockReset();
+      });
+
+      test('it should not update swiper if swiper instance does not exist', () => {
+        const { swiper } = instance;
+        instance.swiper = undefined;
+        instance.updateSwiper();
+
+        expect(updateSwiper).not.toHaveBeenCalled();
+
+        instance.swiper = swiper;
+      });
+
+      test('it should update swiper if swiper instance exists', () => {
+        instance.updateSwiper();
+
+        expect(updateSwiper).toHaveBeenCalled();
+      });
+    });
+
+    describe('renderContent', () => {
+      test('it should return false if element does not exist', () => {
+        expect(instance.renderContent(null)).toBeFalsy();
       });
     });
   });
@@ -76,7 +167,7 @@ describe('ReactIdSwiper', () => {
   describe('rendering snapshot', () => {
     // With default props
     describe('Default', () => {
-      it('should render default swiper', () => {
+      test('it should render default swiper', () => {
         expect(renderSwiper()).toMatchSnapshot();
       });
     });
@@ -90,11 +181,11 @@ describe('ReactIdSwiper', () => {
         }
       };
 
-      it('should render pagination', () => {
+      test('it should render pagination', () => {
         expect(renderSwiper(params)).toMatchSnapshot();
       });
 
-      it('should render pagination with customized class name', () => {
+      test('it should render pagination with customized class name', () => {
         const customizedParams = {
           ...params,
           paginationCustomizedClass: 'pagination-with-custom-class-name'
@@ -103,7 +194,7 @@ describe('ReactIdSwiper', () => {
         expect(renderSwiper(customizedParams)).toMatchSnapshot();
       });
 
-      it('should render pagination with customized function', () => {
+      test('it should render pagination with customized function', () => {
         const customizedParams = {
           ...params,
           renderCustomPagination: () => <span className="pagination-with-custom-function" />
@@ -122,11 +213,11 @@ describe('ReactIdSwiper', () => {
         }
       };
 
-      it('should render navigation buttons', () => {
+      test('it should render navigation buttons', () => {
         expect(renderSwiper(params)).toMatchSnapshot();
       });
 
-      it('should render pagination with customized class name', () => {
+      test('it should render pagination with customized class name', () => {
         const customizedParams = {
           ...params,
           nextButtonCustomizedClass: 'next-button-with-customized-class-name',
@@ -136,7 +227,7 @@ describe('ReactIdSwiper', () => {
         expect(renderSwiper(customizedParams)).toMatchSnapshot();
       });
 
-      it('should render pagination with customized function', () => {
+      test('it should render pagination with customized function', () => {
         const customizedParams = {
           ...params,
           renderCustomNextButton: () => <span>Customized next button</span>,
@@ -156,7 +247,7 @@ describe('ReactIdSwiper', () => {
         }
       };
 
-      it('should render parallax', () => {
+      test('it should render parallax', () => {
         expect(renderSwiper(params)).toMatchSnapshot();
       });
     });
@@ -170,7 +261,7 @@ describe('ReactIdSwiper', () => {
         }
       };
 
-      it('should render parallax', () => {
+      test('it should render parallax', () => {
         expect(renderSwiper(params)).toMatchSnapshot();
       });
     });
@@ -183,7 +274,7 @@ describe('ReactIdSwiper', () => {
         }
       };
 
-      it('should render scrollbar', () => {
+      test('it should render scrollbar', () => {
         expect(renderSwiper(params)).toMatchSnapshot();
       });
     });
@@ -193,7 +284,7 @@ describe('ReactIdSwiper', () => {
         noSwiping: true
       };
 
-      it('should render slide with swiper-no-swiping class name', () => {
+      test('it should render slide with swiper-no-swiping class name', () => {
         expect(renderSwiper(params)).toMatchSnapshot();
       });
     });
@@ -203,7 +294,7 @@ describe('ReactIdSwiper', () => {
         rtl: true
       };
 
-      it('should render with rtl', () => {
+      test('it should render with rtl', () => {
         expect(renderSwiper(params)).toMatchSnapshot();
       });
     });
@@ -214,7 +305,7 @@ describe('ReactIdSwiper', () => {
         WrapperEl: 'section'
       };
 
-      it('should render with custom container & wrapper', () => {
+      test('it should render with custom container & wrapper', () => {
         expect(renderSwiper(params)).toMatchSnapshot();
       });
     });
