@@ -74,15 +74,18 @@ describe('ReactIdSwiper', () => {
     describe('componentDidUpdate', () => {
       let rebuildSwiper;
       let updateSwiper;
+      let swiperSlide;
 
       beforeEach(() => {
         rebuildSwiper = jest.spyOn(instance, 'rebuildSwiper');
         updateSwiper = jest.spyOn(instance, 'updateSwiper');
+        swiperSlide = jest.spyOn(instance.swiper, 'slideTo');
       });
 
       afterEach(() => {
         rebuildSwiper.mockReset();
         updateSwiper.mockReset();
+        swiperSlide.mockReset();
       });
 
       test('it should return if swiper instance does not exist', () => {
@@ -112,6 +115,17 @@ describe('ReactIdSwiper', () => {
         });
 
         expect(updateSwiper).toHaveBeenCalled();
+        expect(swiperSlide).toHaveBeenCalled();
+      });
+
+      test('it should not update swiper when shouldSwiperUpdate nor rebuildOnUpdate is true', () => {
+        component.setProps({
+          shouldSwiperUpdate: false,
+          shourebuildOnUpdateldSwiperUpdate: false
+        });
+
+        expect(updateSwiper).not.toHaveBeenCalled();
+        expect(rebuildSwiper).not.toHaveBeenCalled();
       });
     });
 
