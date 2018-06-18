@@ -190,7 +190,13 @@ export default class Example extends React.Component {
 
     return(
       <div>
-        <Swiper {...params} ref={node => if(node) this.swiper = node.swiper }/>
+        <Swiper {...params} ref={node => if(node) this.swiper = node.swiper }>
+          <div>Slide 1</div>
+          <div>Slide 2</div>
+          <div>Slide 3</div>
+          <div>Slide 4</div>
+          <div>Slide 5</div>
+        </Swiper>
         <button onClick={this.goNext}>Next</button>
         <button onClick={this.goPrev}>Prev</button>
       </div>
