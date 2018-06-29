@@ -31,6 +31,7 @@ React-id-swiper's original props
 | shouldSwiperUpdate | Boolean | false | Update swiper when component is updated |
 | rebuildOnUpdate | Boolean | false | Rebuild swiper when component is updated |
 | noSwiping | Boolean | false | Disable swiping by condition |
+| activeSlideKey | String | null | Initial slide index |
 | renderPrevButton | function |  | Render props function for prev button |
 | renderNextButton | function |  | Render props function for next button |
 | renderScrollbar | function |  | Render props function for scrollbar |
