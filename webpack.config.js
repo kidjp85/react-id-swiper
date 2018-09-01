@@ -1,149 +1,81 @@
-const path = require('path');
+const { resolve } = require('path');
 const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-module.exports = [
+const files = [
   {
-    entry: './src/index.js',
-    output: {
-      filename: './lib/react-id-swiper.js',
-      libraryTarget: 'umd',
-      library: 'ReactIdSwiper',
-      auxiliaryComment: ''
-    },
-    resolve: {
-      extensions: ['.js'],
-      modules: ['./src', 'node_modules']
-    },
-    resolveLoader: {
-      moduleExtensions: ['-loader']
-    },
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          loader: 'babel',
-          include: [path.join(__dirname, 'src')]
-        }
-      ]
-    },
-    externals: {
-      react: 'React',
-      'react-dom': 'ReactDOM'
-    }
+    outputName: 'react-id-swiper',
+    entryName: 'index'
   },
   {
-    entry: './src/custom.js',
-    output: {
-      filename: './lib/react-id-swiper.custom.js',
-      libraryTarget: 'umd',
-      library: 'ReactIdSwiper',
-      auxiliaryComment: ''
-    },
-    resolve: {
-      extensions: ['.js'],
-      modules: ['./src', 'node_modules']
-    },
-    resolveLoader: {
-      moduleExtensions: ['-loader']
-    },
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          loader: 'babel',
-          include: [path.join(__dirname, 'src')]
-        }
-      ]
-    },
-    externals: {
-      react: 'React',
-      'react-dom': 'ReactDOM'
-    }
+    outputName: 'react-id-swiper.custom',
+    entryName: 'custom'
   },
   {
-    entry: './src/index.js',
-    output: {
-      filename: './lib/react-id-swiper.min.js',
-      libraryTarget: 'umd',
-      library: 'ReactIdSwiper'
-    },
-    resolve: {
-      extensions: ['.js'],
-      modules: ['./src', 'node_modules']
-    },
-    resolveLoader: {
-      moduleExtensions: ['-loader']
-    },
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          loader: 'babel',
-          include: [path.join(__dirname, 'src')]
-        }
-      ]
-    },
-    externals: {
-      react: 'React',
-      'react-dom': 'ReactDOM'
-    },
-    plugins: [
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify('production')
-        }
-      }),
-      new webpack.optimize.UglifyJsPlugin({
-        output: {
-          comments: false
-        },
-        compress: {
-          warnings: false
-        }
-      })
-    ]
+    outputName: 'react-id-swiper.min',
+    entryName: 'index',
+    minimizer: true
   },
   {
-    entry: './src/custom.js',
-    output: {
-      filename: './lib/react-id-swiper.custom.min.js',
-      libraryTarget: 'umd',
-      library: 'ReactIdSwiper'
-    },
-    resolve: {
-      extensions: ['.js'],
-      modules: ['./src', 'node_modules']
-    },
-    resolveLoader: {
-      moduleExtensions: ['-loader']
-    },
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          loader: 'babel',
-          include: [path.join(__dirname, 'src')]
-        }
-      ]
-    },
-    externals: {
-      react: 'React',
-      'react-dom': 'ReactDOM'
-    },
-    plugins: [
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify('production')
-        }
-      }),
-      new webpack.optimize.UglifyJsPlugin({
-        output: {
-          comments: false
-        },
-        compress: {
-          warnings: false
-        }
-      })
-    ]
+    outputName: 'react-id-swiper.custom.min',
+    entryName: 'custom',
+    minimizer: true
   }
 ];
+
+const PATHS = {
+  src: resolve(__dirname, 'src'),
+  output: resolve(__dirname, 'lib')
+};
+
+module.exports = files.map(({ entryName, outputName, minimizer }) => ({
+  entry: `${PATHS.src}/${entryName}.js`,
+  output: {
+    path: PATHS.output,
+    filename: `${outputName}.js`,
+    libraryTarget: 'umd',
+    library: 'ReactIdSwiper',
+    auxiliaryComment: ''
+  },
+  resolve: {
+    extensions: ['.js'],
+    modules: ['./src', 'node_modules']
+  },
+  resolveLoader: {
+    moduleExtensions: ['-loader']
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel',
+        include: [PATHS.src]
+      }
+    ]
+  },
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM'
+  },
+  mode: 'production',
+  optimization: {
+    minimizer: minimizer
+      ? [
+          new UglifyJsPlugin({
+            uglifyOptions: {
+              output: {
+                comments: false
+              }
+            }
+          })
+        ]
+      : []
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    })
+  ]
+}));

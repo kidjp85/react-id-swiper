@@ -1,5 +1,5 @@
 node_modules
 src/__tests__
-src/swiper/custom.js
+src/swiper/
 lib
 coverage
