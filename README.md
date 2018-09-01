@@ -4,7 +4,7 @@
 
 [![Package Quality](http://npm.packagequality.com/badge/react-id-swiper.png)](http://packagequality.com/#?package=react-id-swiper)
 
-react-id-swiper ( Newest version 1.6.6 )
+react-id-swiper ( Newest version 1.6.7 )
 ========================================
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component
 > (Providing lightweight version of Swiper which reduces ~40kb of minified size)
@@ -73,20 +73,18 @@ yarn add react-id-swiper
 
 ## You can also use the standalone UMD build
 ```html
-<script src="https://unpkg.com/react-id-swiper@1.6.6/lib/react-id-swiper.js"></script>
-<script src="https://unpkg.com/react-id-swiper@1.6.6/lib/react-id-swiper.min.js"></script>
+<script src="https://unpkg.com/react-id-swiper@1.6.7/lib/react-id-swiper.js"></script>
+<script src="https://unpkg.com/react-id-swiper@1.6.7/lib/react-id-swiper.min.js"></script>
 ```
 ## Recommendation
 >Swiper stylesheet file is required
 ### Use Swiper stylesheet file from CDN
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.css">
 ```
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
 ```
-### OR
-Use stylesheet file from src/styles/  folder (supporting css, less, scss)
 
 ## Usage
 
@@ -211,7 +209,7 @@ export default class Example extends React.Component {
 
 ```javascript
 const params = {
-  pargination: {
+  pagination: {
     el: '.swiper-pagination.customized-swiper-pagination',
   }, // Add your class name for pagination container
   navigation: {
