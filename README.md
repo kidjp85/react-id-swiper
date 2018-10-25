@@ -21,22 +21,22 @@ Swiper is not compatible with all platforms, it is a modern touch slider which i
 React-id-swiper's original props
 ================================
 
-| Name | Type | Default value | Description |
-| ---  | ---  | ---           | ---         |
-| ContainerEl | String | 'div' | Element type for container |
-| containerClass | String | swiper-container | Swiper container class name |
-| WrapperEl | String | 'div' | Element type for wrapper |
-| wrapperClass | String | swiper-wrapper | Swiper wrapper class name |
-| slideClass | String | swiper-slide | Swiper slide class name |
-| shouldSwiperUpdate | Boolean | false | Update swiper when component is updated |
-| rebuildOnUpdate | Boolean | false | Rebuild swiper when component is updated |
-| noSwiping | Boolean | false | Disable swiping by condition |
-| activeSlideKey | String | null | Initial slide index |
-| renderPrevButton | function |  | Render props function for prev button |
-| renderNextButton | function |  | Render props function for next button |
-| renderScrollbar | function |  | Render props function for scrollbar |
-| renderPagination | function |  | Render props function for pagination |
-| renderParallax | function |  | Render props function for parallax |
+| Name               | Type     | Default value    | Description                              |
+| ------------------ | -------- | ---------------- | ---------------------------------------- |
+| ContainerEl        | String   | 'div'            | Element type for container               |
+| containerClass     | String   | swiper-container | Swiper container class name              |
+| WrapperEl          | String   | 'div'            | Element type for wrapper                 |
+| wrapperClass       | String   | swiper-wrapper   | Swiper wrapper class name                |
+| slideClass         | String   | swiper-slide     | Swiper slide class name                  |
+| shouldSwiperUpdate | Boolean  | false            | Update swiper when component is updated  |
+| rebuildOnUpdate    | Boolean  | false            | Rebuild swiper when component is updated |
+| noSwiping          | Boolean  | false            | Disable swiping by condition             |
+| activeSlideKey     | String   | null             | Initial slide index                      |
+| renderPrevButton   | function |                  | Render props function for prev button    |
+| renderNextButton   | function |                  | Render props function for next button    |
+| renderScrollbar    | function |                  | Render props function for scrollbar      |
+| renderPagination   | function |                  | Render props function for pagination     |
+| renderParallax     | function |                  | Render props function for parallax       |
 
 
 >React-id-swiper's deprecated props (from v1.6.3)
@@ -190,10 +190,6 @@ export default class Example extends React.Component {
         el: '.swiper-pagination',
         type: 'bullets',
         clickable: true
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
       }
     }
 
