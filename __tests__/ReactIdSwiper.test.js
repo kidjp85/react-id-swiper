@@ -5,16 +5,16 @@ import ReactIdSwiper from '../src/index';
 const renderSwiper = params =>
   render(
     <ReactIdSwiper {...params}>
-      <div>Slide 1</div>
-      <div>Slide 2</div>
+      <div key="s1">Slide 1</div>
+      <div key="s2">Slide 2</div>
     </ReactIdSwiper>
   );
 
 const mountSwiper = params =>
   mount(
     <ReactIdSwiper {...params}>
-      <div>Slide 1</div>
-      <div>Slide 2</div>
+      <div key="s1">Slide 1</div>
+      <div key="s2">Slide 2</div>
     </ReactIdSwiper>
   );
 
@@ -43,6 +43,13 @@ describe('ReactIdSwiper', () => {
     describe('componentDidMount', () => {
       test('it should initialize swiper', () => {
         expect(instance.swiper).toBeDefined();
+      });
+
+      test('it should slide to wanted slide if `activeSlideKey` is given', () => {
+        component = mountSwiper({ activeSlideKey: 's2' });
+        const { swiper } = component.instance();
+
+        expect(swiper.activeIndex).toBe(1);
       });
     });
 
@@ -126,6 +133,13 @@ describe('ReactIdSwiper', () => {
 
         expect(updateSwiper).not.toHaveBeenCalled();
         expect(rebuildSwiper).not.toHaveBeenCalled();
+      });
+
+      test('it should slide to wanted slide if `activeSlideKey` is given', () => {
+        component = mountSwiper({ activeSlideKey: 's2' });
+        const { swiper } = component.instance();
+
+        expect(swiper.activeIndex).toBe(1);
       });
     });
 
