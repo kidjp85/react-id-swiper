@@ -1,6 +1,6 @@
 {
-  "name": "react-id-swiper",
-  "version": "1.6.8",
+  "name": "@eredessil/react-id-swiper",
+  "version": "1.7.0",
   "description": "ReactJs component for iDangerous Swiper",
   "main": "lib/index",
   "scripts": {
@@ -26,13 +26,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kidjp85/react-id-swiper.git"
+    "url": "git://github.com/eredessil/react-id-swiper.git"
   },
-  "author": "Phuc Nguyen Hoang<phucnguyenhoang1985@gmail.com>",
+  "author": "Norbert feher<fehernorbert92@gmail.com>",
   "dependencies": {
     "object-assign": "^4.1.1",
     "prop-types": "^15.6.2",
-    "swiper": "4.4.1"
+    "swiper": "4.4.6"
   },
   "peerDependencies": {
     "react": "^15.0.0 || ^16.0.0",
