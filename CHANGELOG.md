@@ -1,5 +1,10 @@
 # Change Log for React-id-swiper
 
+## [v1.6.9](https://github.com/kidjp85/react-id-swiper/compare/1.6.9...1.6.8) - Released on Feb 24th, 2019
+  * Upgrade swiper@4.4.6
+  * Update babel 7
+  * [PR-227](https://github.com/kidjp85/react-id-swiper/pull/227) by [jpetitcolas](https://github.com/jpetitcolas)
+
 ## [v1.6.8](https://github.com/kidjp85/react-id-swiper/compare/1.6.8...1.6.7) - Released on Sep 20th, 2018
   * Upgrade swiper@4.4.1
   * Put `src/styles` folder back which only support `css`, `scss`

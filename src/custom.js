@@ -265,39 +265,32 @@ export default class ReactIdSwiper extends Component {
 
   componentDidMount() {
     this.buildSwiper();
+
+    const slideToIndex = this.getActiveSlideIndexFromProps();
+    if (slideToIndex !== null) {
+      this.swiper.slideTo(slideToIndex);
+    }
   }
 
   componentDidUpdate() {
-    if (typeof this.swiper === 'undefined') return;
-    const { rebuildOnUpdate, shouldSwiperUpdate, activeSlideKey } = this.props;
+    if (typeof this.swiper !== 'undefined') {
+      const { rebuildOnUpdate, shouldSwiperUpdate } = this.props;
 
-    if (rebuildOnUpdate) {
-      this.rebuildSwiper();
-    } else if (shouldSwiperUpdate) {
-      this.updateSwiper();
+      if (rebuildOnUpdate) {
+        this.rebuildSwiper();
+      } else if (shouldSwiperUpdate) {
+        this.updateSwiper();
 
-      const numSlides = this.swiper.slides.length;
-      if (numSlides <= this.swiper.activeIndex) {
-        const index = Math.max(numSlides - 1, 0);
-        this.swiper.slideTo(index);
-      }
-    }
-
-    if (activeSlideKey) {
-      let activeSlideId = null;
-      let id = 0;
-
-      React.Children.forEach(this.props.children, child => {
-        if (child) {
-          if (child.key === activeSlideKey) {
-            activeSlideId = id;
-          }
-          id += 1;
+        const numSlides = this.swiper.slides.length;
+        if (numSlides <= this.swiper.activeIndex) {
+          const index = Math.max(numSlides - 1, 0);
+          this.swiper.slideTo(index);
         }
-      });
+      }
 
-      if (activeSlideId !== null) {
-        this.swiper.slideTo(activeSlideId);
+      const slideToIndex = this.getActiveSlideIndexFromProps();
+      if (slideToIndex !== null) {
+        this.swiper.slideTo(slideToIndex);
       }
     }
   }
@@ -305,6 +298,28 @@ export default class ReactIdSwiper extends Component {
   componentWillUnmount() {
     if (typeof this.swiper !== 'undefined') this.swiper.destroy(true, true);
     delete this.swiper;
+  }
+
+  getActiveSlideIndexFromProps() {
+    const { activeSlideKey, children } = this.props;
+
+    if (!activeSlideKey) {
+      return null;
+    }
+
+    let activeSlideId = null;
+    let id = 0;
+
+    React.Children.forEach(children, child => {
+      if (child) {
+        if (child.key === activeSlideKey) {
+          activeSlideId = id;
+        }
+        id += 1;
+      }
+    });
+
+    return activeSlideId;
   }
 
   buildSwiper() {
