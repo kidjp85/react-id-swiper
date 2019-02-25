@@ -1,7 +1,6 @@
 /*
   NOTE: Custom version won't support those features below
   - Virtual
-  - Keyboard
   - Mouse wheel
   - Zoom
   - Lazy load image
@@ -144,6 +143,12 @@ export default class ReactIdSwiper extends Component {
 
     // breakpoints
     breakpoints: PropTypes.object,
+
+    //keyboard
+    keyboard: PropTypes.shape({
+      enabled: PropTypes.bool,
+      onlyInViewport: PropTypes.bool,
+    }),
 
     // observer
     observer: PropTypes.bool,
