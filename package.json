@@ -11,7 +11,7 @@
     "build:cleanup": "rimraf lib",
     "build:lib": "npm run build:cleanup && tsc",
     "build:standalone": "cross-env BABEL_ENV=production webpack",
-    "build": "npm run build:lib && npm build:standalone",
+    "build": "npm run build:lib && npm run build:standalone",
     "lint": "tslint --project tslint.json 'src/**/*.ts?(x)'",
     "lint:fix": "tslint --fix --project tslint.json 'src/**/*.ts?(x)'",
     "test": "jest",
@@ -21,9 +21,6 @@
     "preversion": "npm run lint && npm run lint",
     "prepublishOnly": "npm run test"
   },
-  "pre-commit": [
-    "lint"
-  ],
   "keywords": [
     "iDangerous",
     "Swiper",
@@ -63,7 +60,6 @@
     "enzyme-adapter-react-16": "^1.10.0",
     "enzyme-to-json": "^3.3.5",
     "jest": "^24.4.0",
-    "pre-commit": "^1.2.2",
     "prettier": "^1.16.4",
     "rimraf": "^2.6.3",
     "ts-jest": "^24.0.0",

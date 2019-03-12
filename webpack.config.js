@@ -29,7 +29,7 @@ module.exports = files.map(({ entryName, outputName, minimizer }) => ({
     auxiliaryComment: ''
   },
   resolve: {
-    extensions: ['.tsx', '.ts'],
+    extensions: ['.tsx', '.ts', '.js'],
     modules: ['./src', 'node_modules']
   },
   resolveLoader: {
