@@ -8,17 +8,8 @@ const files = [
     entryName: 'index'
   },
   {
-    outputName: 'react-id-swiper.custom',
-    entryName: 'custom'
-  },
-  {
     outputName: 'react-id-swiper.min',
     entryName: 'index',
-    minimizer: true
-  },
-  {
-    outputName: 'react-id-swiper.custom.min',
-    entryName: 'custom',
     minimizer: true
   }
 ];
@@ -29,7 +20,7 @@ const PATHS = {
 };
 
 module.exports = files.map(({ entryName, outputName, minimizer }) => ({
-  entry: `${PATHS.src}/${entryName}.js`,
+  entry: `${PATHS.src}/${entryName}.tsx`,
   output: {
     path: PATHS.output,
     filename: `${outputName}.js`,
@@ -38,7 +29,7 @@ module.exports = files.map(({ entryName, outputName, minimizer }) => ({
     auxiliaryComment: ''
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.tsx', '.ts'],
     modules: ['./src', 'node_modules']
   },
   resolveLoader: {
@@ -47,15 +38,15 @@ module.exports = files.map(({ entryName, outputName, minimizer }) => ({
   module: {
     rules: [
       {
-        test: /\.js$/,
-        loader: 'babel',
+        test: /\.ts(x)?$/,
+        loader: 'awesome-typescript',
         include: [PATHS.src]
       }
     ]
   },
   externals: {
     react: 'React',
-    'react-dom': 'ReactDOM'
+    swiper: 'Swiper'
   },
   mode: 'production',
   optimization: {

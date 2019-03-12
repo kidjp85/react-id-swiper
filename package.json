@@ -1,17 +1,25 @@
 {
   "name": "react-id-swiper",
-  "version": "1.6.9",
+  "version": "2.0.0-beta",
   "description": "ReactJs component for iDangerous Swiper",
   "main": "lib/index",
+  "files": [
+    "lib/**/*"
+  ],
+  "types": "lib/index.d.ts",
   "scripts": {
-    "build:lib": "rm -rf lib/* && babel src -d lib",
+    "build:cleanup": "rimraf lib",
+    "build:lib": "npm run build:cleanup && tsc",
     "build:standalone": "cross-env BABEL_ENV=production webpack",
-    "build": "yarn test && yarn build:lib && yarn build:standalone",
-    "lint": "eslint src/**/*.js",
-    "lint:fix": "eslint src/**/*.js",
+    "build": "npm run build:lib && npm build:standalone",
+    "lint": "tslint --project tslint.json 'src/**/*.ts?(x)'",
+    "lint:fix": "tslint --fix --project tslint.json 'src/**/*.ts?(x)'",
     "test": "jest",
     "test:dev": "jest --watch --coverage",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "prepare": "npm run build",
+    "preversion": "npm run lint && npm run lint",
+    "prepublishOnly": "npm run test"
   },
   "pre-commit": [
     "lint"
@@ -22,53 +30,54 @@
     "Reactjs"
   ],
   "engines": {
-    "node": ">= 4.7.0"
+    "node": ">= 6.11.0"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/kidjp85/react-id-swiper.git"
   },
-  "author": "Phuc Nguyen Hoang<phucnguyenhoang1985@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/kidjp85/react-id-swiper/issues"
+  },
   "dependencies": {
-    "object-assign": "^4.1.1",
-    "prop-types": "^15.7.2",
-    "swiper": "^4.4.6"
+    "object-assign": "^4.1.1"
   },
   "peerDependencies": {
-    "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "swiper": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.3.3",
-    "@babel/plugin-proposal-class-properties": "^7.3.3",
-    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
-    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.1.0",
-    "babel-loader": "^8.0.5",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
-    "babel-plugin-transform-react-remove-prop-types": "0.4.13",
+    "@types/enzyme": "^3.9.0",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/object-assign": "^4.0.30",
+    "@types/react": "^16.8.7",
+    "@types/react-dom": "^16.8.2",
+    "@types/swiper": "^4.4.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-jest": "^24.4.0",
     "cross-env": "^5.2.0",
     "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.9.1",
+    "enzyme-adapter-react-16": "^1.10.0",
     "enzyme-to-json": "^3.3.5",
-    "eslint": "^5.14.1",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^4.0.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.12.4",
-    "jest": "^24.1.0",
+    "jest": "^24.4.0",
     "pre-commit": "^1.2.2",
     "prettier": "^1.16.4",
-    "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0",
-    "react-test-renderer": "^16.8.3",
-    "uglifyjs-webpack-plugin": "^2.1.1",
-    "webpack": "^4.29.5",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.0",
+    "ts-loader": "^5.3.3",
+    "tslint": "^5.13.1",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-loader": "^3.5.4",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-react": "^3.6.0",
+    "tslint-react-hooks": "^2.0.0-alpha.2",
+    "typescript": "^3.3.3333",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
   },
   "jest": {
@@ -80,19 +89,28 @@
       "enzyme-to-json/serializer"
     ],
     "transform": {
-      "^.+\\.js$": "babel-jest"
+      "^.+\\.(ts|tsx)$": "ts-jest",
+      "^.+\\.(js|jsx)$": "babel-jest"
     },
     "moduleFileExtensions": [
-      "js",
-      "jsx"
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "roots": [
+      "<rootDir>/src/"
     ],
     "moduleDirectories": [
       "node_modules",
-      "src"
+      "<rootDir>/src"
     ],
-    "setupFilesAfterEnv": [
-      "./test-setup.js"
+    "setupFiles": [
+      "<rootDir>/src/tests/setup.ts"
+    ],
+    "testMatch": [
+      "<rootDir>/src/tests/**/*.test.(ts|tsx|js)"
     ]
   },
+  "author": "Phuc Nguyen Hoang<phucnguyenhoang1985@gmail.com>",
   "license": "MIT"
 }

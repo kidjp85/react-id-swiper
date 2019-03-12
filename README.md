@@ -4,10 +4,9 @@
 
 [![Package Quality](http://npm.packagequality.com/badge/react-id-swiper.png)](http://packagequality.com/#?package=react-id-swiper)
 
-react-id-swiper ( Newest version 1.6.9 )
+react-id-swiper ( Newest version 2.0.0 )
 ========================================
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component
-> (Providing lightweight version of Swiper which reduces ~40kb of minified size)
 
 ![Demo](https://media.giphy.com/media/mByDrCTcJch4HVhmfi/giphy.gif)
 
@@ -39,19 +38,6 @@ React-id-swiper's original props
 | renderParallax     | function |                  | Render props function for parallax       |
 
 
->React-id-swiper's deprecated props (from v1.6.3)
-
-- renderCustomPrevButton
-- renderCustomNextButton
-- renderCustomScrollbar
-- renderCustomPagination
-- renderCustomParallax
-- prevButtonCustomizedClass,
-- nextButtonCustomizedClass,
-- paginationCustomizedClass,
-- scrollbarCustomizedClass
-
-
 NOTE: You can also use Swiper's original params too.Swiper API documentation [HERE](http://idangero.us/swiper/api/)
 
 DEMO
@@ -75,8 +61,8 @@ yarn add react-id-swiper
 ## You can also use the standalone UMD build
 
 ```html
-<script src="https://unpkg.com/react-id-swiper@1.6.9/lib/react-id-swiper.js"></script>
-<script src="https://unpkg.com/react-id-swiper@1.6.9/lib/react-id-swiper.min.js"></script>
+<script src="https://unpkg.com/react-id-swiper@2.0.0/lib/react-id-swiper.js"></script>
+<script src="https://unpkg.com/react-id-swiper@2.0.0/lib/react-id-swiper.min.js"></script>
 ```
 ## Recommendation
 
@@ -85,11 +71,11 @@ yarn add react-id-swiper
 ### Use Swiper stylesheet file from CDN
 
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
 ```
 
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
 ```
 
 ### OR
@@ -242,64 +228,6 @@ const params = {
   renderPrevButton: () => <button className="swiper-button-prev">Prev</button>,
   renderNextButton: () => <button className="swiper-button-next">Next</button>,
 }
-```
-
-## React-Id-Swiper also provides lightweight version for Swiper (reduce ~40kb of minified size)
-
-> Those features below are not included in lightweight version
-
-  - Virtual
-  - Keyboard
-  - Mouse wheel
-  - Zoom
-  - Lazy load image
-  - A11y
-  - Parallax
-  - History
-  - Hash-navigation
-  - Effect-cube
-  - Effect-flip
-  - Effect-coverflow
-
-  Instead of
-  ```javascript
-  import Swiper from 'react-id-swiper';
-  ```
-  Use
-  ```javascript
-  import Swiper from 'react-id-swiper/lib/custom';
-  ```
-
-
-### Build demo in local
-First, clone this repo to your local
-
-```bash
-https://github.com/kidjp85/react-id-swiper-demo.git
-```
-
-Install node packages
-
-```bash
-npm install
-```
-or
-
-```bash
-yarn
-```
-
-Run webpack server
-
-```bash
-yarn start
-```
-
-Run tests
-
-```bash
-yarn test
-yarn test --watch
 ```
 
 ## License

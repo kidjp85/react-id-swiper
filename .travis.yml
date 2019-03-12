@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+- "9"
+
+notifications:
+  email:
+    recipients:
+    - phucnguyenhoang1985@gmail.com
+    on_success: change
+    on_failure: always
