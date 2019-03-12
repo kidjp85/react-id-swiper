@@ -46,6 +46,10 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
     return null;
   }
 
+  if (!ContainerEl || !WrapperEl) {
+    return null;
+  }
+
   const getActiveSlideIndexFromProps = () => {
     if (!activeSlideKey) {
       return null;

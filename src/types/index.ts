@@ -8,8 +8,8 @@ export type WrappedElementType = 'div' | 'section' | 'span';
 export type ReactIdSwiperChildren = ReactElement | ReactElement[];
 
 export interface ReactIdSwiperProps extends SwiperOptions {
-  ContainerEl: WrappedElementType;
-  WrapperEl: WrappedElementType;
+  ContainerEl?: WrappedElementType;
+  WrapperEl?: WrappedElementType;
   containerClass?: string;
   wrapperClass?: string;
   rebuildOnUpdate?: boolean;
