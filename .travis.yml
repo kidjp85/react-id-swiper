@@ -1,0 +1,18 @@
+language: node_js
+
+node_js:
+  - 10
+  - 8
+  - 6
+
+scripts:
+  - npm install codecov -g
+after_success:
+  - codecov
+
+notifications:
+  email:
+    recipients:
+    - phucnguyenhoang1985@gmail.com
+    on_success: change
+    on_failure: always

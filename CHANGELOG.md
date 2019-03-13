@@ -1,5 +1,13 @@
 # Change Log for React-id-swiper
 
+## [*v2.0.0-beta*](https://github.com/kidjp85/react-id-swiper/compare/2.0.0-beta...1.6.9) - Released on Mar 13th, 2019
+  * Rewrite completely new package with Typescript + React Hooks Apis
+  * Use `swiper` as peer-dependencies
+  * Add new prop `getSwiper` function that returns `Swiper` instance.
+  * Drop custom build for lightweight version
+  * Drop `swiper` from standalone umd build
+  * Add swiper@4.5.0 stylesheet files
+
 ## [v1.6.9](https://github.com/kidjp85/react-id-swiper/compare/1.6.9...1.6.8) - Released on Feb 24th, 2019
   * Upgrade swiper@4.4.6
   * Update babel 7
@@ -67,7 +75,7 @@
 ## [v1.6.1](https://github.com/kidjp85/react-id-swiper/compare/1.6.1...1.5.8) - Released on February 17th, 2018
   * Upgrade swiper@4.1.6
   * Add unit test
-  
+
 ## [v1.5.8](https://github.com/kidjp85/react-id-swiper/compare/1.5.8...1.5.7) - Released on January 24th, 2018
   * Upgrade swiper@4.1.0
   * Fix bug for UMD build

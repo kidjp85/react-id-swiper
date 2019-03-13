@@ -5,20 +5,11 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const files = [
   {
     outputName: 'react-id-swiper',
-    entryName: 'index'
-  },
-  {
-    outputName: 'react-id-swiper.custom',
-    entryName: 'custom'
+    entryName: 'ReactIdSwiper'
   },
   {
     outputName: 'react-id-swiper.min',
-    entryName: 'index',
-    minimizer: true
-  },
-  {
-    outputName: 'react-id-swiper.custom.min',
-    entryName: 'custom',
+    entryName: 'ReactIdSwiper',
     minimizer: true
   }
 ];
@@ -29,7 +20,7 @@ const PATHS = {
 };
 
 module.exports = files.map(({ entryName, outputName, minimizer }) => ({
-  entry: `${PATHS.src}/${entryName}.js`,
+  entry: `${PATHS.src}/${entryName}.tsx`,
   output: {
     path: PATHS.output,
     filename: `${outputName}.js`,
@@ -38,7 +29,7 @@ module.exports = files.map(({ entryName, outputName, minimizer }) => ({
     auxiliaryComment: ''
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.tsx', '.ts', '.js'],
     modules: ['./src', 'node_modules']
   },
   resolveLoader: {
@@ -47,15 +38,18 @@ module.exports = files.map(({ entryName, outputName, minimizer }) => ({
   module: {
     rules: [
       {
-        test: /\.js$/,
-        loader: 'babel',
-        include: [PATHS.src]
+        test: /\.ts(x)?$/,
+        loader: 'awesome-typescript',
+        include: [PATHS.src],
+        options: {
+          configFileName: 'tsconfig.standalone.json'
+        }
       }
     ]
   },
   externals: {
     react: 'React',
-    'react-dom': 'ReactDOM'
+    swiper: 'Swiper'
   },
   mode: 'production',
   optimization: {

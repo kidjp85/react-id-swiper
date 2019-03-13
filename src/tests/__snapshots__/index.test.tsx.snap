@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ReactIdSwiper rendering snapshot Custom container & wrapper it should render with custom container & wrapper 1`] = `
-<section
+<div
   class="swiper-container"
 >
-  <section
+  <div
     class="swiper-wrapper"
   >
     <div
@@ -17,8 +17,8 @@ exports[`ReactIdSwiper rendering snapshot Custom container & wrapper it should r
     >
       Slide 2
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;
 
 exports[`ReactIdSwiper rendering snapshot Default it should render default swiper 1`] = `
@@ -88,10 +88,10 @@ exports[`ReactIdSwiper rendering snapshot Navigation it should render pagination
     </div>
   </div>
   <div
-    class="swiper-button-next"
+    class="swiper-button-next customized-swiper-button-next"
   />
   <div
-    class="swiper-button-prev"
+    class="swiper-button-prev customized-swiper-button-prev"
   />
 </div>
 `;
@@ -170,7 +170,7 @@ exports[`ReactIdSwiper rendering snapshot Pagination it should render pagination
 
 exports[`ReactIdSwiper rendering snapshot Pagination it should render pagination with customized class name 1`] = `
 <div
-  class="swiper-container"
+  class="customized-swiper-container"
 >
   <div
     class="swiper-wrapper"
@@ -187,7 +187,7 @@ exports[`ReactIdSwiper rendering snapshot Pagination it should render pagination
     </div>
   </div>
   <div
-    class="swiper-pagination"
+    class="swiper-pagination customized-swiper-pagination"
   />
 </div>
 `;
