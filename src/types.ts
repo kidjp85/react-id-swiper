@@ -14,6 +14,7 @@ export interface ReactIdSwiperProps extends SwiperOptions {
   wrapperClass?: string;
   rebuildOnUpdate?: boolean;
   shouldSwiperUpdate?: boolean;
+  getSwiper?: (swiper: SwiperInstance) => void;
   activeSlideKey?: string | number;
   renderScrollbar?: ReactIdSwiperRenderProps;
   renderPagination?: ReactIdSwiperRenderProps;
@@ -21,7 +22,7 @@ export interface ReactIdSwiperProps extends SwiperOptions {
   renderNextButton?: ReactIdSwiperRenderProps;
   renderParallax?: ReactIdSwiperRenderProps;
   rtl?: string | undefined;
-  children: ReactIdSwiperChildren;
+  children?: ReactIdSwiperChildren;
   parallaxEl?: {
     el: string;
     value: string;

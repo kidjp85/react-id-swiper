@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, mount } from 'enzyme';
-import ReactIdSwiper from '../index';
-import { ReactIdSwiperRenderProps } from '../types';
+import ReactIdSwiper from '../ReactIdSwiper';
+import { ReactIdSwiperProps, WrappedElementType } from '../types';
 
-const renderSwiper = (params?: ReactIdSwiperRenderProps) =>
+const renderSwiper = (params?: ReactIdSwiperProps) =>
   render(
     <ReactIdSwiper {...params}>
       <div key="s1">Slide 1</div>
@@ -11,7 +11,7 @@ const renderSwiper = (params?: ReactIdSwiperRenderProps) =>
     </ReactIdSwiper>
   );
 
-const mountSwiper = params =>
+const mountSwiper = (params?: ReactIdSwiperProps) =>
   mount(
     <ReactIdSwiper {...params}>
       <div key="s1">Slide 1</div>
@@ -21,7 +21,7 @@ const mountSwiper = params =>
 
 describe('ReactIdSwiper', () => {
   describe('defaultProps', () => {
-    const component = mountSwiper({});
+    const component = mountSwiper();
 
     test('should have default props', () => {
       expect(component.prop('containerClass')).toEqual('swiper-container');
@@ -55,8 +55,10 @@ describe('ReactIdSwiper', () => {
 
       test('it should render pagination with customized class name', () => {
         const customizedParams = {
-          ...params,
-          paginationCustomizedClass: 'pagination-with-custom-class-name'
+          pagination: {
+            el: '.swiper-pagination.customized-swiper-pagination'
+          },
+          containerClass: 'customized-swiper-container' // Replace swiper-container with customized-swiper-container
         };
 
         expect(renderSwiper(customizedParams)).toMatchSnapshot();
@@ -88,8 +90,10 @@ describe('ReactIdSwiper', () => {
       test('it should render pagination with customized class name', () => {
         const customizedParams = {
           ...params,
-          nextButtonCustomizedClass: 'next-button-with-customized-class-name',
-          prevButtonCustomizedClass: 'prev-button-with-customized-class-name'
+          navigation: {
+            nextEl: '.swiper-button-next.customized-swiper-button-next',
+            prevEl: '.swiper-button-prev.customized-swiper-button-prev'
+          }
         };
 
         expect(renderSwiper(customizedParams)).toMatchSnapshot();
@@ -159,7 +163,7 @@ describe('ReactIdSwiper', () => {
 
     describe('RTL', () => {
       const params = {
-        rtl: true
+        rtl: 'rtl'
       };
 
       test('it should render with rtl', () => {
@@ -168,9 +172,14 @@ describe('ReactIdSwiper', () => {
     });
 
     describe('Custom container & wrapper', () => {
-      const params = {
-        ContainerEl: 'section',
-        WrapperEl: 'section'
+      interface Params {
+        ContainerEl: WrappedElementType;
+        WrapperEl: WrappedElementType;
+      }
+
+      const params: Params = {
+        ContainerEl: 'div',
+        WrapperEl: 'div'
       };
 
       test('it should render with custom container & wrapper', () => {

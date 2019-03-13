@@ -17,39 +17,42 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
   let swiper: SwiperInstance = null;
 
   const {
+    activeSlideKey,
     ContainerEl,
-    WrapperEl,
+    children,
     containerClass,
-    wrapperClass,
-    rtl,
-    scrollbar,
-    renderScrollbar,
-    pagination,
-    renderPagination,
+    getSwiper,
     navigation,
-    renderPrevButton,
-    renderNextButton,
+    noSwiping,
+    pagination,
     parallax,
     parallaxEl,
-    renderParallax,
-    activeSlideKey,
-    children,
-    slideClass,
-    noSwiping,
+    WrapperEl,
+    wrapperClass,
     rebuildOnUpdate,
-    shouldSwiperUpdate
+    renderScrollbar,
+    renderPagination,
+    renderPrevButton,
+    renderNextButton,
+    renderParallax,
+    rtl,
+    scrollbar,
+    shouldSwiperUpdate,
+    slideClass
   } = props;
 
+  // No render if wrapper elements are not provided
+  if (!children || !ContainerEl || !WrapperEl) {
+    return null;
+  }
+
+  // Validate children props
   if (!validateChildren(children)) {
     console.warn('Children should be react element or an array of react element!!');
-
     return null;
   }
 
-  if (!ContainerEl || !WrapperEl) {
-    return null;
-  }
-
+  // Get current active slide key
   const getActiveSlideIndexFromProps = () => {
     if (!activeSlideKey) {
       return null;
@@ -70,26 +73,41 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
     return activeSlideId;
   };
 
-  const buildSwiper = () => {
-    if (swiperRef.current) {
-      swiper = new Swiper(swiperRef.current, objectAssign({}, props));
+  // Get swiper instance
+  const getSwiperInstance = (swiperInstance: SwiperInstance) => {
+    if (typeof getSwiper === 'function') {
+      getSwiper(swiperInstance);
     }
   };
 
+  // Initialize swiper
+  const buildSwiper = () => {
+    if (swiperRef.current && swiper === null) {
+      swiper = new Swiper(swiperRef.current, objectAssign({}, props));
+      getSwiperInstance(swiper);
+    }
+  };
+
+  // Rebuild swiper
   const rebuildSwiper = () => {
     if (swiper !== null) {
       swiper.destroy(true, true);
+      swiper = null;
+      getSwiperInstance(swiper);
     }
 
     buildSwiper();
   };
 
+  // Update swiper
   const updateSwiper = () => {
     if (swiper !== null) {
       swiper.update();
+      getSwiperInstance(swiper);
     }
   };
 
+  // Render slides
   const renderContent = (e: ReactElement) => {
     if (!isReactElement(e)) {
       return null;
@@ -107,6 +125,7 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
     });
   };
 
+  // Only execute when component is mounted or unmounted
   useEffect(() => {
     buildSwiper();
 
@@ -125,6 +144,7 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
     };
   }, []);
 
+  // Execute each time when props are updated
   useEffect(() => {
     if (swiper !== null) {
       if (rebuildOnUpdate) {
@@ -160,6 +180,7 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
   );
 };
 
+// Default props
 ReactIdSwiper.defaultProps = {
   containerClass: 'swiper-container',
   wrapperClass: 'swiper-wrapper',

@@ -5,11 +5,11 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const files = [
   {
     outputName: 'react-id-swiper',
-    entryName: 'index'
+    entryName: 'ReactIdSwiper'
   },
   {
     outputName: 'react-id-swiper.min',
-    entryName: 'index',
+    entryName: 'ReactIdSwiper',
     minimizer: true
   }
 ];
@@ -40,7 +40,10 @@ module.exports = files.map(({ entryName, outputName, minimizer }) => ({
       {
         test: /\.ts(x)?$/,
         loader: 'awesome-typescript',
-        include: [PATHS.src]
+        include: [PATHS.src],
+        options: {
+          configFileName: 'tsconfig.standalone.json'
+        }
       }
     ]
   },

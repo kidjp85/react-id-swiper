@@ -4,11 +4,13 @@
 
 [![Package Quality](http://npm.packagequality.com/badge/react-id-swiper.png)](http://packagequality.com/#?package=react-id-swiper)
 
-react-id-swiper ( Newest version 2.0.0 )
+react-id-swiper ( Newest version 2.0.0-beta )
 ========================================
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component
 
 ![Demo](https://media.giphy.com/media/mByDrCTcJch4HVhmfi/giphy.gif)
+
+## :warning: IMPORTANT NOTICE: Version 2.x requires React & ReactDOM's version >=16.8.0 to use [Hooks](https://reactjs.org/docs/hooks-intro.html)
 
 What is Swiper?
 ===============
@@ -20,22 +22,23 @@ Swiper is not compatible with all platforms, it is a modern touch slider which i
 React-id-swiper's original props
 ================================
 
-| Name               | Type     | Default value    | Description                              |
-| ------------------ | -------- | ---------------- | ---------------------------------------- |
-| ContainerEl        | String   | 'div'            | Element type for container               |
-| containerClass     | String   | swiper-container | Swiper container class name              |
-| WrapperEl          | String   | 'div'            | Element type for wrapper                 |
-| wrapperClass       | String   | swiper-wrapper   | Swiper wrapper class name                |
-| slideClass         | String   | swiper-slide     | Swiper slide class name                  |
-| shouldSwiperUpdate | Boolean  | false            | Update swiper when component is updated  |
-| rebuildOnUpdate    | Boolean  | false            | Rebuild swiper when component is updated |
-| noSwiping          | Boolean  | false            | Disable swiping by condition             |
-| activeSlideKey     | String   | null             | Initial slide index                      |
-| renderPrevButton   | function |                  | Render props function for prev button    |
-| renderNextButton   | function |                  | Render props function for next button    |
-| renderScrollbar    | function |                  | Render props function for scrollbar      |
-| renderPagination   | function |                  | Render props function for pagination     |
-| renderParallax     | function |                  | Render props function for parallax       |
+| Name               | Type     | Default value    | Description                                      |
+| ------------------ | -------- | ---------------- | -------------------------------------------------|
+| ContainerEl        | String   | 'div'            | Element type for container                       |
+| containerClass     | String   | swiper-container | Swiper container class name                      |
+| WrapperEl          | String   | 'div'            | Element type for wrapper                         |
+| wrapperClass       | String   | swiper-wrapper   | Swiper wrapper class name                        |
+| slideClass         | String   | swiper-slide     | Swiper slide class name                          |
+| shouldSwiperUpdate | Boolean  | false            | Update swiper when component is updated          |
+| rebuildOnUpdate    | Boolean  | false            | Rebuild swiper when component is updated         |
+| noSwiping          | Boolean  | false            | Disable swiping by condition                     |
+| activeSlideKey     | String   | null             | Initial slide index                              |
+| renderPrevButton   | function |                  | Render props function for prev button            |
+| renderNextButton   | function |                  | Render props function for next button            |
+| renderScrollbar    | function |                  | Render props function for scrollbar              |
+| renderPagination   | function |                  | Render props function for pagination             |
+| renderParallax     | function |                  | Render props function for parallax               |
+| getSwiper          | function |                  | Callback function that returns Swiper instance   |
 
 
 NOTE: You can also use Swiper's original params too.Swiper API documentation [HERE](http://idangero.us/swiper/api/)
@@ -61,9 +64,13 @@ yarn add react-id-swiper
 ## You can also use the standalone UMD build
 
 ```html
-<script src="https://unpkg.com/react-id-swiper@2.0.0/lib/react-id-swiper.js"></script>
-<script src="https://unpkg.com/react-id-swiper@2.0.0/lib/react-id-swiper.min.js"></script>
+<script src="https://unpkg.com/react-id-swiper@2.0.0-beta/lib/react-id-swiper.js"></script>
 ```
+
+```html
+<script src="https://unpkg.com/react-id-swiper@2.0.0-beta/lib/react-id-swiper.min.js"></script>
+```
+
 ## Recommendation
 
 >Swiper stylesheet file is required
@@ -79,6 +86,7 @@ yarn add react-id-swiper
 ```
 
 ### OR
+
 Use stylesheet file from src/styles/  folder (supporting css, scss)
 
 ## Usage
@@ -91,22 +99,17 @@ Use stylesheet file from src/styles/  folder (supporting css, scss)
 import React from 'react';
 import Swiper from 'react-id-swiper';
 
-class Example extends React.Component {
-  render() {
+const SimpleSwiper = () => (
+  <Swiper>
+    <div>Slide 1</div>
+    <div>Slide 2</div>
+    <div>Slide 3</div>
+    <div>Slide 4</div>
+    <div>Slide 5</div>
+  </Swiper>
+)
 
-    return (
-      <Swiper>
-        <div>Slide 1</div>
-        <div>Slide 2</div>
-        <div>Slide 3</div>
-        <div>Slide 4</div>
-        <div>Slide 5</div>
-      </Swiper>
-    )
-  }
-}
-
-export default Example;
+export default SimpleSwiper;
 ```
 
 ### Example with params
@@ -117,86 +120,76 @@ export default Example;
 import React from 'react';
 import Swiper from 'react-id-swiper';
 
-class Example extends React.Component {
-  render() {
-    const params = {
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
-      spaceBetween: 30
-    }
+const SimpleSwiperWithParams = () => {
+  const params = {
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    spaceBetween: 30
+  }
 
-    return(
-      <Swiper {...params}>
+  return(
+    <Swiper {...params}>
+      <div>Slide 1</div>
+      <div>Slide 2</div>
+      <div>Slide 3</div>
+      <div>Slide 4</div>
+      <div>Slide 5</div>
+    </Swiper>
+  )
+}
+
+export default SimpleSwiperWithParams;
+```
+
+### Example with manipulating swiper from outside swiper component
+
+>Example with navigation button using Hook
+
+```javascript
+import React, { useState } from 'react';
+import Swiper from 'react-id-swiper';
+
+const ManipulatingSwiper = () => {
+  const [swiper, updateSwiper] = useState(null);
+
+  const goNext = () => {
+    if (swiper !== null) {
+      swiper.slideNext();
+    }
+  };
+
+  const goPrev = () => {
+    if (swiper !== null) {
+      swiper.slidePrev();
+    }
+  };
+
+  return (
+    <div>
+      <Swiper getSwiper={updateSwiper}>
         <div>Slide 1</div>
         <div>Slide 2</div>
         <div>Slide 3</div>
         <div>Slide 4</div>
         <div>Slide 5</div>
       </Swiper>
-    )
-  }
-}
+      <button onClick={goPrev}>Prev</button>
+      <button onClick={goNext}>Next</button>
+    </div>
+  );
+};
 
-export default Example;
+export default ManipulatingSwiper;
 ```
 
-### Example with manipulating swiper from outside swiper component
->Example with navigation button
-
-```javascript
-import React from 'react';
-import Swiper from 'react-id-swiper';
-
-export default class Example extends React.Component {
-  constructor(props) {
-    super(props)
-    this.goNext = this.goNext.bind(this)
-    this.goPrev = this.goPrev.bind(this)
-    this.swiper = null
-  }
-
-  goNext() {
-    if (this.swiper) this.swiper.slideNext()
-  }
-
-  goPrev() {
-    if (this.swiper) this.swiper.slidePrev()
-  }
-
-  render() {
-    const params = {
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true
-      }
-    }
-
-    return(
-      <div>
-        <Swiper {...params} ref={node => if(node) this.swiper = node.swiper }>
-          <div>Slide 1</div>
-          <div>Slide 2</div>
-          <div>Slide 3</div>
-          <div>Slide 4</div>
-          <div>Slide 5</div>
-        </Swiper>
-        <button onClick={this.goNext}>Next</button>
-        <button onClick={this.goPrev}>Prev</button>
-      </div>
-    )
-  }
-}
-```
-
-### How to add customized class for swiper?
+### How to add customized css classes for swiper?
 
 >Example with navigation button
 

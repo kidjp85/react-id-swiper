@@ -3,10 +3,10 @@
   "version": "2.0.0-beta",
   "description": "ReactJs component for iDangerous Swiper",
   "main": "lib/index",
+  "types": "lib/index.d.ts",
   "files": [
     "lib/**/*"
   ],
-  "types": "lib/index.d.ts",
   "scripts": {
     "build:cleanup": "rimraf lib",
     "build:lib": "npm run build:cleanup && tsc",
@@ -62,7 +62,10 @@
     "enzyme-to-json": "^3.3.5",
     "jest": "^24.4.0",
     "prettier": "^1.16.4",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
     "rimraf": "^2.6.3",
+    "swiper": "^4.5.0",
     "ts-jest": "^24.0.0",
     "ts-loader": "^5.3.3",
     "tslint": "^5.13.1",

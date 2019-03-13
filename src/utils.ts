@@ -15,10 +15,6 @@ export const classNames = (el: SelectableElement): string => {
 };
 
 export const validateChildren = (children: any) => {
-  if (!children) {
-    return false;
-  }
-
   let isValid = true;
 
   if (Array.isArray(children)) {
