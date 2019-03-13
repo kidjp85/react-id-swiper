@@ -85,6 +85,7 @@
     "resetModules": true,
     "verbose": true,
     "browser": true,
+    "collectCoverage":true,
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
