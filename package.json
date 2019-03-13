@@ -1,11 +1,12 @@
 {
   "name": "react-id-swiper",
-  "version": "2.0.0-beta",
+  "version": "2.0.0",
   "description": "ReactJs component for iDangerous Swiper",
   "main": "lib/index",
   "types": "lib/index.d.ts",
   "files": [
-    "lib/**/*"
+    "lib/**/*",
+    "src/styles/**/*"
   ],
   "scripts": {
     "build:cleanup": "rimraf lib",

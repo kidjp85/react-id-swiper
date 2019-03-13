@@ -1,6 +1,10 @@
 # Change Log for React-id-swiper
 
-## [*v2.0.0-beta*](https://github.com/kidjp85/react-id-swiper/compare/2.0.0-beta...1.6.9) - Released on Mar 13th, 2019
+## [v2.0.0](https://github.com/kidjp85/react-id-swiper/compare/2.0.0...2.0.0-beta) - Released on Mar 14th, 2019
+  * Add tests
+  * Update README
+
+## [*v2.0.0-beta*](https://github.com/kidjp85/react-id-swiper/compare/2.0.0...1.6.9) - Released on Mar 13th, 2019
   * Rewrite completely new package with Typescript + React Hooks Apis
   * Use `swiper` as peer-dependencies
   * Add new prop `getSwiper` function that returns `Swiper` instance.

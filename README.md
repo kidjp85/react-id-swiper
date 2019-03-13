@@ -1,16 +1,15 @@
 [![npm Version](https://img.shields.io/npm/v/react-id-swiper.svg?style=flat-square)](https://npmjs.org/package/react-id-swiper)
 [![Coverage Status](https://img.shields.io/codecov/c/github/moroshko/react-autosuggest/master.svg?style=flat-square)](https://codecov.io/gh/kidjp85/react-id-swiper)
 [![npm Downloads](https://img.shields.io/npm/dm/react-id-swiper.svg?style=flat-square)](https://npmjs.org/package/react-id-swiper)
+[![Build Status](https://travis-ci.org/kidjp85/react-id-swiper.svg?branch=master)](https://travis-ci.org/kidjp85/react-id-swiper)
 
 [![Package Quality](http://npm.packagequality.com/badge/react-id-swiper.png)](http://packagequality.com/#?package=react-id-swiper)
 
-react-id-swiper ( Newest version 2.0.0-beta )
+react-id-swiper ( Newest version 2.0.0 )
 ========================================
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component
 
 ![Demo](https://media.giphy.com/media/mByDrCTcJch4HVhmfi/giphy.gif)
-
-## :warning: IMPORTANT NOTICE: Version 2.x requires React & ReactDOM's version >=16.8.0 to use [Hooks](https://reactjs.org/docs/hooks-intro.html)
 
 What is Swiper?
 ===============
@@ -41,41 +40,43 @@ React-id-swiper's original props
 | getSwiper          | function |                  | Callback function that returns Swiper instance   |
 
 
-NOTE: You can also use Swiper's original params too.Swiper API documentation [HERE](http://idangero.us/swiper/api/)
+NOTE: You can also use Swiper's original params too. Swiper API documentation [HERE](http://idangero.us/swiper/api/)
 
-DEMO
-====
+## :warning: Important
 
-You can see the demo with example code [HERE](http://kidjp85.github.io/react-id-swiper/)
+From version 2.x.x requires React & ReactDOM ver >=16.8.0 to use [Hooks](https://reactjs.org/docs/hooks-intro.html)
 
-## Installation
-By npm
+## Installation and setup
+
+### Npm package
+
+> By npm
 
 ```bash
 npm install --save react-id-swiper
 ```
 
-By Yarn
+> By Yarn
 
 ```bash
 yarn add react-id-swiper
 ```
 
-## You can also use the standalone UMD build
+### CDN
 
 ```html
-<script src="https://unpkg.com/react-id-swiper@2.0.0-beta/lib/react-id-swiper.js"></script>
+<script src="https://unpkg.com/react-id-swiper@2.0.0/lib/react-id-swiper.js"></script>
 ```
 
 ```html
-<script src="https://unpkg.com/react-id-swiper@2.0.0-beta/lib/react-id-swiper.min.js"></script>
+<script src="https://unpkg.com/react-id-swiper@2.0.0/lib/react-id-swiper.min.js"></script>
 ```
 
-## Recommendation
+## Styling
 
->Swiper stylesheet file is required
+**Swiper stylesheet file is required**
 
-### Use Swiper stylesheet file from CDN
+Use Swiper stylesheet file from CDN or `src/styles/` (supporting css, scss)
 
 ```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
@@ -85,15 +86,11 @@ yarn add react-id-swiper
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
 ```
 
-### OR
+## Examples
 
-Use stylesheet file from src/styles/  folder (supporting css, scss)
+Find more examples [here](http://kidjp85.github.io/react-id-swiper/)
 
-## Usage
-
-### Example with default
-
->Example with default params
+### Default
 
 ```javascript
 import React from 'react';
@@ -112,9 +109,7 @@ const SimpleSwiper = () => (
 export default SimpleSwiper;
 ```
 
-### Example with params
-
->Example with navigation buttons
+### Using params
 
 ```javascript
 import React from 'react';
@@ -148,9 +143,7 @@ const SimpleSwiperWithParams = () => {
 export default SimpleSwiperWithParams;
 ```
 
-### Example with manipulating swiper from outside swiper component
-
->Example with navigation button using Hook
+### Manipulating swiper from outside swiper component
 
 ```javascript
 import React, { useState } from 'react';
@@ -189,9 +182,7 @@ const ManipulatingSwiper = () => {
 export default ManipulatingSwiper;
 ```
 
-### How to add customized css classes for swiper?
-
->Example with navigation button
+### Adding customized css classes
 
 ```javascript
 const params = {
@@ -206,9 +197,7 @@ const params = {
 }
 ```
 
-### How to add customized components?
-
->Example with customized navigation button
+### Adding customized components
 
 For customized rendering to work, you have to use same classname with params el.
 
@@ -223,6 +212,39 @@ const params = {
 }
 ```
 
+### Workable slides
+
+Each slide should be wrapped by HTML element
+
+> BAD CODE
+
+```javascript
+<Swiper {...params}>
+  Slide content
+</Swiper>
+```
+
+> GOOD CODE
+
+```javascript
+<Swiper {...params}>
+  <span>Slide content</span>
+</Swiper>
+```
+
+## Bug report
+
+**Please use the prepared Codesanbox below to reproduce your issue. Thank you!!**
+
+[![Edit ReactIdSwiper - DEMO](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/p8j61y7j7?fontsize=14)
+
+
+## Authors
+
+* **Phuc Hoang Nguyen** - *Initial work* - [Phuc Hoang Nguyen](https://github.com/kidjp85)
+
+See also the list of [contributors](https://github.com/kidjp85/react-id-swiper/contributors) who participated in this project.
+
 ## License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
