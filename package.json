@@ -18,8 +18,8 @@
     "test:dev": "jest --watch --coverage",
     "test:coverage": "jest --coverage",
     "prepare": "npm run build",
-    "preversion": "npm run lint && npm run lint",
-    "prepublishOnly": "npm run test"
+    "preversion": "npm run lint",
+    "prepublishOnly": "npm run lint && npm run lint"
   },
   "keywords": [
     "iDangerous",
@@ -42,7 +42,7 @@
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
-    "swiper": "^4.0.0"
+    "swiper": ">=4.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.3.4",
