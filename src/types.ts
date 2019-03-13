@@ -12,10 +12,11 @@ export interface ReactIdSwiperProps extends SwiperOptions {
   WrapperEl?: WrappedElementType;
   containerClass?: string;
   wrapperClass?: string;
+  slideClass?: string;
   rebuildOnUpdate?: boolean;
   shouldSwiperUpdate?: boolean;
   getSwiper?: (swiper: SwiperInstance) => void;
-  activeSlideKey?: string | number;
+  activeSlideKey?: string;
   renderScrollbar?: ReactIdSwiperRenderProps;
   renderPagination?: ReactIdSwiperRenderProps;
   renderPrevButton?: ReactIdSwiperRenderProps;
