@@ -5,11 +5,11 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const files = [
   {
     outputName: 'react-id-swiper',
-    entryName: 'ReactIdSwiper'
+    entryName: 'ReactIdSwiper.umd'
   },
   {
     outputName: 'react-id-swiper.min',
-    entryName: 'ReactIdSwiper',
+    entryName: 'ReactIdSwiper.umd',
     minimizer: true
   }
 ];

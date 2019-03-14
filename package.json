@@ -1,11 +1,17 @@
 {
   "name": "react-id-swiper",
-  "version": "2.0.0",
+  "version": "2.1.0-beta",
   "description": "ReactJs component for iDangerous Swiper",
   "main": "lib/index",
   "types": "lib/index.d.ts",
   "files": [
-    "lib/**/*",
+    "lib/*.d.ts",
+    "lib/index.js",
+    "lib/ReactIdSwiper.js",
+    "lib/utils.js",
+    "lib/types.js",
+    "lib/react-id-swiper.js",
+    "lib/react-id-swiper.min.js",
     "src/styles/**/*"
   ],
   "scripts": {
@@ -46,6 +52,8 @@
     "swiper": ">=4.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "@types/enzyme": "^3.9.0",
@@ -57,6 +65,7 @@
     "@types/swiper": "^4.4.2",
     "awesome-typescript-loader": "^5.2.1",
     "babel-jest": "^24.4.0",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
     "cross-env": "^5.2.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.10.0",
@@ -86,18 +95,19 @@
     "resetModules": true,
     "verbose": true,
     "browser": true,
-    "collectCoverage":true,
+    "collectCoverage": true,
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
     "transform": {
-      "^.+\\.(ts|tsx)$": "ts-jest",
-      "^.+\\.(js|jsx)$": "babel-jest"
+      "^.+\\.(js|jsx)$": "babel-jest",
+      "^.+\\.(ts|tsx)$": "ts-jest"
     },
     "moduleFileExtensions": [
       "ts",
       "tsx",
-      "js"
+      "js",
+      "jsx"
     ],
     "roots": [
       "<rootDir>/src/"
@@ -105,6 +115,9 @@
     "moduleDirectories": [
       "node_modules",
       "<rootDir>/src"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(swiper|dom7)/)"
     ],
     "setupFiles": [
       "<rootDir>/src/tests/setup.ts"

@@ -7,10 +7,10 @@ import React, {
   isValidElement,
   ReactElement
 } from 'react';
-import { Swiper } from 'swiper/dist/js/swiper.esm';
+import Swiper from 'swiper';
 import objectAssign from 'object-assign';
 import { ReactIdSwiperProps, SwiperInstance } from './types';
-import { classNames, validateChildren, isReactElement, isModuleAvailable } from './utils';
+import { classNames, validateChildren, isReactElement } from './utils';
 
 const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
   const swiperRef = createRef<HTMLDivElement>();
@@ -39,14 +39,10 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
     scrollbar,
     shouldSwiperUpdate,
     slideClass,
-    loop,
-    modules = []
+    loop
   } = props;
 
-  // Initialize modules to use with swiper;
-  Swiper.use(modules);
-
-  // No render if wrapper elements are not provided or when modules is empty
+  // No render if wrapper elements are not provided
   if (!children || !ContainerEl || !WrapperEl) {
     return null;
   }
@@ -86,19 +82,19 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
     }
   };
 
-  // Initialize swiper
-  const buildSwiper = () => {
-    if (swiperRef.current && swiper === null) {
-      swiper = new Swiper(swiperRef.current, objectAssign({}, props));
-      getSwiperInstance(swiper);
-    }
-  };
-
   // Destroy swiper
   const destroySwiper = () => {
     if (swiper !== null) {
       swiper.destroy(true, true);
       swiper = null;
+      getSwiperInstance(swiper);
+    }
+  };
+
+  // Initialize swiper
+  const buildSwiper = () => {
+    if (swiperRef.current && swiper === null) {
+      swiper = new Swiper(swiperRef.current, objectAssign({}, props));
       getSwiperInstance(swiper);
     }
   };
@@ -172,24 +168,14 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
     }
   });
 
-  // Check modules are loaded before rendering contents
-  const shouldRenderParallax = isModuleAvailable(modules, 'parallax') && parallax && parallaxEl;
-  const shouldRenderPagination =
-    isModuleAvailable(modules, 'pagination') && pagination && pagination.el;
-  const shouldRenderScrollbar =
-    isModuleAvailable(modules, 'scrollbar') && scrollbar && scrollbar.el;
-  const isNavigationModuleAvailable = isModuleAvailable(modules, 'navigation');
-  const shouldRenderNextButton = isNavigationModuleAvailable && navigation && navigation.nextEl;
-  const shouldRenderPrevButton = isNavigationModuleAvailable && navigation && navigation.prevEl;
-
   return (
     <ContainerEl className={containerClass} dir={rtl && 'rtl'} ref={swiperRef}>
-      {shouldRenderParallax && renderParallax && renderParallax(props)}
+      {parallax && parallaxEl && renderParallax && renderParallax(props)}
       <WrapperEl className={wrapperClass}>{Children.map(children, renderContent)}</WrapperEl>
-      {shouldRenderPagination && renderPagination && renderPagination(props)}
-      {shouldRenderScrollbar && renderScrollbar && renderScrollbar(props)}
-      {shouldRenderNextButton && renderNextButton && renderNextButton(props)}
-      {shouldRenderPrevButton && renderPrevButton && renderPrevButton(props)}
+      {pagination && pagination.el && renderPagination && renderPagination(props)}
+      {scrollbar && scrollbar.el && renderScrollbar && renderScrollbar(props)}
+      {navigation && navigation.nextEl && renderNextButton && renderNextButton(props)}
+      {navigation && navigation.prevEl && renderPrevButton && renderPrevButton(props)}
     </ContainerEl>
   );
 };
@@ -212,8 +198,7 @@ ReactIdSwiper.defaultProps = {
   renderParallax: ({ parallaxEl }) =>
     parallaxEl ? (
       <div className={classNames(parallaxEl.el)} data-swiper-parallax={parallaxEl.value} />
-    ) : null,
-  modules: []
+    ) : null
 };
 
 export default ReactIdSwiper;

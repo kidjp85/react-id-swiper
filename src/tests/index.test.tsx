@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, mount } from 'enzyme';
+import { Pagination, Navigation, Scrollbar, Parallax } from 'swiper/dist/js/swiper.esm';
 import ReactIdSwiper from '../ReactIdSwiper';
 import { ReactIdSwiperProps, WrappedElementType } from '../types';
 
@@ -43,6 +44,7 @@ describe('ReactIdSwiper', () => {
     // Render pagination
     describe('Pagination', () => {
       const params = {
+        modules: [Pagination],
         pagination: {
           el: '.swiper-pagination',
           clickable: true
@@ -77,6 +79,7 @@ describe('ReactIdSwiper', () => {
     // Render navigation
     describe('Navigation', () => {
       const params = {
+        modules: [Navigation],
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
@@ -112,6 +115,7 @@ describe('ReactIdSwiper', () => {
 
     describe('Parallax', () => {
       const params = {
+        modules: [Parallax],
         parallax: true,
         parallaxEl: {
           el: '.parallax-bg',
@@ -126,6 +130,7 @@ describe('ReactIdSwiper', () => {
 
     describe('Parallax', () => {
       const params = {
+        modules: [Parallax],
         parallax: true,
         parallaxEl: {
           el: '.parallax-bg',
@@ -140,6 +145,7 @@ describe('ReactIdSwiper', () => {
 
     describe('Scrollbar', () => {
       const params = {
+        modules: [Scrollbar],
         scrollbar: {
           el: '.swiper-scrollbar',
           hide: true
