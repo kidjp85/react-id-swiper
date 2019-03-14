@@ -7,7 +7,9 @@ export {
   SelectableElement,
   SwiperInstance,
   WrappedElementType,
-  ReactIdSwiperChildren
+  ReactIdSwiperChildren,
+  SwiperModuleName,
+  GetSwiper
 } from './types';
 
 // React-id-swiper
