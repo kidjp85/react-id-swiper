@@ -1,15 +1,21 @@
+sudo: false
 language: node_js
-
+cache:
+  directories:
+    - node_modules
 node_js:
-  - 10
   - 8
-  - 6
-
+install:
+  - yarn install
+  - npm install -g codecov
 scripts:
-  - npm install codecov -g
-after_success:
-  - codecov
-
+  - yarn test
+  - yarn test:coverage
+  - yarn lint
+after_success: "cat ./coverage/lcov.info | $(npm bin)/codecov"
+branches:
+  only:
+  - master
 notifications:
   email:
     recipients:

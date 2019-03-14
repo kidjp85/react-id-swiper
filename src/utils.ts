@@ -1,5 +1,5 @@
 import { isValidElement, Children, ReactElement } from 'react';
-import { SelectableElement } from './types';
+import { SelectableElement, SwiperModules, SwiperModuleName } from './types';
 
 export const classNames = (el: SelectableElement): string => {
   if (typeof el === 'string') {
@@ -33,3 +33,19 @@ export const validateChildren = (children: any) => {
 export const isReactElement = (element: ReactElement): boolean =>
   isValidElement(element) &&
   (typeof element.type === 'string' || typeof element.type === 'function');
+
+export const isModuleAvailable = (
+  modules: SwiperModules,
+  moduleName: SwiperModuleName
+): boolean => {
+  let moduleAvailable = false;
+
+  for (let i = 0; i < modules.length; i++) {
+    if (modules[i].name === moduleName) {
+      moduleAvailable = true;
+      break;
+    }
+  }
+
+  return moduleAvailable;
+};

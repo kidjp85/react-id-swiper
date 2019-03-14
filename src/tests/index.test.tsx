@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, mount } from 'enzyme';
+import { Pagination, Navigation, Scrollbar, Parallax } from 'swiper/dist/js/swiper.esm';
 import ReactIdSwiper from '../ReactIdSwiper';
 import { ReactIdSwiperProps, WrappedElementType } from '../types';
 
@@ -32,6 +33,28 @@ describe('ReactIdSwiper', () => {
     });
   });
 
+  describe('rendering', () => {
+    test('it should not render component with no child', () => {
+      const wrapper = mount(<ReactIdSwiper />);
+
+      expect(wrapper.html()).toEqual(null);
+    });
+
+    test('it should not render component with invalid children props', () => {
+      const multipleChildren = mount(
+        <ReactIdSwiper>
+          <div key="s1">Slide 1</div>
+          {'Slide 2' as any}
+        </ReactIdSwiper>
+      );
+
+      const singleChildre = mount(<ReactIdSwiper>{'Slide 2' as any}</ReactIdSwiper>);
+
+      expect(multipleChildren.html()).toEqual(null);
+      expect(singleChildre.html()).toEqual(null);
+    });
+  });
+
   describe('rendering snapshot', () => {
     // With default props
     describe('Default', () => {
@@ -43,6 +66,7 @@ describe('ReactIdSwiper', () => {
     // Render pagination
     describe('Pagination', () => {
       const params = {
+        modules: [Pagination],
         pagination: {
           el: '.swiper-pagination',
           clickable: true
@@ -77,6 +101,7 @@ describe('ReactIdSwiper', () => {
     // Render navigation
     describe('Navigation', () => {
       const params = {
+        modules: [Navigation],
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
@@ -112,6 +137,7 @@ describe('ReactIdSwiper', () => {
 
     describe('Parallax', () => {
       const params = {
+        modules: [Parallax],
         parallax: true,
         parallaxEl: {
           el: '.parallax-bg',
@@ -126,6 +152,7 @@ describe('ReactIdSwiper', () => {
 
     describe('Parallax', () => {
       const params = {
+        modules: [Parallax],
         parallax: true,
         parallaxEl: {
           el: '.parallax-bg',
@@ -140,6 +167,7 @@ describe('ReactIdSwiper', () => {
 
     describe('Scrollbar', () => {
       const params = {
+        modules: [Scrollbar],
         scrollbar: {
           el: '.swiper-scrollbar',
           hide: true

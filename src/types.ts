@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
-import Swiper, { SwiperOptions, SelectableElement } from 'swiper';
+
+import Swiper, { SwiperOptions, SelectableElement, SwiperModule } from 'swiper';
 
 export type ReactIdSwiperRenderProps = (props: ReactIdSwiperProps) => ReactElement | null;
 
@@ -7,6 +8,9 @@ export type WrappedElementType = 'div' | 'section' | 'span';
 
 export type ReactIdSwiperChildren = ReactElement | ReactElement[];
 
+export type GetSwiper = (swiper: SwiperInstance) => void;
+
+export type SwiperModules = (SwiperModule & { name: string })[];
 export interface ReactIdSwiperProps extends SwiperOptions {
   ContainerEl?: WrappedElementType;
   WrapperEl?: WrappedElementType;
@@ -15,7 +19,7 @@ export interface ReactIdSwiperProps extends SwiperOptions {
   slideClass?: string;
   rebuildOnUpdate?: boolean;
   shouldSwiperUpdate?: boolean;
-  getSwiper?: (swiper: SwiperInstance) => void;
+  getSwiper?: GetSwiper;
   activeSlideKey?: string;
   renderScrollbar?: ReactIdSwiperRenderProps;
   renderPagination?: ReactIdSwiperRenderProps;
@@ -28,8 +32,29 @@ export interface ReactIdSwiperProps extends SwiperOptions {
     el: string;
     value: string;
   };
+  modules?: SwiperModules;
 }
 
 export type SelectableElement = SelectableElement | undefined;
 
 export type SwiperInstance = Swiper | null;
+
+export type SwiperModuleName =
+  | 'navigation'
+  | 'pagination'
+  | 'scrollbar'
+  | 'autoplay'
+  | 'parallax'
+  | 'lazy'
+  | 'effect-fade'
+  | 'effect-coverflow'
+  | 'effect-flip'
+  | 'effect-cube'
+  | 'zoom'
+  | 'keyboard'
+  | 'mousewheel'
+  | 'virtual'
+  | 'hash-navigation'
+  | 'history'
+  | 'controller'
+  | 'a11y';
