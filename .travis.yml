@@ -4,7 +4,7 @@ cache:
   directories:
     - node_modules
 node_js:
-  -8
+  - 8
 install:
   - yarn install
   - yarn global add lcov
