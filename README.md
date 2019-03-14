@@ -47,7 +47,7 @@ NOTE: You can also use Swiper's original params too. Swiper API documentation [H
 
 - From version 2.0.0 requires React & ReactDOM ver >=16.8.0 to use [Hooks](https://reactjs.org/docs/hooks-intro.html)
 
-- From version 2.1.0, adding new props named `modules` that can help reducing bundle file size. More info [here](https://idangero.us/swiper/api/#Custom%20Build)
+- From version 2.1.0, adding new props named `modules` that can help reducing bundle file size. More info [here](https://idangero.us/swiper/api/#custom-build)
 
 ## Installation and setup
 
