@@ -33,6 +33,28 @@ describe('ReactIdSwiper', () => {
     });
   });
 
+  describe('rendering', () => {
+    test('it should not render component with no child', () => {
+      const wrapper = mount(<ReactIdSwiper />);
+
+      expect(wrapper.html()).toEqual(null);
+    });
+
+    test('it should not render component with invalid children props', () => {
+      const multipleChildren = mount(
+        <ReactIdSwiper>
+          <div key="s1">Slide 1</div>
+          {'Slide 2' as any}
+        </ReactIdSwiper>
+      );
+
+      const singleChildre = mount(<ReactIdSwiper>{'Slide 2' as any}</ReactIdSwiper>);
+
+      expect(multipleChildren.html()).toEqual(null);
+      expect(singleChildre.html()).toEqual(null);
+    });
+  });
+
   describe('rendering snapshot', () => {
     // With default props
     describe('Default', () => {

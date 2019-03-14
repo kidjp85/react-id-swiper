@@ -5,7 +5,7 @@
 
 [![Package Quality](http://npm.packagequality.com/badge/react-id-swiper.png)](http://packagequality.com/#?package=react-id-swiper)
 
-react-id-swiper ( Newest version 2.1.0-beta )
+react-id-swiper ( Newest version 2.1.0 )
 ========================================
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component
 
@@ -68,11 +68,11 @@ yarn add react-id-swiper
 ### CDN
 
 ```html
-<script src="https://unpkg.com/react-id-swiper@2.1.0-beta/lib/react-id-swiper.js"></script>
+<script src="https://unpkg.com/react-id-swiper@2.1.0/lib/react-id-swiper.js"></script>
 ```
 
 ```html
-<script src="https://unpkg.com/react-id-swiper@2.1.0-beta/lib/react-id-swiper.min.js"></script>
+<script src="https://unpkg.com/react-id-swiper@2.1.0/lib/react-id-swiper.min.js"></script>
 ```
 
 ## Styling
