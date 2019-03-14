@@ -7,7 +7,7 @@ node_js:
   - 8
 install:
   - yarn install
-  - yarn global add lcov
+  - npm install -g codecov
 scripts:
   - yarn test
   - yarn test:coverage
