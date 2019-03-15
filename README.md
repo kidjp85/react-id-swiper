@@ -56,13 +56,15 @@ NOTE: You can also use Swiper's original params too. Swiper API documentation [H
 > By npm
 
 ```bash
-npm install --save react-id-swiper
+npm install --save react-id-swiper@latest swiper@latest
+
+
 ```
 
 > By Yarn
 
 ```bash
-yarn add react-id-swiper
+yarn add react-id-swiper@latest swiper@latest
 ```
 
 ### CDN
