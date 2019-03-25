@@ -247,7 +247,7 @@ Each slide should be wrapped by HTML element
 
 **Please use the prepared Codesanbox below to reproduce your issue. Thank you!!**
 
-[![Edit ReactIdSwiper - DEMO](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/p8j61y7j7?fontsize=14)
+[![Edit ReactIdSwiper - DEMO](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/p8j61y7j7?fontsize=14) [![Greenkeeper badge](https://badges.greenkeeper.io/kidjp85/react-id-swiper.svg)](https://greenkeeper.io/)
 
 
 ## Authors
