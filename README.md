@@ -2,6 +2,7 @@
 [![Coverage Status](https://img.shields.io/codecov/c/github/moroshko/react-autosuggest/master.svg?style=flat-square)](https://codecov.io/gh/kidjp85/react-id-swiper)
 [![npm Downloads](https://img.shields.io/npm/dm/react-id-swiper.svg?style=flat-square)](https://npmjs.org/package/react-id-swiper)
 [![Build Status](https://travis-ci.org/kidjp85/react-id-swiper.svg?branch=master)](https://travis-ci.org/kidjp85/react-id-swiper)
+[![Greenkeeper badge](https://badges.greenkeeper.io/kidjp85/react-id-swiper.svg)](https://greenkeeper.io/)
 
 [![Package Quality](http://npm.packagequality.com/badge/react-id-swiper.png)](http://packagequality.com/#?package=react-id-swiper)
 
@@ -247,7 +248,7 @@ Each slide should be wrapped by HTML element
 
 **Please use the prepared Codesanbox below to reproduce your issue. Thank you!!**
 
-[![Edit ReactIdSwiper - DEMO](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/p8j61y7j7?fontsize=14) [![Greenkeeper badge](https://badges.greenkeeper.io/kidjp85/react-id-swiper.svg)](https://greenkeeper.io/)
+[![Edit ReactIdSwiper - DEMO](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/p8j61y7j7?fontsize=14)
 
 
 ## Authors
