@@ -8,11 +8,11 @@ node_js:
 install:
   - yarn install
   - npm install -g codecov
-scripts:
+script:
   - yarn test
   - yarn test:coverage
   - yarn lint
-after_success: "cat ./coverage/lcov.info | $(npm bin)/codecov"
+after_script: "cat ./coverage/lcov.info | $(npm bin)/codecov"
 branches:
   only:
   - master
