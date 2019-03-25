@@ -7,10 +7,11 @@ import React, {
   isValidElement,
   ReactElement
 } from 'react';
-import { Swiper } from 'swiper/dist/js/swiper.esm';
 import objectAssign from 'object-assign';
 import { ReactIdSwiperProps, SwiperInstance } from './types';
 import { classNames, validateChildren, isReactElement, isModuleAvailable } from './utils';
+
+const Swiper = require('swiper/dist/js/swiper.js');
 
 const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
   const swiperRef = createRef<HTMLDivElement>();
