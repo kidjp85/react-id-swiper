@@ -6,7 +6,7 @@
 
 [![Package Quality](http://npm.packagequality.com/badge/react-id-swiper.png)](http://packagequality.com/#?package=react-id-swiper)
 
-react-id-swiper ( Newest version 2.1.0 )
+react-id-swiper ( Newest version 2.1.1 )
 ========================================
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component
 
@@ -48,7 +48,9 @@ NOTE: You can also use Swiper's original params too. Swiper API documentation [H
 
 - From version 2.0.0 requires React & ReactDOM ver >=16.8.0 to use [Hooks](https://reactjs.org/docs/hooks-intro.html)
 
-- From version 2.1.0, adding new props named `modules` that can help reducing bundle file size. More info [here](https://idangero.us/swiper/api/#custom-build)
+- From version 2.1.1, adding new props named `modules` that can help reducing bundle file size. More info [here](https://idangero.us/swiper/api/#custom-build)
+
+- Full build swiper version is available from `2.1.1`, which can be found from `react-id-swiper/lib/ReactIdSwiper.full`.
 
 ## Installation and setup
 
@@ -58,8 +60,6 @@ NOTE: You can also use Swiper's original params too. Swiper API documentation [H
 
 ```bash
 npm install --save react-id-swiper@latest swiper@latest
-
-
 ```
 
 > By Yarn
@@ -71,11 +71,11 @@ yarn add react-id-swiper@latest swiper@latest
 ### CDN
 
 ```html
-<script src="https://unpkg.com/react-id-swiper@2.1.0/lib/react-id-swiper.js"></script>
+<script src="https://unpkg.com/react-id-swiper@2.1.1/lib/react-id-swiper.js"></script>
 ```
 
 ```html
-<script src="https://unpkg.com/react-id-swiper@2.1.0/lib/react-id-swiper.min.js"></script>
+<script src="https://unpkg.com/react-id-swiper@2.1.1/lib/react-id-swiper.min.js"></script>
 ```
 
 ## Styling
@@ -101,6 +101,25 @@ Find more examples [here](http://kidjp85.github.io/react-id-swiper/)
 ```javascript
 import React from 'react';
 import Swiper from 'react-id-swiper';
+
+const SimpleSwiper = () => (
+  <Swiper>
+    <div>Slide 1</div>
+    <div>Slide 2</div>
+    <div>Slide 3</div>
+    <div>Slide 4</div>
+    <div>Slide 5</div>
+  </Swiper>
+)
+
+export default SimpleSwiper;
+```
+
+### Using full version of Swiper
+
+```javascript
+import React from 'react';
+import Swiper from 'react-id-swiper/lib/ReactIdSwiper.full';
 
 const SimpleSwiper = () => (
   <Swiper>

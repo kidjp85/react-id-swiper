@@ -1,20 +1,11 @@
 {
   "name": "react-id-swiper",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "ReactJs component for iDangerous Swiper",
   "main": "lib/index",
   "types": "lib/index.d.ts",
   "files": [
-    "lib/index.js",
-    "lib/index.d.ts",
-    "lib/ReactIdSwiper.js",
-    "lib/ReactIdSwiper.d.ts",
-    "lib/utils.js",
-    "lib/utils.d.ts",
-    "lib/types.js",
-    "lib/types.d.ts",
-    "lib/react-id-swiper.js",
-    "lib/react-id-swiper.min.js",
+    "lib/**/*",
     "src/styles/**/*"
   ],
   "scripts": {

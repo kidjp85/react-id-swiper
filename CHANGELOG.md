@@ -1,5 +1,8 @@
 # Change Log for React-id-swiper
 
+## [v2.1.1](https://github.com/kidjp85/react-id-swiper/compare/2.1.1...2.1.0) - Released on Mar 26th, 2019
+  * Add full version back to lib folder
+
 ## [v2.1.0](https://github.com/kidjp85/react-id-swiper/compare/2.1.0...2.0.0) - Released on Mar 15th, 2019
   * :bomb: **Great news** - Add new props **`modules`** that allows to import only necessary swiper modules.
   * Fix `activeSlideKey` does not work correctly when `loop: true`
