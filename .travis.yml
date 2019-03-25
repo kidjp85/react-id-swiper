@@ -16,6 +16,7 @@ after_success: "cat ./coverage/lcov.info | $(npm bin)/codecov"
 branches:
   only:
   - master
+  - /^greenkeeper/.*$/
 notifications:
   email:
     recipients:
