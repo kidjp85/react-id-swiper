@@ -1,5 +1,8 @@
 # Change Log for React-id-swiper
 
+## [v2.1.2](https://github.com/kidjp85/react-id-swiper/compare/2.1.2...2.1.1) - Released on April 16th, 2019
+  * Fix rendering issue for styled-component element
+
 ## [v2.1.1](https://github.com/kidjp85/react-id-swiper/compare/2.1.1...2.1.0) - Released on Mar 26th, 2019
   * Add full version back to lib folder
 
