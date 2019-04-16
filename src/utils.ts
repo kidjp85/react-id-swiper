@@ -32,7 +32,9 @@ export const validateChildren = (children: any) => {
 
 export const isReactElement = (element: ReactElement): boolean =>
   isValidElement(element) &&
-  (typeof element.type === 'string' || typeof element.type === 'function');
+  (typeof element.type === 'string' ||
+    typeof element.type === 'function' ||
+    typeof element.type === 'object');
 
 export const isModuleAvailable = (
   modules: SwiperModules,
