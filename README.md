@@ -227,7 +227,7 @@ const CustomBuildSwiper = () => {
   )
 }
 
-export default SimpleSwiperWithParams;
+export default CustomBuildSwiper;
 ```
 
 **NOTE**:
