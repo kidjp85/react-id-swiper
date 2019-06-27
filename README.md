@@ -39,7 +39,7 @@ Swiper is not compatible with all platforms, it is a modern touch slider which i
 | renderParallax     | function |                  | Render props function for parallax               |
 | getSwiper          | function |                  | Callback function that returns Swiper instance   |
 
-**If you want to use custom build swiper to reduce bundle size, you need to use extra props below.**
+**If you want to use Swiper custom build to reduce bundle size, you need to use extra props below.**
 
 # Custom build extra props
 
@@ -54,6 +54,8 @@ Swiper is not compatible with all platforms, it is a modern touch slider which i
 * Find more info about Swiper custom build [HERE](https://idangero.us/swiper/api/#custom-build)
 
 # Installation and setup
+
+From version 2.0.0, it requires **React & ReactDOM ver >=16.8.0** to use [Hooks](https://reactjs.org/docs/hooks-intro.html)
 
 ## Npm package
 
