@@ -191,6 +191,8 @@ export default ManipulatingSwiper;
 
 ## Custom build Swiper
 
+You can find the [WORKING DEMO REPO HERE](https://github.com/kidjp85/react-id-swiper-custom-build)
+
 ```javascript
 import React from 'react';
 import { Swiper, Navigation, Pagination } from 'swiper/dist/js/swiper.esm.js';
