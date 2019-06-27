@@ -6,7 +6,7 @@
 
 [![Package Quality](http://npm.packagequality.com/badge/react-id-swiper.png)](http://packagequality.com/#?package=react-id-swiper)
 
-react-id-swiper ( Newest version 2.1.2 )
+react-id-swiper ( Newest version 2.3.0 )
 ========================================
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component
 
@@ -15,12 +15,11 @@ react-id-swiper ( Newest version 2.1.2 )
 What is Swiper?
 ===============
 
-Swiper - is the free and most modern mobile touch slider with hardware accelerated transitions and amazing native behavior. It is intended to be used in mobile websites, mobile web apps, and mobile native/hybrid apps. Designed mostly for iOS, but also works great on latest Android, Windows Phone 8 and modern Desktop browsers
-
+Swiper - is the free and most modern mobile touch slider with hardware accelerated transitions and amazing native behavior.
+It is intended to be used in mobile websites, mobile web apps, and mobile native/hybrid apps. Designed mostly for iOS, but also works great on latest Android, Windows Phone 8 and modern Desktop browsers
 Swiper is not compatible with all platforms, it is a modern touch slider which is focused only on modern apps/platforms to bring the best experience and simplicity.
 
-React-id-swiper's original props
-================================
+# Props
 
 | Name               | Type     | Default value    | Description                                      |
 | ------------------ | -------- | ---------------- | -------------------------------------------------|
@@ -39,22 +38,24 @@ React-id-swiper's original props
 | renderPagination   | function |                  | Render props function for pagination             |
 | renderParallax     | function |                  | Render props function for parallax               |
 | getSwiper          | function |                  | Callback function that returns Swiper instance   |
-| modules            | array    |                  | Array of Swiper modules for custom build         |
+
+**If you want to use custom build swiper to reduce bundle size, you need to use extra props below.**
+
+# Custom build extra props
+
+| Name               | Type     | Default value    | Description                                      |
+| ------------------ | -------- | ---------------- | -------------------------------------------------|
+| Swiper             | Class    |                  | Swiper class                                     |
+| modules            | array    |                  | Array of Swiper necessary modules                |
 
 
-NOTE: You can also use Swiper's original params too. Swiper API documentation [HERE](http://idangero.us/swiper/api/)
+**NOTE:**
+* You can also use Swiper's original params too. Swiper API documentation [HERE](http://idangero.us/swiper/api/)
+* Find more info about Swiper custom build [HERE](https://idangero.us/swiper/api/#custom-build)
 
-## :warning: Breaking change from 2.x
+# Installation and setup
 
-- From version 2.0.0 requires React & ReactDOM ver >=16.8.0 to use [Hooks](https://reactjs.org/docs/hooks-intro.html)
-
-- From version 2.1.1, adding new props named `modules` that can help reducing bundle file size. More info [here](https://idangero.us/swiper/api/#custom-build)
-
-- Full build swiper version is available from `2.1.1`, which can be found from `react-id-swiper/lib/ReactIdSwiper.full`.
-
-## Installation and setup
-
-### Npm package
+## Npm package
 
 > By npm
 
@@ -68,21 +69,21 @@ npm install --save react-id-swiper@latest swiper@latest
 yarn add react-id-swiper@latest swiper@latest
 ```
 
-### CDN
+## CDN
 
 ```html
-<script src="https://unpkg.com/react-id-swiper@2.1.2/lib/react-id-swiper.js"></script>
+<script src="https://unpkg.com/react-id-swiper@2.3.0/lib/react-id-swiper.js"></script>
 ```
 
 ```html
-<script src="https://unpkg.com/react-id-swiper@2.1.2/lib/react-id-swiper.min.js"></script>
+<script src="https://unpkg.com/react-id-swiper@2.3.0/lib/react-id-swiper.min.js"></script>
 ```
 
-## Styling
+# Styling
 
 **Swiper stylesheet file is required**
 
-Use Swiper stylesheet file from CDN or `src/styles/` (supporting css, scss)
+Use Swiper stylesheet file from CDN or `react-id-swiper/lib/styles/` (supporting css, scss)
 
 ```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
@@ -92,11 +93,9 @@ Use Swiper stylesheet file from CDN or `src/styles/` (supporting css, scss)
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
 ```
 
-## Examples
+# Examples [here](http://kidjp85.github.io/react-id-swiper/)
 
-Find more examples [here](http://kidjp85.github.io/react-id-swiper/)
-
-### Default
+## Default
 
 ```javascript
 import React from 'react';
@@ -115,36 +114,14 @@ const SimpleSwiper = () => (
 export default SimpleSwiper;
 ```
 
-### Using full version of Swiper
-
-```javascript
-import React from 'react';
-import Swiper from 'react-id-swiper/lib/ReactIdSwiper.full';
-
-const SimpleSwiper = () => (
-  <Swiper>
-    <div>Slide 1</div>
-    <div>Slide 2</div>
-    <div>Slide 3</div>
-    <div>Slide 4</div>
-    <div>Slide 5</div>
-  </Swiper>
-)
-
-export default SimpleSwiper;
-```
-
-### Using params
+## Using params
 
 ```javascript
 import React from 'react';
 import Swiper from 'react-id-swiper';
-// Need to add Pagination, Navigation modules
-import { Pagination, Navigation } from 'swiper/dist/js/swiper.esm'
 
 const SimpleSwiperWithParams = () => {
   const params = {
-    modules: [Pagination, Navigation],
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
@@ -171,12 +148,11 @@ const SimpleSwiperWithParams = () => {
 export default SimpleSwiperWithParams;
 ```
 
-### Manipulating swiper from outside swiper component
+## Manipulating swiper from outside swiper component
 
 ```javascript
 import React, { useState } from 'react';
 import Swiper from 'react-id-swiper';
-import { Navigation } from 'swiper/dist/js/swiper.esm'
 
 const ManipulatingSwiper = () => {
   const [swiper, updateSwiper] = useState(null);
@@ -211,11 +187,64 @@ const ManipulatingSwiper = () => {
 export default ManipulatingSwiper;
 ```
 
-### Adding customized css classes
+## Custom build Swiper
+
+```javascript
+import React from 'react';
+import { Swiper, Navigation, Pagination } from 'swiper/dist/js/swiper.esm.js';
+import ReactIdSwiperCustom from 'react-id-swiper/lib/ReactIdSwiper.custom';
+
+const CustomBuildSwiper = () => {
+  const params = {
+    // Provide Swiper class as props
+    Swiper,
+    // Add modules you need
+    modules: [Navigation, Pagination],
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    spaceBetween: 30
+  }
+
+  return(
+    <ReactIdSwiperCustom {...params}>
+      <div>Slide 1</div>
+      <div>Slide 2</div>
+      <div>Slide 3</div>
+      <div>Slide 4</div>
+      <div>Slide 5</div>
+    </ReactIdSwiperCustom>
+  )
+}
+
+export default SimpleSwiperWithParams;
+```
+
+**NOTE**:
+* If you use Webpack & Babel you need to setup Babel loader config in `webpack.config.js` like below:
+
+```js
+module: {
+  rules: [
+    {
+      exclude: [/node_modules\/(?!(swiper|dom7)\/).*/, /\.test\.js(x)?$/],
+      test: /\.js(x)?$/,
+      use: [{ loader: 'babel-loader' }],
+    }
+  ],
+}
+```
+
+## Adding customized css classes
 
 ```javascript
 const params = {
-  modules: [Pagination],
   pagination: {
     el: '.swiper-pagination.customized-swiper-pagination',
   }, // Add your class name for pagination container
@@ -227,13 +256,12 @@ const params = {
 }
 ```
 
-### Adding customized components
+## Adding customized components
 
 For customized rendering to work, you have to use same classname with params el.
 
 ```javascript
 const params = {
-  modules: [Navigation],
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
@@ -243,7 +271,7 @@ const params = {
 }
 ```
 
-### Workable slides
+## Workable slides
 
 Each slide should be wrapped by HTML element
 
@@ -263,19 +291,19 @@ Each slide should be wrapped by HTML element
 </Swiper>
 ```
 
-## Bug report
+# Bug report
 
 **Please use the prepared Codesanbox below to reproduce your issue. Thank you!!**
 
 [![Edit ReactIdSwiper - DEMO](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/p8j61y7j7?fontsize=14)
 
 
-## Authors
+# Authors
 
 * **Asher Nguyen** - *Initial work* - [Asher Nguyen](https://github.com/kidjp85)
 
 See also the list of [contributors](https://github.com/kidjp85/react-id-swiper/contributors) who participated in this project.
 
-## License
+# License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details

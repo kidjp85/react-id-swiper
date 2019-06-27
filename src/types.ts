@@ -11,6 +11,7 @@ export type ReactIdSwiperChildren = ReactElement | ReactElement[];
 export type GetSwiper = (swiper: SwiperInstance) => void;
 
 export type SwiperModules = (SwiperModule & { name: string })[];
+
 export interface ReactIdSwiperProps extends SwiperOptions {
   ContainerEl?: WrappedElementType;
   WrapperEl?: WrappedElementType;
@@ -32,7 +33,11 @@ export interface ReactIdSwiperProps extends SwiperOptions {
     el: string;
     value: string;
   };
+}
+
+export interface ReactIdSwiperCustomProps extends ReactIdSwiperProps {
   modules?: SwiperModules;
+  Swiper: typeof Swiper;
 }
 
 export type SelectableElement = SelectableElement | undefined;

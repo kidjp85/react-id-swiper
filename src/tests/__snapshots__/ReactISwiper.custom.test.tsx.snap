@@ -1,0 +1,310 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReactIdSwiperCustom rendering snapshot Custom container & wrapper it should render with custom container & wrapper 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReactIdSwiperCustom rendering snapshot Default it should render default swiper 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReactIdSwiperCustom rendering snapshot Navigation it should render navigation buttons 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+  <div
+    class="swiper-button-next"
+  />
+  <div
+    class="swiper-button-prev"
+  />
+</div>
+`;
+
+exports[`ReactIdSwiperCustom rendering snapshot Navigation it should render pagination with customized class name 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+  <div
+    class="swiper-button-next customized-swiper-button-next"
+  />
+  <div
+    class="swiper-button-prev customized-swiper-button-prev"
+  />
+</div>
+`;
+
+exports[`ReactIdSwiperCustom rendering snapshot Navigation it should render pagination with customized function 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+  <div
+    class="swiper-button-next"
+  />
+  <div
+    class="swiper-button-prev"
+  />
+</div>
+`;
+
+exports[`ReactIdSwiperCustom rendering snapshot No swiping it should render slide with swiper-no-swiping class name 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide  swiper-no-swiping"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide  swiper-no-swiping"
+    >
+      Slide 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReactIdSwiperCustom rendering snapshot Pagination it should render pagination 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+  <div
+    class="swiper-pagination"
+  />
+</div>
+`;
+
+exports[`ReactIdSwiperCustom rendering snapshot Pagination it should render pagination with customized class name 1`] = `
+<div
+  class="customized-swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReactIdSwiperCustom rendering snapshot Pagination it should render pagination with customized function 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+  <div
+    class="swiper-pagination"
+  />
+</div>
+`;
+
+exports[`ReactIdSwiperCustom rendering snapshot Parallax it should render parallax 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="parallax-bg"
+    data-swiper-parallax="-23%"
+  />
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReactIdSwiperCustom rendering snapshot Parallax it should render parallax 2`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="parallax-bg"
+    data-swiper-parallax="-23%"
+  />
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReactIdSwiperCustom rendering snapshot RTL it should render with rtl 1`] = `
+<div
+  class="swiper-container"
+  dir="rtl"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReactIdSwiperCustom rendering snapshot Scrollbar it should render scrollbar 1`] = `
+<div
+  class="swiper-container"
+>
+  <div
+    class="swiper-wrapper"
+  >
+    <div
+      class="swiper-slide"
+    >
+      Slide 1
+    </div>
+    <div
+      class="swiper-slide"
+    >
+      Slide 2
+    </div>
+  </div>
+  <div
+    class="swiper-scrollbar"
+  />
+</div>
+`;
