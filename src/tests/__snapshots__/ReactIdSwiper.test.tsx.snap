@@ -186,6 +186,9 @@ exports[`ReactIdSwiper rendering snapshot Pagination it should render pagination
       Slide 2
     </div>
   </div>
+  <div
+    class="swiper-pagination customized-swiper-pagination"
+  />
 </div>
 `;
 

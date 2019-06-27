@@ -1,28 +1,28 @@
 import React from 'react';
 import { render, mount } from 'enzyme';
-import { Pagination, Navigation, Scrollbar, Parallax } from 'swiper/dist/js/swiper.esm';
-import ReactIdSwiper from '../ReactIdSwiper';
-import { ReactIdSwiperProps, WrappedElementType } from '../types';
+import { Pagination, Navigation, Scrollbar, Parallax, Swiper } from 'swiper/dist/js/swiper.esm';
+import ReactIdSwiper from '../ReactIdSwiper.custom';
+import { ReactIdSwiperCustomProps, WrappedElementType } from '../types';
 
-const renderSwiper = (params?: ReactIdSwiperProps) =>
+const renderSwiper = (params?: ReactIdSwiperCustomProps) =>
   render(
-    <ReactIdSwiper {...params}>
+    <ReactIdSwiper {...{ ...params, Swiper }}>
       <div key="s1">Slide 1</div>
       <div key="s2">Slide 2</div>
     </ReactIdSwiper>
   );
 
-const mountSwiper = (params?: ReactIdSwiperProps) =>
+const mountSwiper = (params?: ReactIdSwiperCustomProps) =>
   mount(
-    <ReactIdSwiper {...params}>
+    <ReactIdSwiper {...{ ...params, Swiper }}>
       <div key="s1">Slide 1</div>
       <div key="s2">Slide 2</div>
     </ReactIdSwiper>
   );
 
-describe('ReactIdSwiper', () => {
+describe('ReactIdSwiperCustom', () => {
   describe('defaultProps', () => {
-    const component = mountSwiper();
+    const component = mountSwiper({ Swiper });
 
     test('should have default props', () => {
       expect(component.prop('containerClass')).toEqual('swiper-container');
@@ -35,23 +35,25 @@ describe('ReactIdSwiper', () => {
 
   describe('rendering', () => {
     test('it should not render component with no child', () => {
-      const wrapper = mount(<ReactIdSwiper />);
+      const wrapper = mount(<ReactIdSwiper Swiper={Swiper} />);
 
       expect(wrapper.html()).toEqual(null);
     });
 
     test('it should not render component with invalid children props', () => {
       const multipleChildren = mount(
-        <ReactIdSwiper>
+        <ReactIdSwiper Swiper={Swiper}>
           <div key="s1">Slide 1</div>
           {'Slide 2' as any}
         </ReactIdSwiper>
       );
 
-      const singleChildre = mount(<ReactIdSwiper>{'Slide 2' as any}</ReactIdSwiper>);
+      const singleChildren = mount(
+        <ReactIdSwiper Swiper={Swiper}>{'Slide 2' as any}</ReactIdSwiper>
+      );
 
       expect(multipleChildren.html()).toEqual(null);
-      expect(singleChildre.html()).toEqual(null);
+      expect(singleChildren.html()).toEqual(null);
     });
   });
 
@@ -66,6 +68,7 @@ describe('ReactIdSwiper', () => {
     // Render pagination
     describe('Pagination', () => {
       const params = {
+        Swiper,
         modules: [Pagination],
         pagination: {
           el: '.swiper-pagination',
@@ -79,6 +82,7 @@ describe('ReactIdSwiper', () => {
 
       test('it should render pagination with customized class name', () => {
         const customizedParams = {
+          Swiper,
           pagination: {
             el: '.swiper-pagination.customized-swiper-pagination'
           },
@@ -101,6 +105,7 @@ describe('ReactIdSwiper', () => {
     // Render navigation
     describe('Navigation', () => {
       const params = {
+        Swiper,
         modules: [Navigation],
         navigation: {
           nextEl: '.swiper-button-next',
@@ -137,6 +142,7 @@ describe('ReactIdSwiper', () => {
 
     describe('Parallax', () => {
       const params = {
+        Swiper,
         modules: [Parallax],
         parallax: true,
         parallaxEl: {
@@ -152,6 +158,7 @@ describe('ReactIdSwiper', () => {
 
     describe('Parallax', () => {
       const params = {
+        Swiper,
         modules: [Parallax],
         parallax: true,
         parallaxEl: {
@@ -167,6 +174,7 @@ describe('ReactIdSwiper', () => {
 
     describe('Scrollbar', () => {
       const params = {
+        Swiper,
         modules: [Scrollbar],
         scrollbar: {
           el: '.swiper-scrollbar',
@@ -181,6 +189,7 @@ describe('ReactIdSwiper', () => {
 
     describe('No swiping', () => {
       const params = {
+        Swiper,
         noSwiping: true
       };
 
@@ -191,6 +200,7 @@ describe('ReactIdSwiper', () => {
 
     describe('RTL', () => {
       const params = {
+        Swiper,
         rtl: 'rtl'
       };
 
@@ -200,12 +210,13 @@ describe('ReactIdSwiper', () => {
     });
 
     describe('Custom container & wrapper', () => {
-      interface Params {
+      interface Params extends ReactIdSwiperCustomProps {
         ContainerEl: WrappedElementType;
         WrapperEl: WrappedElementType;
       }
 
       const params: Params = {
+        Swiper,
         ContainerEl: 'div',
         WrapperEl: 'div'
       };

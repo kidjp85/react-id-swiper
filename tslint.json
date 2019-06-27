@@ -2,13 +2,12 @@
   "rulesDirectory": [
     "tslint-react",
     "tslint-plugin-prettier",
-    "tslint-config-airbnb",
-    "tslint-react-hooks"
+    "tslint-config-airbnb"
   ],
   "linterOptions": {
     "exclude": [
-      "node_module",
-      "lib"
+      "node_modules/**/*.d.ts",
+      "packages/**/*.d.ts"
     ]
   },
   "rules": {
@@ -54,7 +53,6 @@
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": false,
     "no-unused-expression": true,
-    "no-use-before-declare": true,
     "radix": true,
     "switch-default": true,
     "trailing-comma": [false],
