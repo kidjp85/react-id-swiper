@@ -6,7 +6,7 @@
 
 [![Package Quality](http://npm.packagequality.com/badge/react-id-swiper.png)](http://packagequality.com/#?package=react-id-swiper)
 
-react-id-swiper ( Newest version 2.3.0 )
+react-id-swiper ( Newest version 2.3.1 )
 ========================================
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component
 
