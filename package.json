@@ -1,6 +1,6 @@
 {
   "name": "react-id-swiper",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "ReactJs component for iDangerous Swiper",
   "main": "lib/index",
   "types": "lib/index.d.ts",

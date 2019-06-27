@@ -1,5 +1,8 @@
 # Change Log for React-id-swiper
 
+## [v2.3.1](https://github.com/kidjp85/react-id-swiper/compare/2.3.1...2.3.0) - Released on June 27th, 2019
+  * Fix bug [276](https://github.com/kidjp85/react-id-swiper/issues/276) for rebuildOnUpdate and shouldSwiperUpdate not working properly.
+
 ## [v2.3.0](https://github.com/kidjp85/react-id-swiper/compare/2.3.0...2.1.2) - Released on June 27th, 2019
   * Use Swiper full build version as default instead of `react-id-swiper/lib/react-id-swiper.full`
   * Provide custom build version which allows to use `Swiper` class as props instead of importing directly from `swiper/dist/js/swiper.esm`

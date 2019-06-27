@@ -3,6 +3,7 @@ import React, {
   Children,
   createRef,
   useEffect,
+  useRef,
   cloneElement,
   isValidElement,
   ReactElement
@@ -46,10 +47,10 @@ const ReactIdSwiperCustom: FunctionComponent<ReactIdSwiperCustomProps> = props =
   }
 
   // Define swiper ref
-  const swiperRef = createRef<HTMLDivElement>();
+  const swiperNodeRef = createRef<HTMLDivElement>();
 
-  // Define swiper instance
-  let swiper: SwiperInstance = null;
+  // Define swiper instance ref
+  const swiperInstanceRef = useRef<SwiperInstance>(null);
 
   // Initialize modules to use with swiper
   Swiper.use(modules);
@@ -57,6 +58,7 @@ const ReactIdSwiperCustom: FunctionComponent<ReactIdSwiperCustomProps> = props =
   // Validate children props
   if (!validateChildren(children)) {
     console.warn('Children should be react element or an array of react element!!');
+
     return null;
   }
 
@@ -67,6 +69,7 @@ const ReactIdSwiperCustom: FunctionComponent<ReactIdSwiperCustomProps> = props =
     }
 
     let activeSlideId = 0;
+
     // In loop mode first slide index should be 1
     let id = loop ? 1 : 0;
 
@@ -91,18 +94,18 @@ const ReactIdSwiperCustom: FunctionComponent<ReactIdSwiperCustomProps> = props =
 
   // Initialize swiper
   const buildSwiper = () => {
-    if (swiperRef.current && swiper === null) {
-      swiper = new Swiper(swiperRef.current, objectAssign({}, props));
-      getSwiperInstance(swiper);
+    if (swiperNodeRef.current && swiperInstanceRef.current === null) {
+      swiperInstanceRef.current = new Swiper(swiperNodeRef.current, objectAssign({}, props));
+      getSwiperInstance(swiperInstanceRef.current);
     }
   };
 
   // Destroy swiper
   const destroySwiper = () => {
-    if (swiper !== null) {
-      swiper.destroy(true, true);
-      swiper = null;
-      getSwiperInstance(swiper);
+    if (swiperInstanceRef.current !== null) {
+      swiperInstanceRef.current.destroy(true, true);
+      swiperInstanceRef.current = null;
+      getSwiperInstance(swiperInstanceRef.current);
     }
   };
 
@@ -114,9 +117,9 @@ const ReactIdSwiperCustom: FunctionComponent<ReactIdSwiperCustomProps> = props =
 
   // Update swiper
   const updateSwiper = () => {
-    if (swiper !== null) {
-      swiper.update();
-      getSwiperInstance(swiper);
+    if (swiperInstanceRef.current !== null) {
+      swiperInstanceRef.current.update();
+      getSwiperInstance(swiperInstanceRef.current);
     }
   };
 
@@ -144,8 +147,8 @@ const ReactIdSwiperCustom: FunctionComponent<ReactIdSwiperCustomProps> = props =
 
     const slideToIndex = getActiveSlideIndexFromProps();
 
-    if (swiper !== null && slideToIndex !== null) {
-      swiper.slideTo(slideToIndex);
+    if (swiperInstanceRef.current !== null && slideToIndex !== null) {
+      swiperInstanceRef.current.slideTo(slideToIndex);
     }
 
     return () => destroySwiper();
@@ -153,24 +156,24 @@ const ReactIdSwiperCustom: FunctionComponent<ReactIdSwiperCustomProps> = props =
 
   // Execute each time when props are updated
   useEffect(() => {
-    if (swiper !== null) {
+    if (swiperInstanceRef.current !== null) {
       if (rebuildOnUpdate) {
         rebuildSwiper();
       } else if (shouldSwiperUpdate) {
         updateSwiper();
 
-        const numSlides = swiper.slides.length;
+        const numSlides = swiperInstanceRef.current.slides.length;
 
-        if (numSlides <= swiper.activeIndex) {
+        if (numSlides <= swiperInstanceRef.current.activeIndex) {
           const index = Math.max(numSlides - 1, 0);
-          swiper.slideTo(index);
+          swiperInstanceRef.current.slideTo(index);
         }
       }
 
       const slideToIndex = getActiveSlideIndexFromProps();
 
       if (slideToIndex !== null) {
-        swiper.slideTo(slideToIndex);
+        swiperInstanceRef.current.slideTo(slideToIndex);
       }
     }
   });
@@ -186,7 +189,7 @@ const ReactIdSwiperCustom: FunctionComponent<ReactIdSwiperCustomProps> = props =
   const shouldRenderPrevButton = isNavigationModuleAvailable && navigation && navigation.prevEl;
 
   return (
-    <ContainerEl className={containerClass} dir={rtl && 'rtl'} ref={swiperRef}>
+    <ContainerEl className={containerClass} dir={rtl && 'rtl'} ref={swiperNodeRef}>
       {shouldRenderParallax && renderParallax && renderParallax(props)}
       <WrapperEl className={wrapperClass}>{Children.map(children, renderContent)}</WrapperEl>
       {shouldRenderPagination && renderPagination && renderPagination(props)}
