@@ -74,11 +74,11 @@ yarn add react-id-swiper@latest swiper@latest
 ## CDN
 
 ```html
-<script src="https://unpkg.com/react-id-swiper@2.3.0/lib/react-id-swiper.js"></script>
+<script src="https://unpkg.com/react-id-swiper@2.3.1/lib/react-id-swiper.js"></script>
 ```
 
 ```html
-<script src="https://unpkg.com/react-id-swiper@2.3.0/lib/react-id-swiper.min.js"></script>
+<script src="https://unpkg.com/react-id-swiper@2.3.1/lib/react-id-swiper.min.js"></script>
 ```
 
 # Styling
@@ -173,7 +173,7 @@ const ManipulatingSwiper = () => {
 
   return (
     <div>
-      <Swiper getSwiper={updateSwiper} modules={[Navigation]}>
+      <Swiper getSwiper={updateSwiper}>
         <div>Slide 1</div>
         <div>Slide 2</div>
         <div>Slide 3</div>
