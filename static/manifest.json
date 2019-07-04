@@ -1,35 +1,24 @@
 {
-  "name": "nextjs-stater",
-  "short_name": "Next PWA",
-  "icons": [
-    {
-      "src": "img/apple-touch-icon-120x120.png",
-      "sizes": "120x120",
-      "type": "image/png"
-    },
-    {
-      "src": "img/apple-touch-icon-152x152.png",
-      "sizes": "152x152",
-      "type": "image/png"
-    },
-    {
-      "src": "img/android-chrome-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png"
-    },
-    {
-      "src": "img/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "img/splashscreen-icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png"
-    }
-  ],
-  "start_url": "/",
-  "display": "standalone",
-  "theme_color": "#673ab7",
-  "background_color": "#EEE"
+    "name": "asher_phuc_hoang_nguyen",
+    "short_name": "asher_nguyen",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
 }
