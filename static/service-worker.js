@@ -4,28 +4,28 @@ self.__precacheManifest = [
     "revision": "5c0fd2659cb0f3688872"
   },
   {
-    "url": "//kidjp85.github.io/react-id-swiper//_next/static/jhEzRhHQWMwJVG6teiOlZ/pages/_app.js",
-    "revision": "f59bff51b6a2b81e02b2"
+    "url": "//kidjp85.github.io/react-id-swiper//_next/static/ptsdYgTwhM_5tKEMfQK2j/pages/_app.js",
+    "revision": "bc9ae707cc357116948f"
   },
   {
-    "url": "//kidjp85.github.io/react-id-swiper//_next/static/jhEzRhHQWMwJVG6teiOlZ/pages/_error.js",
-    "revision": "a3fb19c431155b4e25c9"
+    "url": "//kidjp85.github.io/react-id-swiper//_next/static/ptsdYgTwhM_5tKEMfQK2j/pages/_error.js",
+    "revision": "8abfa5a3fae2abc09545"
   },
   {
-    "url": "//kidjp85.github.io/react-id-swiper//_next/static/jhEzRhHQWMwJVG6teiOlZ/pages/doc.js",
-    "revision": "3a874ee2fbe9ee83de98"
+    "url": "//kidjp85.github.io/react-id-swiper//_next/static/ptsdYgTwhM_5tKEMfQK2j/pages/doc.js",
+    "revision": "e262aca0687431d477d9"
   },
   {
-    "url": "//kidjp85.github.io/react-id-swiper//_next/static/jhEzRhHQWMwJVG6teiOlZ/pages/example.js",
-    "revision": "e75eee2839aa6446b08c"
+    "url": "//kidjp85.github.io/react-id-swiper//_next/static/ptsdYgTwhM_5tKEMfQK2j/pages/example.js",
+    "revision": "66954686d5b1d20d988f"
   },
   {
-    "url": "//kidjp85.github.io/react-id-swiper//_next/static/jhEzRhHQWMwJVG6teiOlZ/pages/index.js",
-    "revision": "9ceb5f3b1d1977c3478b"
+    "url": "//kidjp85.github.io/react-id-swiper//_next/static/ptsdYgTwhM_5tKEMfQK2j/pages/index.js",
+    "revision": "a3f68d149875985711ea"
   },
   {
-    "url": "//kidjp85.github.io/react-id-swiper//_next/static/jhEzRhHQWMwJVG6teiOlZ/pages/types.js",
-    "revision": "a3686895906cff2c0909"
+    "url": "//kidjp85.github.io/react-id-swiper//_next/static/ptsdYgTwhM_5tKEMfQK2j/pages/types.js",
+    "revision": "64cdfdecf26d8a084e78"
   },
   {
     "url": "//kidjp85.github.io/react-id-swiper//_next/static/runtime/main-e982b5c97b3c8ddbfa75.js",
