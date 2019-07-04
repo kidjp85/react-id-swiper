@@ -95,7 +95,7 @@ Use Swiper stylesheet file from CDN or `react-id-swiper/lib/styles/` (supporting
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
 ```
 
-# Examples [here](https://react-id-swiper.ashernguyen.site/)
+# Examples [here](https://react-id-swiper.ashernguyen.site/example/default)
 
 ## Default
 
