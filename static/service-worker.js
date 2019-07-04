@@ -1,31 +1,31 @@
 self.__precacheManifest = [
   {
+    "url": "//kidjp85.github.io/react-id-swiper//_next/static/A36QQ2IzZC5zj7wcO4AZ7/pages/_app.js",
+    "revision": "cb66d9f1304146a92a45"
+  },
+  {
+    "url": "//kidjp85.github.io/react-id-swiper//_next/static/A36QQ2IzZC5zj7wcO4AZ7/pages/_error.js",
+    "revision": "9b2a184337b1aee2a2f4"
+  },
+  {
+    "url": "//kidjp85.github.io/react-id-swiper//_next/static/A36QQ2IzZC5zj7wcO4AZ7/pages/doc.js",
+    "revision": "322f9bb047be09749798"
+  },
+  {
+    "url": "//kidjp85.github.io/react-id-swiper//_next/static/A36QQ2IzZC5zj7wcO4AZ7/pages/example.js",
+    "revision": "395e8a6a4a20299e8d71"
+  },
+  {
+    "url": "//kidjp85.github.io/react-id-swiper//_next/static/A36QQ2IzZC5zj7wcO4AZ7/pages/index.js",
+    "revision": "ea0315bfbb39cb5c73fc"
+  },
+  {
+    "url": "//kidjp85.github.io/react-id-swiper//_next/static/A36QQ2IzZC5zj7wcO4AZ7/pages/types.js",
+    "revision": "0f5a031a90e38e7112a6"
+  },
+  {
     "url": "//kidjp85.github.io/react-id-swiper//_next/static/chunks/commons.dc78a8de141b59b2653b.js",
     "revision": "5c0fd2659cb0f3688872"
-  },
-  {
-    "url": "//kidjp85.github.io/react-id-swiper//_next/static/kQe927n7xNTQI4P7eHYjj/pages/_app.js",
-    "revision": "482e2e67e4921e6a4bff"
-  },
-  {
-    "url": "//kidjp85.github.io/react-id-swiper//_next/static/kQe927n7xNTQI4P7eHYjj/pages/_error.js",
-    "revision": "bcdb694d42224d4dcbd3"
-  },
-  {
-    "url": "//kidjp85.github.io/react-id-swiper//_next/static/kQe927n7xNTQI4P7eHYjj/pages/doc.js",
-    "revision": "5348ddc1dcb2b26efb25"
-  },
-  {
-    "url": "//kidjp85.github.io/react-id-swiper//_next/static/kQe927n7xNTQI4P7eHYjj/pages/example.js",
-    "revision": "4db664ebd369da0efe1f"
-  },
-  {
-    "url": "//kidjp85.github.io/react-id-swiper//_next/static/kQe927n7xNTQI4P7eHYjj/pages/index.js",
-    "revision": "70ffbf95febb5f766d3e"
-  },
-  {
-    "url": "//kidjp85.github.io/react-id-swiper//_next/static/kQe927n7xNTQI4P7eHYjj/pages/types.js",
-    "revision": "44dac665267aafd3920a"
   },
   {
     "url": "//kidjp85.github.io/react-id-swiper//_next/static/runtime/main-e982b5c97b3c8ddbfa75.js",
