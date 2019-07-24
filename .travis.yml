@@ -11,7 +11,7 @@ install:
 script:
   - yarn test
   - yarn test:coverage
-  - yarn lint
+  - yarn lint:ts
 after_script: "cat ./coverage/lcov.info | $(npm bin)/codecov"
 branches:
   only:

@@ -35,6 +35,17 @@
     "type": "git",
     "url": "git://github.com/kidjp85/react-id-swiper.git"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint",
+      "git add"
+    ]
+  },
   "bugs": {
     "url": "https://github.com/kidjp85/react-id-swiper/issues"
   },
@@ -77,7 +88,9 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-react-hooks": "^1.6.1",
+    "husky": "^3.0.1",
     "jest": "^24.8.0",
+    "lint-staged": "^9.2.0",
     "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
