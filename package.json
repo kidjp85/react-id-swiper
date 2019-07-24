@@ -20,8 +20,8 @@
     "test:dev": "jest --watch --coverage",
     "test:coverage": "jest --coverage",
     "prepare": "yarn build",
-    "preversion": "yarn lint",
-    "prepublishOnly": "yarn test && yarn lint"
+    "preversion": "yarn lint:ts",
+    "prepublishOnly": "yarn test && yarn lint:ts"
   },
   "keywords": [
     "iDangerous",
