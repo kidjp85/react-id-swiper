@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { Pagination, Navigation, Scrollbar, Parallax } from 'swiper/dist/js/swiper.esm';
-import { classNames, validateChildren, isReactElement, isModuleAvailable } from '../utils';
 import { mount } from 'enzyme';
+import { classNames, validateChildren, isReactElement, isModuleAvailable } from '../utils';
 
 describe('utils', () => {
   describe('classnames', () => {
