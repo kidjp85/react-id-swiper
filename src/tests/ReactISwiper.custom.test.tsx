@@ -156,22 +156,6 @@ describe('ReactIdSwiperCustom', () => {
       });
     });
 
-    describe('Parallax', () => {
-      const params = {
-        Swiper,
-        modules: [Parallax],
-        parallax: true,
-        parallaxEl: {
-          el: '.parallax-bg',
-          value: '-23%'
-        }
-      };
-
-      test('it should render parallax', () => {
-        expect(renderSwiper(params)).toMatchSnapshot();
-      });
-    });
-
     describe('Scrollbar', () => {
       const params = {
         Swiper,

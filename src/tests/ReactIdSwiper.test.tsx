@@ -146,20 +146,6 @@ describe('ReactIdSwiper', () => {
       });
     });
 
-    describe('Parallax', () => {
-      const params = {
-        parallax: true,
-        parallaxEl: {
-          el: '.parallax-bg',
-          value: '-23%'
-        }
-      };
-
-      test('it should render parallax', () => {
-        expect(renderSwiper(params)).toMatchSnapshot();
-      });
-    });
-
     describe('Scrollbar', () => {
       const params = {
         scrollbar: {

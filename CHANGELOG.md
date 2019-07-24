@@ -1,5 +1,9 @@
 # Change Log for React-id-swiper
 
+## [v2.3.2](https://github.com/kidjp85/react-id-swiper/compare/2.3.2...2.3.1) - Released on July 24th, 2019
+  * Upgrade npm packages
+  * Replace `tslint` with `eslint`
+
 ## [v2.3.1](https://github.com/kidjp85/react-id-swiper/compare/2.3.1...2.3.0) - Released on June 27th, 2019
   * Fix bug [276](https://github.com/kidjp85/react-id-swiper/issues/276) for rebuildOnUpdate and shouldSwiperUpdate not working properly.
 
