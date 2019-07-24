@@ -241,31 +241,6 @@ exports[`ReactIdSwiper rendering snapshot Parallax it should render parallax 1`]
 </div>
 `;
 
-exports[`ReactIdSwiper rendering snapshot Parallax it should render parallax 2`] = `
-<div
-  class="swiper-container"
->
-  <div
-    class="parallax-bg"
-    data-swiper-parallax="-23%"
-  />
-  <div
-    class="swiper-wrapper"
-  >
-    <div
-      class="swiper-slide"
-    >
-      Slide 1
-    </div>
-    <div
-      class="swiper-slide"
-    >
-      Slide 2
-    </div>
-  </div>
-</div>
-`;
-
 exports[`ReactIdSwiper rendering snapshot RTL it should render with rtl 1`] = `
 <div
   class="swiper-container"
