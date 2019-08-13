@@ -71,7 +71,7 @@
     "@types/react-dom": "^16.8.5",
     "@types/swiper": "^4.4.3",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
+    "@typescript-eslint/parser": "^2.0.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-jest": "^24.8.0",
     "babel-plugin-dynamic-import-node": "^2.3.0",
