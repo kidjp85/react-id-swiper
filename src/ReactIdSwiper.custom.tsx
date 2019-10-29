@@ -96,7 +96,6 @@ const ReactIdSwiperCustom: FunctionComponent<ReactIdSwiperCustomProps> = props =
   const buildSwiper = () => {
     if (swiperNodeRef.current && swiperInstanceRef.current === null) {
       swiperInstanceRef.current = new Swiper(swiperNodeRef.current, objectAssign({}, props));
-      getSwiperInstance(swiperInstanceRef.current);
     }
   };
 
@@ -105,7 +104,6 @@ const ReactIdSwiperCustom: FunctionComponent<ReactIdSwiperCustomProps> = props =
     if (swiperInstanceRef.current !== null) {
       swiperInstanceRef.current.destroy(true, true);
       swiperInstanceRef.current = null;
-      getSwiperInstance(swiperInstanceRef.current);
     }
   };
 
@@ -119,7 +117,6 @@ const ReactIdSwiperCustom: FunctionComponent<ReactIdSwiperCustomProps> = props =
   const updateSwiper = () => {
     if (swiperInstanceRef.current !== null) {
       swiperInstanceRef.current.update();
-      getSwiperInstance(swiperInstanceRef.current);
     }
   };
 
@@ -178,6 +175,10 @@ const ReactIdSwiperCustom: FunctionComponent<ReactIdSwiperCustomProps> = props =
     }
   });
 
+  useEffect(() => {
+    getSwiperInstance(swiperInstanceRef.current);
+  }, [swiperInstanceRef]);
+
   // Check modules are loaded before rendering contents
   const shouldRenderParallax = isModuleAvailable(modules, 'parallax') && parallax && parallaxEl;
   const shouldRenderPagination =
@@ -222,6 +223,6 @@ ReactIdSwiperCustom.defaultProps = {
   modules: []
 };
 
-ReactIdSwiperCustom.displayName = 'ReactIdSwiperCustom';
+ReactIdSwiperCustom.displayName = 'ReactIdSwiper';
 
 export default ReactIdSwiperCustom;

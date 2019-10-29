@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, mount } from 'enzyme';
-import { Pagination, Navigation, Scrollbar, Parallax, Swiper } from 'swiper/dist/js/swiper.esm';
+import { Pagination, Navigation, Scrollbar, Parallax, Swiper } from 'swiper/js/swiper.esm';
 import ReactIdSwiper from '../ReactIdSwiper.custom';
 import { ReactIdSwiperCustomProps, WrappedElementType } from '../types';
 

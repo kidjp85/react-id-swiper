@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Pagination, Navigation, Scrollbar, Parallax } from 'swiper/dist/js/swiper.esm';
+import { Pagination, Navigation, Scrollbar, Parallax } from 'swiper/js/swiper.esm';
 import { mount } from 'enzyme';
 import { classNames, validateChildren, isReactElement, isModuleAvailable } from '../utils';
 

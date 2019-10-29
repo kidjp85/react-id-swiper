@@ -46,18 +46,6 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
   // Define swiper instance ref
   const swiperInstanceRef = useRef<SwiperInstance>(null);
 
-  // No render if wrapper elements are not provided
-  if (!children || !ContainerEl || !WrapperEl) {
-    return null;
-  }
-
-  // Validate children props
-  if (!validateChildren(children)) {
-    console.warn('Children should be react element or an array of react element!!');
-
-    return null;
-  }
-
   // Get current active slide key
   const getActiveSlideIndexFromProps = () => {
     if (!activeSlideKey) {
@@ -92,7 +80,6 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
     if (swiperInstanceRef.current !== null) {
       swiperInstanceRef.current.destroy(true, true);
       swiperInstanceRef.current = null;
-      getSwiperInstance(swiperInstanceRef.current);
     }
   };
 
@@ -100,7 +87,6 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
   const buildSwiper = () => {
     if (swiperNodeRef.current && swiperInstanceRef.current === null) {
       swiperInstanceRef.current = new Swiper(swiperNodeRef.current, objectAssign({}, props));
-      getSwiperInstance(swiperInstanceRef.current);
     }
   };
 
@@ -114,7 +100,6 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
   const updateSwiper = () => {
     if (swiperInstanceRef.current !== null) {
       swiperInstanceRef.current.update();
-      getSwiperInstance(swiperInstanceRef.current);
     }
   };
 
@@ -172,6 +157,22 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
       }
     }
   });
+
+  useEffect(() => {
+    getSwiperInstance(swiperInstanceRef.current);
+  }, [swiperInstanceRef]);
+
+  // No render if wrapper elements are not provided
+  if (!children || !ContainerEl || !WrapperEl) {
+    return null;
+  }
+
+  // Validate children props
+  if (!validateChildren(children)) {
+    console.warn('Children should be react element or an array of react element!!');
+
+    return null;
+  }
 
   return (
     <ContainerEl className={containerClass} dir={rtl && 'rtl'} ref={swiperNodeRef}>
