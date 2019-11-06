@@ -156,7 +156,10 @@ import 'swiper/swiper.less'
 ```javascript
 import React from 'react';
 import Swiper from 'react-id-swiper';
-import 'react-id-swiper/lib/styles/css/swiper.css'; // or `/scss/swiper.scss`
+// Version <= 2.3.2
+import 'react-id-swiper/lib/styles/css/swiper.css';
+// Version >= 2.4.0
+import 'swiper/css/swiper.css';
 
 const SimpleSwiper = () => (
   <Swiper>
