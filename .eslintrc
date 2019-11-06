@@ -28,8 +28,9 @@
   },
   "rules": {
     "import/no-unresolved": "error",
-    "import/order": "error",
+    "import/order": "off",
     "import/named": "off",
+    "import/default": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-explicit-any": ["off"],
     "react/display-name": ["off"],

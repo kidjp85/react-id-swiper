@@ -1,5 +1,10 @@
 # Change Log for React-id-swiper
 
+## [v2.4.0](https://github.com/kidjp85/react-id-swiper/compare/2.4.0...2.3.2) - Released on Nov 7th, 2019
+  * Upgrade to support `Swiper` version 5.x
+  * Drop support for `Swiper`'s stylesheet
+  * Upgrade npm packages
+
 ## [v2.3.2](https://github.com/kidjp85/react-id-swiper/compare/2.3.2...2.3.1) - Released on July 24th, 2019
   * Upgrade npm packages
   * Replace `tslint` with `eslint`

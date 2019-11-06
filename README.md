@@ -1,12 +1,13 @@
 [![npm Version](https://img.shields.io/npm/v/react-id-swiper.svg?style=flat-square)](https://npmjs.org/package/react-id-swiper)
 [![Coverage Status](https://img.shields.io/codecov/c/github/moroshko/react-autosuggest/master.svg?style=flat-square)](https://codecov.io/gh/kidjp85/react-id-swiper)
-[![npm Downloads](https://img.shields.io/npm/dm/react-id-swiper.svg?style=flat-square)](https://npmjs.org/package/react-id-swiper)
+[![Weekly download](https://img.shields.io/npm/dw/react-id-swiper.svg?style=flat-square)](https://npmjs.org/package/react-id-swiper)
+[![Total Downloads](https://img.shields.io/npm/dt/react-id-swiper.svg?style=flat-square)](https://npmjs.org/package/react-id-swiper)
 [![Build Status](https://travis-ci.org/kidjp85/react-id-swiper.svg?branch=master)](https://travis-ci.org/kidjp85/react-id-swiper)
 [![Greenkeeper badge](https://badges.greenkeeper.io/kidjp85/react-id-swiper.svg)](https://greenkeeper.io/)
 
 [![Package Quality](http://npm.packagequality.com/badge/react-id-swiper.png)](http://packagequality.com/#?package=react-id-swiper)
 
-react-id-swiper ( Newest version 2.3.2 )
+react-id-swiper ( Newest version 2.4.0 )
 ========================================
 > A library to use [Swiper](http://www.idangero.us/swiper/get-started/) as a ReactJs component
 
@@ -52,6 +53,7 @@ Swiper is not compatible with all platforms, it is a modern touch slider which i
 
 
 **NOTE:**
+
 * You can also use Swiper's original params too. Swiper API documentation [HERE](http://idangero.us/swiper/api/)
 * Find more info about Swiper custom build [HERE](https://idangero.us/swiper/api/#custom-build)
 
@@ -64,7 +66,8 @@ Swiper is not compatible with all platforms, it is a modern touch slider which i
 
 # Installation and setup
 
-From version 2.0.0, it requires **React & ReactDOM ver >=16.8.0** to use [Hooks](https://reactjs.org/docs/hooks-intro.html)
+- From version 2.0.0, it requires **React & ReactDOM ver >=16.8.0** to use [Hooks](https://reactjs.org/docs/hooks-intro.html)
+- From version 2.4.0, it requires **Swiper ver >= 5.0.0**
 
 ## Npm package
 
@@ -83,11 +86,11 @@ yarn add react-id-swiper@latest swiper@latest
 ## CDN
 
 ```html
-<script src="https://unpkg.com/react-id-swiper@2.3.2/lib/react-id-swiper.js"></script>
+<script src="https://unpkg.com/react-id-swiper@2.4.0/lib/react-id-swiper.js"></script>
 ```
 
 ```html
-<script src="https://unpkg.com/react-id-swiper@2.3.2/lib/react-id-swiper.min.js"></script>
+<script src="https://unpkg.com/react-id-swiper@2.4.0/lib/react-id-swiper.min.js"></script>
 ```
 
 # Styling
@@ -97,21 +100,49 @@ yarn add react-id-swiper@latest swiper@latest
 Use Swiper stylesheet file from CDN
 
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.2.0/css/swiper.css">
 ```
 
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.2.0/css/swiper.min.css">
 ```
 
-Or `react-id-swiper/lib/styles/` (supporting CSS and SCSS)
+**For version <=2.3.2**
 
-```js
-import 'react-id-swiper/lib/styles/scss/swiper.scss';
+You can import direct from `react-id-swiper/lib/styles/` (supporting css, scss)
+
+> css
+
+```javascript
+import 'react-id-swiper/lib/styles/css/swiper.css'
 ```
 
-```js
-import 'react-id-swiper/lib/styles/css/swiper.css';
+> scss
+
+```javascript
+import 'react-id-swiper/lib/styles/scss/swiper.scss'
+```
+
+**For version >=2.4.0**
+
+You should import directly from `Swiper` packages which supports css, scss and less
+
+> css
+
+```javascript
+import 'swiper/css/swiper.css'
+```
+
+> scss
+
+```javascript
+import 'swiper/swiper.scss'
+```
+
+> less
+
+```javascript
+import 'swiper/swiper.less'
 ```
 
 # Examples
@@ -125,7 +156,10 @@ import 'react-id-swiper/lib/styles/css/swiper.css';
 ```javascript
 import React from 'react';
 import Swiper from 'react-id-swiper';
-import 'react-id-swiper/lib/styles/css/swiper.css'; // or `/scss/swiper.scss`
+// Version <= 2.3.2
+import 'react-id-swiper/lib/styles/css/swiper.css';
+// Version >= 2.4.0
+import 'swiper/css/swiper.css';
 
 const SimpleSwiper = () => (
   <Swiper>
@@ -219,8 +253,11 @@ You can find the [WORKING DEMO REPO HERE](https://github.com/kidjp85/react-id-sw
 
 ```javascript
 import React from 'react';
-import { Swiper, Navigation, Pagination } from 'swiper/dist/js/swiper.esm.js';
 import ReactIdSwiperCustom from 'react-id-swiper/lib/ReactIdSwiper.custom';
+// For swiper version 4.x
+import { Swiper, Navigation, Pagination } from 'swiper/dist/js/swiper.esm';
+// For swiper version 5.x
+import { Swiper, Navigation, Pagination } from 'swiper/js/swiper.esm';
 
 const CustomBuildSwiper = () => {
   const params = {
@@ -257,7 +294,7 @@ export default CustomBuildSwiper;
 **NOTE**:
 * If you use Webpack & Babel you need to setup Babel loader config in `webpack.config.js` like below:
 
-```js
+```javascript
 module: {
   rules: [
     {
@@ -303,17 +340,17 @@ const params = {
 
 Each slide should be wrapped by HTML element
 
-> BAD CODE
+> BAD CODE :thumbsdown:
 
-```js
+```javascript
 <Swiper {...params}>
   Slide content // notice no HTML element
 </Swiper>
 ```
 
-> GOOD CODE
+> GOOD CODE :thumbsup:
 
-```js
+```javascript
 <Swiper {...params}>
   <span>Slide content</span>
 </Swiper>

@@ -1,6 +1,10 @@
 import { ReactElement } from 'react';
 
-import Swiper, { SwiperOptions, SelectableElement, SwiperModule } from 'swiper';
+import Swiper, {
+  SwiperOptions,
+  SelectableElement as SwiperSelectableElement,
+  SwiperModule
+} from 'swiper';
 
 export type ReactIdSwiperRenderProps = (props: ReactIdSwiperProps) => ReactElement | null;
 
@@ -40,7 +44,7 @@ export interface ReactIdSwiperCustomProps extends ReactIdSwiperProps {
   Swiper: typeof Swiper;
 }
 
-export type SelectableElement = SelectableElement | undefined;
+export type SelectableElement = SwiperSelectableElement | undefined;
 
 export type SwiperInstance = Swiper | null;
 
