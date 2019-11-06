@@ -1042,10 +1042,10 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
   integrity sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
 
-"@types/react-dom@^16.9.3":
-  version "16.9.3"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.3.tgz#4006ff0e13958af91313869077c04cb20d9b9d04"
-  integrity sha512-FUuZKXPr9qlzUT9lhuzrZgLjH63TvNn28Ch3MvKG4B+F52zQtO8DtE0Opbncy3xaucNZM2WIPfuNTgkbKx5Brg==
+"@types/react-dom@^16.9.4":
+  version "16.9.4"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.4.tgz#0b58df09a60961dcb77f62d4f1832427513420df"
+  integrity sha512-fya9xteU/n90tda0s+FtN5Ym4tbgxpq/hb/Af24dvs6uYnYn+fspaxw5USlw0R8apDNwxsqumdRoCoKitckQqw==
   dependencies:
     "@types/react" "*"
 
@@ -1062,10 +1062,10 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
 
-"@types/swiper@^4.4.8":
-  version "4.4.8"
-  resolved "https://registry.yarnpkg.com/@types/swiper/-/swiper-4.4.8.tgz#8a0602eb34c8bfe87924a8df7ecd63345463b5c0"
-  integrity sha512-jtvfbuIUlrI+kV6yk63ddM9Uiv2a3ruGjhihzzDDq/C6kY6EZXV6yVGIc8OxMb0Gwjac2bGltMuF1WcDYV9sZQ==
+"@types/swiper@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@types/swiper/-/swiper-5.2.0.tgz#11ddbff1726a1a31c11a3e1e93e5d07050418445"
+  integrity sha512-JUkSp8aarWdp5SMWo89nMVFuBO3PZLhhP3F1jWGFUC2nclDxIU/ZbgMYAvBs29j906nQ/uAXiEqloV6qPQpUZg==
 
 "@types/tough-cookie@*":
   version "2.3.5"

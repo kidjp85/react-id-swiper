@@ -107,19 +107,19 @@ Use Swiper stylesheet file from CDN
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.2.0/css/swiper.min.css">
 ```
 
-**For version ~2.3.2**
+**For version <=2.3.2**
 
 You can import direct from `react-id-swiper/lib/styles/` (supporting css, scss)
 
 > css
 
-```js
+```javascript
 import 'react-id-swiper/lib/styles/css/swiper.css'
 ```
 
 > scss
 
-```js
+```javascript
 import 'react-id-swiper/lib/styles/scss/swiper.scss'
 ```
 
@@ -129,30 +129,20 @@ You should import directly from `Swiper` packages which supports css, scss and l
 
 > css
 
-```js
+```javascript
 import 'swiper/css/swiper.css'
 ```
 
 > scss
 
-```js
+```javascript
 import 'swiper/swiper.scss'
 ```
 
 > less
 
-```js
+```javascript
 import 'swiper/swiper.less'
-```
-
-Or `react-id-swiper/lib/styles/` (supporting CSS and SCSS)
-
-```js
-import 'react-id-swiper/lib/styles/scss/swiper.scss';
-```
-
-```js
-import 'react-id-swiper/lib/styles/css/swiper.css';
 ```
 
 # Examples
@@ -301,7 +291,7 @@ export default CustomBuildSwiper;
 **NOTE**:
 * If you use Webpack & Babel you need to setup Babel loader config in `webpack.config.js` like below:
 
-```js
+```javascript
 module: {
   rules: [
     {
@@ -349,7 +339,7 @@ Each slide should be wrapped by HTML element
 
 > BAD CODE :thumbsdown:
 
-```js
+```javascript
 <Swiper {...params}>
   Slide content // notice no HTML element
 </Swiper>
@@ -357,7 +347,7 @@ Each slide should be wrapped by HTML element
 
 > GOOD CODE :thumbsup:
 
-```js
+```javascript
 <Swiper {...params}>
   <span>Slide content</span>
 </Swiper>
