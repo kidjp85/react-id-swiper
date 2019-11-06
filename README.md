@@ -16,8 +16,10 @@ What is Swiper?
 ===============
 
 Swiper - is the free and most modern mobile touch slider with hardware accelerated transitions and amazing native behavior.
-It is intended to be used in mobile websites, mobile web apps, and mobile native/hybrid apps. Designed mostly for iOS, but also works great on latest Android, Windows Phone 8 and modern Desktop browsers
-Swiper is not compatible with all platforms, it is a modern touch slider which is focused only on modern apps/platforms to bring the best experience and simplicity.
+
+It is intended to be used in mobile websites, mobile web apps, and mobile native/hybrid apps. Designed mostly for iOS, but also works great on latest Android, Windows Phone 8 and modern Desktop browsers.
+
+Swiper is not compatible with all platforms, it is a modern touch slider which is focused only on modern apps/platforms to bring the best experience and simplicity. Swiper does work well with [Gatsby](https://www.gatsbyjs.org/).
 
 # Props
 
@@ -53,6 +55,13 @@ Swiper is not compatible with all platforms, it is a modern touch slider which i
 * You can also use Swiper's original params too. Swiper API documentation [HERE](http://idangero.us/swiper/api/)
 * Find more info about Swiper custom build [HERE](https://idangero.us/swiper/api/#custom-build)
 
+# Documentation
+
+- [Get Started](https://react-id-swiper.ashernguyen.site/doc/get-started)
+- [API](https://react-id-swiper.ashernguyen.site/doc/api)
+- [Custom Build](https://react-id-swiper.ashernguyen.site/doc/custom-build)
+- [Examples](https://react-id-swiper.ashernguyen.site/example/default)
+
 # Installation and setup
 
 From version 2.0.0, it requires **React & ReactDOM ver >=16.8.0** to use [Hooks](https://reactjs.org/docs/hooks-intro.html)
@@ -85,7 +94,7 @@ yarn add react-id-swiper@latest swiper@latest
 
 **Swiper stylesheet file is required**
 
-Use Swiper stylesheet file from CDN or `react-id-swiper/lib/styles/` (supporting css, scss)
+Use Swiper stylesheet file from CDN
 
 ```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
@@ -95,13 +104,28 @@ Use Swiper stylesheet file from CDN or `react-id-swiper/lib/styles/` (supporting
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
 ```
 
-# Examples [here](https://react-id-swiper.ashernguyen.site/example/default)
+Or `react-id-swiper/lib/styles/` (supporting CSS and SCSS)
+
+```js
+import 'react-id-swiper/lib/styles/scss/swiper.scss';
+```
+
+```js
+import 'react-id-swiper/lib/styles/css/swiper.css';
+```
+
+# Examples
+
+[Numerous live examples](https://react-id-swiper.ashernguyen.site/example/default):
+
+>Navigation, Pagination, Pagination / Dynamic Bullets, Progress Pagination, Fraction Pagination, Custom Pagination, Scrollbar, Vertical slider, Space Between Slides, Mutiple Slides Per View, Auto Slides Per View / Carousel Mode, Centered Slides, Centered Slides + Auto Slides Per View, Free Mode / No Fixed Positions, Scroll Container, Multiple Row Slides Layout, Nested Swipers, Grab Cursor, Loop Mode / Infinite Loop, Loop Mode With Multiple Slides Per Group, Fade Effect, 3D Cube Effect, 3D Coverflow Effect, 3D Flip Effect, Mousewheel-control, Auto Play, Thumbs Gallery With Two-way Control, RTL Layout, Parallax, Lazyload Image, Responsive Breakpoints, Manipulating component outside Swiper, Customized Component
 
 ## Default
 
 ```javascript
 import React from 'react';
 import Swiper from 'react-id-swiper';
+import 'react-id-swiper/lib/styles/css/swiper.css'; // or `/scss/swiper.scss`
 
 const SimpleSwiper = () => (
   <Swiper>
@@ -281,15 +305,15 @@ Each slide should be wrapped by HTML element
 
 > BAD CODE
 
-```javascript
+```js
 <Swiper {...params}>
-  Slide content
+  Slide content // notice no HTML element
 </Swiper>
 ```
 
 > GOOD CODE
 
-```javascript
+```js
 <Swiper {...params}>
   <span>Slide content</span>
 </Swiper>
