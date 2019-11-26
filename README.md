@@ -130,19 +130,19 @@ You should import directly from `Swiper` packages which supports css, scss and l
 > css
 
 ```javascript
-import 'swiper/css/swiper.css'
+import 'swiper/dist/css/swiper.css'
 ```
 
 > scss
 
 ```javascript
-import 'swiper/swiper.scss'
+import 'swiper/src/swiper.scss'
 ```
 
 > less
 
 ```javascript
-import 'swiper/swiper.less'
+import 'swiper/src/swiper.less'
 ```
 
 # Examples
