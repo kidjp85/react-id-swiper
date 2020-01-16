@@ -215,7 +215,7 @@ import React, { useState } from 'react';
 import Swiper from 'react-id-swiper';
 
 const ManipulatingSwiper = () => {
-  const [swiper, updateSwiper] = useState(null);
+  const [swiper, setSwiper] = useState(null);
 
   const goNext = () => {
     if (swiper !== null) {
@@ -231,7 +231,7 @@ const ManipulatingSwiper = () => {
 
   return (
     <div>
-      <Swiper getSwiper={updateSwiper}>
+      <Swiper getSwiper={setSwiper}>
         <div>Slide 1</div>
         <div>Slide 2</div>
         <div>Slide 3</div>
