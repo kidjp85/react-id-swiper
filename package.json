@@ -62,7 +62,7 @@
     "@babel/preset-react": "^7.7.0",
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
-    "@types/jest": "^24.0.22",
+    "@types/jest": "^25.1.0",
     "@types/jsdom": "^12.2.4",
     "@types/object-assign": "^4.0.30",
     "@types/react": "^16.9.11",
