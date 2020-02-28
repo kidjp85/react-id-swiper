@@ -1,7 +1,6 @@
 import React, {
   FunctionComponent,
   Children,
-  createRef,
   useEffect,
   useRef,
   cloneElement,
@@ -41,25 +40,15 @@ const ReactIdSwiperCustom: FunctionComponent<ReactIdSwiperCustomProps> = props =
     modules = []
   } = props;
 
-  // No render if wrapper elements are not provided or when modules is empty
-  if (!Swiper || !children || !ContainerEl || !WrapperEl) {
-    return null;
-  }
-
   // Define swiper ref
-  const swiperNodeRef = createRef<HTMLDivElement>();
+  const swiperNodeRef = useRef<HTMLDivElement>(null);
 
   // Define swiper instance ref
   const swiperInstanceRef = useRef<SwiperInstance>(null);
 
   // Initialize modules to use with swiper
-  Swiper.use(modules);
-
-  // Validate children props
-  if (!validateChildren(children)) {
-    console.warn('Children should be react element or an array of react element!!');
-
-    return null;
+  if (Swiper) {
+    Swiper.use(modules);
   }
 
   // Get current active slide key
@@ -189,8 +178,20 @@ const ReactIdSwiperCustom: FunctionComponent<ReactIdSwiperCustomProps> = props =
   const shouldRenderNextButton = isNavigationModuleAvailable && navigation && navigation.nextEl;
   const shouldRenderPrevButton = isNavigationModuleAvailable && navigation && navigation.prevEl;
 
+  // No render if wrapper elements are not provided or when modules is empty
+  if (!Swiper || !children || !ContainerEl || !WrapperEl) {
+    return null;
+  }
+
+  // Validate children props
+  if (!validateChildren(children)) {
+    console.warn('Children should be react element or an array of react element!!');
+
+    return null;
+  }
+
   return (
-    <ContainerEl className={containerClass} dir={rtl && 'rtl'} ref={swiperNodeRef}>
+    <ContainerEl className={containerClass} dir={rtl} ref={swiperNodeRef}>
       {shouldRenderParallax && renderParallax && renderParallax(props)}
       <WrapperEl className={wrapperClass}>{Children.map(children, renderContent)}</WrapperEl>
       {shouldRenderPagination && renderPagination && renderPagination(props)}
