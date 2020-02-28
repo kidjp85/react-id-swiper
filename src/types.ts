@@ -33,7 +33,7 @@ export interface ReactIdSwiperProps extends SwiperOptions {
   renderPrevButton?: ReactIdSwiperRenderProps;
   renderNextButton?: ReactIdSwiperRenderProps;
   renderParallax?: ReactIdSwiperRenderProps;
-  rtl?: 'rtl';
+  rtl?: string;
   children?: ReactIdSwiperChildren;
   parallaxEl?: {
     el: string;

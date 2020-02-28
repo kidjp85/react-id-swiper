@@ -191,7 +191,7 @@ const ReactIdSwiperCustom: FunctionComponent<ReactIdSwiperCustomProps> = props =
   }
 
   return (
-    <ContainerEl className={containerClass} dir={rtl} ref={swiperNodeRef}>
+    <ContainerEl className={containerClass} dir={rtl && 'rtl'} ref={swiperNodeRef}>
       {shouldRenderParallax && renderParallax && renderParallax(props)}
       <WrapperEl className={wrapperClass}>{Children.map(children, renderContent)}</WrapperEl>
       {shouldRenderPagination && renderPagination && renderPagination(props)}
