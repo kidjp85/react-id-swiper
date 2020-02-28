@@ -1,12 +1,14 @@
 import { ReactElement } from 'react';
 
+type Maybe<T> = T | null;
+
 import Swiper, {
   SwiperOptions,
   SelectableElement as SwiperSelectableElement,
   SwiperModule
 } from 'swiper';
 
-export type ReactIdSwiperRenderProps = (props: ReactIdSwiperProps) => ReactElement | null;
+export type ReactIdSwiperRenderProps = (props: ReactIdSwiperProps) => Maybe<ReactElement>;
 
 export type WrappedElementType = 'div' | 'section' | 'span';
 
@@ -31,7 +33,7 @@ export interface ReactIdSwiperProps extends SwiperOptions {
   renderPrevButton?: ReactIdSwiperRenderProps;
   renderNextButton?: ReactIdSwiperRenderProps;
   renderParallax?: ReactIdSwiperRenderProps;
-  rtl?: string | undefined;
+  rtl?: string;
   children?: ReactIdSwiperChildren;
   parallaxEl?: {
     el: string;
@@ -46,7 +48,7 @@ export interface ReactIdSwiperCustomProps extends ReactIdSwiperProps {
 
 export type SelectableElement = SwiperSelectableElement | undefined;
 
-export type SwiperInstance = Swiper | null;
+export type SwiperInstance = Maybe<Swiper>;
 
 export type SwiperModuleName =
   | 'navigation'

@@ -1,7 +1,6 @@
 import React, {
   FunctionComponent,
   Children,
-  createRef,
   useEffect,
   useRef,
   cloneElement,
@@ -41,7 +40,7 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
   } = props;
 
   // Define swiper ref
-  const swiperNodeRef = createRef<HTMLDivElement>();
+  const swiperNodeRef = useRef<HTMLDivElement>(null);
 
   // Define swiper instance ref
   const swiperInstanceRef = useRef<SwiperInstance>(null);
