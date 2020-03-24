@@ -130,7 +130,7 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
       swiperInstanceRef.current.slideTo(slideToIndex);
     }
 
-    return () => {};
+    return;
   }, []);
 
   // Execute each time when props are updated
