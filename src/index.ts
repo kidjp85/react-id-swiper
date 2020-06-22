@@ -9,7 +9,7 @@ export {
   WrappedElementType,
   ReactIdSwiperChildren,
   SwiperModuleName,
-  GetSwiper
+  SwiperRefNode
 } from './types';
 
 // React-id-swiper
