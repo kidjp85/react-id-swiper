@@ -17,7 +17,8 @@
     "jest": true,
     "amd": true,
     "node": true,
-    "es6": true
+    "es6": true,
+    "jest/globals": true
   },
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -28,12 +29,25 @@
   },
   "rules": {
     "import/no-unresolved": "error",
-    "import/order": "off",
     "import/named": "off",
+    "import/no-named-as-default" : "off",
     "import/default": "off",
+    "import/order": ["error", {
+      "groups": ["external", "builtin", "internal", "parent", "sibling", "index" ]
+    }],
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-explicit-any": ["off"],
-    "react/display-name": ["off"],
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/no-empty-interface": ["error", {
+      "allowSingleExtends": true
+    }],
+    "@typescript-eslint/ban-types": ["error", {
+      "types": {
+        "{}": false,
+        "object": false
+      }
+    }],
+    "react/display-name": "off",
     "prettier/prettier": ["error", {
       "singleQuote": true,
       "printWidth": 100,
