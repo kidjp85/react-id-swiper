@@ -63,7 +63,7 @@
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.0",
-    "@types/jsdom": "16.2.3",
+    "@types/jsdom": "11.0.4",
     "@types/object-assign": "^4.0.30",
     "@types/react": "^16.9.38",
     "@types/react-dom": "^16.9.8",
@@ -73,6 +73,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-jest": "^26.0.1",
     "babel-plugin-dynamic-import-node": "^2.3.3",
+    "browser-resolve": "^1.11.3",
     "cross-env": "^7.0.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
@@ -105,8 +106,8 @@
     "resetMocks": true,
     "resetModules": true,
     "verbose": true,
-    "browser": true,
     "collectCoverage": true,
+    "browser": true,
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
