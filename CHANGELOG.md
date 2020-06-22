@@ -2,7 +2,7 @@
 
 ## [v4.0.0](https://github.com/kidjp85/react-id-swiper/compare/4.0.0...3.0.0) - Released on Jun 22th, 2020
   * Upgrade to support `Swiper` newest version
-  * Depricate `getSwiper` props
+  * Remove `getSwiper` props
   * Allow to access `Swiper instance` from `ref`
   * Upgrade npm packages
 
