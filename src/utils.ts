@@ -1,12 +1,15 @@
 import { isValidElement, Children, ReactElement } from 'react';
-import { SelectableElement, SwiperModules, SwiperModuleName } from './types';
+import {
+  SelectableElement,
+  SwiperModules,
+  SwiperModuleName,
+  ReactIdSwiperChildren,
+  SetRef
+} from './types';
 
 export const classNames = (el: SelectableElement): string => {
   if (typeof el === 'string') {
-    return el
-      .split('.')
-      .join(' ')
-      .trim();
+    return el.split('.').join(' ').trim();
   } else if (el instanceof HTMLElement) {
     return el.className;
   }
@@ -14,7 +17,7 @@ export const classNames = (el: SelectableElement): string => {
   return '';
 };
 
-export const validateChildren = (children: any) => {
+export const validateChildren = (children: ReactIdSwiperChildren): boolean => {
   let isValid = true;
 
   if (Array.isArray(children)) {
@@ -50,4 +53,12 @@ export const isModuleAvailable = (
   }
 
   return moduleAvailable;
+};
+
+export const setRef: SetRef = (ref, value) => {
+  if (typeof ref === 'function') {
+    ref(value);
+  } else if (ref) {
+    ref.current = value;
+  }
 };
