@@ -349,7 +349,7 @@ See also the list of [contributors](https://github.com/kidjp85/react-id-swiper/c
 
 # Buy me a coffee
 
-<a href="https://www.buymeacoffee.com/kidjp85" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Coffee" style="height: 40px !important;" ></a>
+<a href="https://www.buymeacoffee.com/kidjp85" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Coffee" height="40"></a>
 
 # License
 
