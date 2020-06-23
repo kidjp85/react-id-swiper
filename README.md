@@ -191,12 +191,10 @@ export default SimpleSwiperWithParams;
 ## Manipulating swiper from outside swiper component
 
 ```javascript
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import Swiper from 'react-id-swiper';
 
 const ManipulatingSwiper = () => {
-  const [swiper, setSwiper] = useState(null);
-
   const ref = useRef(null);
 
   const goNext = () => {
@@ -351,7 +349,7 @@ See also the list of [contributors](https://github.com/kidjp85/react-id-swiper/c
 
 # Buy me a coffee
 
-<a href="https://www.buymeacoffee.com/kidjp85" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+<a href="https://www.buymeacoffee.com/kidjp85" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Coffee" style="height: 40px !important;" ></a>
 
 # License
 
