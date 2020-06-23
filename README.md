@@ -199,13 +199,13 @@ const ManipulatingSwiper = () => {
 
   const goNext = () => {
     if (ref.current !== null && ref.current.swiper !== null) {
-      swiper.slideNext();
+      ref.current.swiper.slideNext();
     }
   };
 
   const goPrev = () => {
     if (ref.current !== null && ref.current.swiper !== null) {
-      swiper.slidePrev();
+      ref.current.swiper.slidePrev();
     }
   };
 
