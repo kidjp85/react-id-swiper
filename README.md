@@ -130,9 +130,9 @@ import 'swiper/swiper.less'
 
 # Examples
 
-[Numerous live examples](https://react-id-swiper.ashernguyen.site/example/default):
+## Live Examples
 
->Navigation, Pagination, Pagination / Dynamic Bullets, Progress Pagination, Fraction Pagination, Custom Pagination, Scrollbar, Vertical slider, Space Between Slides, Mutiple Slides Per View, Auto Slides Per View / Carousel Mode, Centered Slides, Centered Slides + Auto Slides Per View, Free Mode / No Fixed Positions, Scroll Container, Multiple Row Slides Layout, Nested Swipers, Grab Cursor, Loop Mode / Infinite Loop, Loop Mode With Multiple Slides Per Group, Fade Effect, 3D Cube Effect, 3D Coverflow Effect, 3D Flip Effect, Mousewheel-control, Auto Play, Thumbs Gallery With Two-way Control, RTL Layout, Parallax, Lazyload Image, Responsive Breakpoints, Manipulating component outside Swiper, Customized Component
+[Codesandbox Live Examples](docs/live-examples.md)
 
 ## Default
 
@@ -195,6 +195,8 @@ import React, { useRef } from 'react';
 import Swiper from 'react-id-swiper';
 
 const ManipulatingSwiper = () => {
+  const ref = useRef(null);
+
   const ref = useRef(null);
 
   const goNext = () => {
@@ -269,6 +271,7 @@ export default CustomBuildSwiper;
 ```
 
 **NOTE**:
+
 * If you use Webpack & Babel you need to setup Babel loader config in `webpack.config.js` like below:
 
 ```javascript
