@@ -37,11 +37,4 @@ You can view the live code examples in Code Sandbox.
 | Lazyload Image                             | https://codesandbox.io/s/lazyload-image-rl1bk                                        |
 | Responsive Breakpoints                     | https://codesandbox.io/s/responsive-breakpoints-example-t2rsy                        |
 | Manipulating component outside Swiper      | https://codesandbox.io/s/manipulating-swiper-component-from-outside-example-5gv2r    |
-| Customized Componen                        | https://codesandbox.io/s/customized-component-example-nksc2                          |
-
-
-
-
-
-
-
+| Customized Component                       | https://codesandbox.io/s/customized-component-example-nksc2                          |
