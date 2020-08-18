@@ -139,7 +139,7 @@ import 'swiper/swiper.less'
 ```javascript
 import React from 'react';
 import Swiper from 'react-id-swiper';
-import 'swiper/css/swiper.css';
+import 'swiper/swiper-bundle.css';
 
 const SimpleSwiper = () => (
   <Swiper>
