@@ -197,8 +197,6 @@ import Swiper from 'react-id-swiper';
 const ManipulatingSwiper = () => {
   const ref = useRef(null);
 
-  const ref = useRef(null);
-
   const goNext = () => {
     if (ref.current !== null && ref.current.swiper !== null) {
       ref.current.swiper.slideNext();
