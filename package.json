@@ -94,7 +94,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rimraf": "^3.0.2",
-    "swiper": "^5.4.5",
+    "swiper": "^6.5.1",
     "ts-jest": "^26.1.1",
     "ts-loader": "^7.0.5",
     "typescript": "^3.9.6",
